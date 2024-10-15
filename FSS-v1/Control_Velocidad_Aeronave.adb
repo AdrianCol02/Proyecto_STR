@@ -1,7 +1,7 @@
 with Ada.Real_Time; use Ada.Real_Time;
 with devicesFSS_V1; use devicesFSS_V1;
 
-package body Control_Velocidad_Aeronave is
+package body control_velocidad_aeronave is
 
     --Vamos a hacer uso de constantes para realizar las pruebas en un entorno controlado, más adelante se podrán modificar con el objeto protegido
     Max_Velocidad : constant Float:= 1000.0;
@@ -115,4 +115,4 @@ package body Control_Velocidad_Aeronave is
         --Se desarrollará en futuras versiones ya que no conocemos si hacen presencia en ella otros módulos de control
     end Control_Velocidad_Avion;
 
-end Control_Velocidad_Aeronave;
+end control_velocidad_aeronave;
