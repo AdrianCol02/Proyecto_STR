@@ -99,10 +99,11 @@ package body control_velocidad_aeronave is
             Velocidad_Actual := Read_Speed;
 
             if Velocidad_Actual < Min_Velocidad then
-                Light_2(ON);
+                Alarm(3);
             end if;
 
             if Velocidad_Actual < 250.0 then
+                Alarm(5);
                 Set_Speed(300.0);
             end if;
 
