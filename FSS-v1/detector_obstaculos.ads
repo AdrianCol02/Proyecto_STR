@@ -1,5 +1,5 @@
 -- detector_obstaculos.ads
--- Especificación para el sistema de detección de obstáculos y maniobra de desvío
+-- Especificación para el sistema de detección de obstáculos y maniobra de desvío usando tasks
 
 package Detector_Obstaculos is
 
@@ -15,29 +15,30 @@ package Detector_Obstaculos is
    -- Tipo que representa la visibilidad actual
    type Visibilidad_Tipo is range 0 .. 1000; -- En metros
 
-   -- Función que determina si hay un obstáculo
-   function Hay_Obstaculo(Distancia : Distancia_Tipo) return Boolean;
+   -- Task que maneja la detección de obstáculos cada 250 ms
+   task type Task_Deteccion is
+      entry Configurar_Deteccion(
+         Distancia    : Distancia_Tipo;
+         Velocidad    : Velocidad_Tipo;
+         Altitud      : Altitud_Tipo;
+         Visibilidad  : Visibilidad_Tipo;
+         Piloto_Presente : Boolean
+      );
+   end Task_Deteccion;
 
-   -- Procedimiento que calcula el tiempo hasta la colisión
-   procedure Calcular_Tiempo_Colision(
-      Distancia : Distancia_Tipo;
-      Velocidad : Velocidad_Tipo;
-      Tiempo    : out Float
-   );
+   -- Task que maneja el cálculo de tiempo hasta la colisión
+   task type Task_Tiempo_Colision is
+      entry Calcular(Distancia : Distancia_Tipo; Velocidad : Velocidad_Tipo);
+   end Task_Tiempo_Colision;
 
-   -- Procedimiento que genera una alarma sonora
-   procedure Alarma_Sonora(Volumen : Integer);
+   -- Task que maneja la alarma sonora
+   task type Task_Alarma is
+      entry Activar(Volumen : Integer);
+   end Task_Alarma;
 
-   -- Procedimiento que inicia la maniobra de desvío
-   procedure Maniobra_Desvio(Altitud : Altitud_Tipo);
-
-   -- Procedimiento principal para detectar obstáculos y realizar acciones necesarias
-   procedure Detectar_Obstaculos(
-      Distancia    : Distancia_Tipo;
-      Velocidad    : Velocidad_Tipo;
-      Altitud      : Altitud_Tipo;
-      Visibilidad  : Visibilidad_Tipo;
-      Piloto_Presente : Boolean
-   );
+   -- Task que maneja la maniobra de desvío
+   task type Task_Maniobra_Desvio is
+      entry Iniciar(Altitud : Altitud_Tipo);
+   end Task_Maniobra_Desvio;
 
 end Detector_Obstaculos;
