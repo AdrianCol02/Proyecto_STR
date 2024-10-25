@@ -1,10 +1,11 @@
 with Ada.Real_Time; use Ada.Real_Time;
-with devicesFSS_V1; use devicesFSS_V1;  
+with devicesFSS_V1; use devicesFSS_V1;
+with Ada.textIO; use Ada.textIO;
 
-package body visualizacion_aeronave is
+package body control_visualizacion_aeronave is
 
     -- Intervalo de visualización: 1 segundo (1000 ms)
-    intervalo_visualizacion : contant Time_Span := Miliseconds(1000);
+    intervalo_visualizacion : constant Time_Span := Miliseconds(1000);
 
     task body visualizar_datos is
         altitude : Float;

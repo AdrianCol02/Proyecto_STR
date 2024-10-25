@@ -1,4 +1,3 @@
-
 with Kernel.Serial_Output; use Kernel.Serial_Output;
 
 with System; use System;
@@ -30,7 +29,7 @@ package body button_interrupt is
          j := j + 1;
 
          --Hora_Actual (Big_Bang);
-         --Put ("=====> Interrupción Externa 2 ");
+         --Put ("=====> Interrupciï¿½n Externa 2 ");
       end loop;
    end Interrupt;
 
