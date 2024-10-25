@@ -1,6 +1,7 @@
 with Ada.Real_Time; use Ada.Real_Time;
 with Ada.Text_IO; use Ada.Text_IO;
 with devicesFSS_V1; use devicesFSS_V1;
+with Datos_Aeronave; -- Incluir el objeto protegido
 
 package body control_posicion_altitud is
 
@@ -21,11 +22,18 @@ package body control_posicion_altitud is
         Joystick : Joystick_Samples_Type;
         Joystick_Pitch : Pitch_Samples_Type;
         Current_Altitude : Altitude_Samples_Type;
+        Datos : Datos_Aeronave.Datos_Type;
     begin
         loop
             Read_Joystick(Joystick);
             Joystick_Pitch := Joystick(x);
             Current_Altitude := Read_Altitude;
+
+            -- Actualizar datos en el objeto protegido
+            Datos.Altitud := Current_Altitude;
+            Datos.Joystick_X := Joystick(x);
+            Datos.Joystick_Y := Joystick(y);
+            Datos_Aeronave.Actualizar_Datos(Datos); -- Actualizar objeto protegido
 
             -- Verificamos que el ángulo del joystick esté en el rango permitido
             if Joystick_Pitch <= Max_Pitch_Angle and Joystick_Pitch >= Min_Pitch_Angle then
@@ -58,9 +66,14 @@ package body control_posicion_altitud is
 
     task body control_altitude is
         Current_Altitude : Altitude_Samples_Type;
+        Datos : Datos_Aeronave.Datos_Type;
     begin
         loop
             Current_Altitude := Read_Altitude;
+
+            -- Actualizar datos en el objeto protegido
+            Datos.Altitud := Current_Altitude;
+            Datos_Aeronave.Actualizar_Datos(Datos); -- Actualizar objeto protegido
 
             -- Sección que controla las altitudes críticas
             if Current_Altitude <= Min_Altitude then
@@ -78,25 +91,32 @@ package body control_posicion_altitud is
     task body control_roll is
         Joystick : Joystick_Samples_Type;
         Joystick_Roll : Roll_Samples_Type;
+        Datos : Datos_Aeronave.Datos_Type;
     begin
         loop
             Read_Joystick(Joystick);
             Joystick_Roll := Joystick(y);
+
+            -- Actualizar datos en el objeto protegido
+            Datos.Joystick_X := Joystick(x);
+            Datos.Joystick_Y := Joystick(y);
+            Datos_Aeronave.Actualizar_Datos(Datos); -- Actualizar objeto protegido
 
             -- Verificamos que el ángulo del joystick esté en el rango permitido
             if Joystick_Roll <= Max_Roll_Angle and Joystick_Roll >= Min_Roll_Angle then
                 -- Aplicar el ángulo del joystick
                 Set_Aircraft_Roll(Joystick_Roll);
 
-                -- Verificar si el ángulo excede el límite de alerta
-                if Joystick_Roll > Alert_Roll_Angle or Joystick_Roll < -Alert_Roll_Angle then
-                    Display_Message("Alerta: ángulo de alabeo excede los ±35 grados");
+                -- Verificar si el ángulo de rol está en el rango crítico
+                if Joystick_Roll >= Alert_Roll_Angle or Joystick_Roll <= -Alert_Roll_Angle then
+                    Light_2(On); -- Enciende una luz de advertencia
+                else
+                    Light_2(Off); -- Apagar la luz si el ángulo de rol está seguro
                 end if;
             end if;
 
             delay until Clock + Milliseconds(200); -- Intervalo de control para 5 veces por segundo
         end loop;
     end control_roll;
-
 
 end control_posicion_altitud;

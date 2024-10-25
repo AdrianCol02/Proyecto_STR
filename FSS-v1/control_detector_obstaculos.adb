@@ -1,6 +1,7 @@
 with Ada.Real_Time;
 with Ada.Text_IO;
 with devicesFSS_V1;
+with Datos_Aeronave; -- Incluir el objeto protegido
 
 package body control_detector_obstaculos is
 
@@ -11,6 +12,7 @@ package body control_detector_obstaculos is
       Visibilidad       : devicesFSS_V1.Light_Samples_Type;
       Piloto_Presente   : devicesFSS_V1.PilotPresence_Samples_Type;
       Tiempo_Colision   : Duration;
+      Datos : Datos_Aeronave.Datos_Type;
    begin
       loop
          -- Leer datos de sensores
@@ -19,6 +21,15 @@ package body control_detector_obstaculos is
          Altitud := devicesFSS_V1.Read_Altitude;
          devicesFSS_V1.Read_Light_Intensity(Visibilidad);
          Piloto_Presente := devicesFSS_V1.Read_PilotPresence;
+
+         -- Actualizar datos en el objeto protegido
+         Datos.Velocidad := Velocidad;
+         Datos.Altitud := Altitud;
+         Datos.Joystick_X := 0.0;  -- Puede ser modificado más adelante
+         Datos.Joystick_Y := 0.0;  -- Puede ser modificado más adelante
+         Datos.Potencia_Motores := 0;  -- Valor predeterminado
+
+         Datos_Aeronave.Actualizar_Datos(Datos); -- Actualizar objeto protegido
 
          -- Calcular tiempo de colisión
          if Velocidad > 0 then
