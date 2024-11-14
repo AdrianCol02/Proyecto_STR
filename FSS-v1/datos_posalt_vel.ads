@@ -1,35 +1,25 @@
-package body datos_posatl_vel is
-    protected body Datos_Vuelo is
+with devicesFSS_V1; use devicesFSS_V1;
+with Ada.Real_Time; use Ada.Real_Time;
 
-        procedure Actualizar_Datos is
-            Joystick_Posicion : Joystick_Samples_Type;
-        begin
-            -- Leer la velocidad y altitud usando `devicesFSS_V1`
-            Velocidad_Actual := Read_Speed;
-            Altitud_Actual := Read_Altitude;
-            
-            -- Leer la posición del joystick
-            Read_Joystick(Joystick_Posicion);
-            Posicion_X_Actual := Joystick_Posicion(x);
-            Posicion_Y_Actual := Joystick_Posicion(y);
+package datos_posalt_vel is
+    protected Datos_Vuelo is
+        -- Procedimientos de actualización
+        procedure Actualizar_Velocidad;
+        procedure Actualizar_Altitud;
+        procedure Actualizar_Posicion_X;
+        procedure Actualizar_Posicion_Y;
 
-            -- Actualizar visualización
-            Display_Speed(Velocidad_Actual);
-            Display_Altitude(Altitud_Actual);
-            Display_Joystick(Joystick_Posicion);
-        end Actualizar_Datos;
+        -- Procedimientos de lectura
+        procedure Leer_Velocidad(Velocidad : out Speed_Samples_Type);
+        procedure Leer_Altitud(Altitud : out Altitude_Samples_Type);
+        procedure Leer_Posicion_X(Posicion_X : out Joystick_Samples_Values);
+        procedure Leer_Posicion_Y(Posicion_Y : out Joystick_Samples_Values);
 
-        procedure Leer_Datos(Velocidad : out Speed_Samples_Type; 
-                             Altitud : out Altitude_Samples_Type; 
-                             Posicion_X : out Joystick_Samples_Values; 
-                             Posicion_Y : out Joystick_Samples_Values) is
-        begin
-            -- Proporcionar los datos actuales
-            Velocidad := Velocidad_Actual;
-            Altitud := Altitud_Actual;
-            Posicion_X := Posicion_X_Actual;
-            Posicion_Y := Posicion_Y_Actual;
-        end Leer_Datos;
-
+    private
+        -- Variables privadas que almacenan los datos actuales
+        Velocidad_Actual : Speed_Samples_Type := 0;  -- velocidad inicial
+        Altitud_Actual : Altitude_Samples_Type := 0; -- altitud inicial
+        Posicion_X_Actual : Joystick_Samples_Values := 0;  -- posición inicial en X
+        Posicion_Y_Actual : Joystick_Samples_Values := 0;  -- posición inicial en Y
     end Datos_Vuelo;
-end datos_posatl_vel;
+end datos_posalt_vel;
