@@ -1,7 +1,7 @@
 with Ada.Real_Time;
 with Ada.Text_IO;
 with devicesFSS_V1;
-with Datos_Aeronave; -- Incluir el objeto protegido
+with datos_posalt_vel; -- Incluir el objeto protegido
 
 package body control_detector_obstaculos is
 
@@ -17,8 +17,8 @@ package body control_detector_obstaculos is
       loop
          -- Leer datos de sensores
          devicesFSS_V1.Read_Distance(Distancia);
-         Velocidad := devicesFSS_V1.Read_Speed;
-         Altitud := devicesFSS_V1.Read_Altitude;
+         Velocidad := datos_posalt_vel.Datos_Vuelo.Leer_Velocidad;
+         Altitud := datos_posalt_vel.Datos_Vuelo.Leer_Altitud;
          devicesFSS_V1.Read_Light_Intensity(Visibilidad);
          Piloto_Presente := devicesFSS_V1.Read_PilotPresence;
 
@@ -57,36 +57,37 @@ package body control_detector_obstaculos is
    end Supervisor_Obstaculos;
 
    task body Desviador_Obstaculos is
-      Altitud           : devicesFSS_V1.Altitude_Samples_Type;
-      Set_Desvio        : Boolean := False;
+      Altitud    : devicesFSS_V1.Altitude_Samples_Type;
+      Set_Desvio : Boolean := False;
    begin
       loop
-         select
-            -- Ejecuta maniobra si hay desvío pendiente
-            when Set_Desvio =>
-               Altitud := devicesFSS_V1.Read_Altitude;
+         -- Verificar si hay desvío pendiente
+         if Set_Desvio then
+            Altitud := devicesFSS_V1.Read_Altitude;
 
-               if Altitud <= 8500 then
-                  devicesFSS_V1.Set_Aircraft_Pitch(20);
-               else
-                  devicesFSS_V1.Set_Aircraft_Roll(45);
-               end if;
+            -- Realizar maniobra basada en la altitud
+            if Altitud <= 8500 then
+               devicesFSS_V1.Set_Aircraft_Pitch(20); -- Incrementar pitch
+            else
+               devicesFSS_V1.Set_Aircraft_Roll(45); -- Realizar roll
+            end if;
 
-               delay 3.0;  -- Mantener maniobra por 3 segundos
+            delay 3.0;  -- Mantener maniobra por 3 segundos
 
-               -- Estabilizar la nave
-               if Altitud <= 8500 then
-                  devicesFSS_V1.Set_Aircraft_Pitch(0);
-               else
-                  devicesFSS_V1.Set_Aircraft_Roll(0);
-               end if;
+            -- Estabilizar la nave después de la maniobra
+            if Altitud <= 8500 then
+               devicesFSS_V1.Set_Aircraft_Pitch(0); -- Estabilizar pitch
+            else
+               devicesFSS_V1.Set_Aircraft_Roll(0); -- Estabilizar roll
+            end if;
 
-               -- Reiniciar el estado del desvío
-               Set_Desvio := False;
+            -- Reiniciar el estado del desvío
+            Set_Desvio := False;
 
-         or
+         else
+            -- Sin desvío pendiente, esperar el siguiente ciclo
             delay Periodo_Deteccion;
-         end select;
+         end if;
       end loop;
    end Desviador_Obstaculos;
 
