@@ -3,11 +3,14 @@ A -g
 P LC TF
 R nnvnrnnvnnnnvvvvnvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U datos_posalt_vel%b	datos_posalt_vel.adb	383388F8 PK IL
+U datos_posalt_vel%b	datos_posalt_vel.adb	3D75F695 PK IL
+W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.real_time%s	a-reatim.adb		a-reatim.ali
+W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
 
-U datos_posalt_vel%s	datos_posalt_vel.ads	2004CDB8 PK IL
+U datos_posalt_vel%s	datos_posalt_vel.ads	3BD5A3BD PK IL
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali
@@ -21,8 +24,8 @@ D a-filico.ads		20000718095948 1DECB9AC
 D a-reatim.ads		20000718095948 5DBAB303
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
-D datos_posalt_vel.ads	20241114193455 18AD6115
-D datos_posalt_vel.adb	20241114193042 209EE9ED
+D datos_posalt_vel.ads	20241116114138 037C0F10
+D datos_posalt_vel.adb	20241116114159 06A05528
 D devicesfss_v1.ads	20241114183330 65131FAE
 D kernel.ads		20010312182047 56BBE4F1
 D kernel-cpu_primitives.ads  20010312182047 5746D7AD
@@ -51,43 +54,36 @@ D s-taprob.ads		20000718095949 1D5668B3
 D s-unstyp.ads		20000718095949 78AFB91D
 D unchconv.ads		20000718095949 72DC4539
 X 1 ada.ads
-18U9*Ada 8|2r6 2r25
+18U9*Ada 8|2r6 2r25 9|2r6 2r25
 X 5 a-reatim.ads
-43U13*Real_Time 8|2r10 2r29
+43U13*Real_Time 8|2r10 2r29 9|2r10 2r29
 X 8 datos_posalt_vel.ads
-4U9*datos_posalt_vel 9|1b14
+4U9*datos_posalt_vel 9|3b14
 5w15*Datos_Vuelo
-7U19 Actualizar_Velocidad 9|4b19
+7U19 Actualizar_Velocidad 9|6b19
 8U19 Actualizar_Altitud 9|12b19
-9U19 Actualizar_Posicion_X 9|20b19
-10U19 Actualizar_Posicion_Y 9|30b19
-13U19 Leer_Velocidad 9|42b19
-13i34 Velocidad 9|42b34 45r13
-14U19 Leer_Altitud 9|48b19
-14i32 Altitud 9|48b32 51r13
-15U19 Leer_Posicion_X 9|54b19
-15i35 Posicion_X 9|54b35 57r13
-16U19 Leer_Posicion_Y 9|60b19
-16i35 Posicion_Y 9|60b35 63r13
-20i9 Velocidad_Actual 9|7r13 9r27 45r26
-21i9 Altitud_Actual 9|15r13 17r30 51r24
-22i9 Posicion_X_Actual 9|25r13 57r27
-23i9 Posicion_Y_Actual 9|35r13 63r27
-X 9 datos_posalt_vel.adb
-21a13 Joystick_Posicion 24m27 25r34 27r30
-31a13 Joystick_Posicion 34m27 35r34 37r30
+9U19 Actualizar_Pitch 9|18b19
+10U19 Actualizar_Roll 9|24b19
+13U19 Leer_Velocidad 9|31b19
+13i34 Velocidad 9|31b34 34r13
+14U19 Leer_Altitud 9|37b19
+14i32 Altitud 9|37b32 40r13
+15U19 Leer_Pitch 9|43b19
+15i30 Pitch 9|43b30 46r13
+16U19 Leer_Roll 9|49b19
+16i29 Roll 9|49b29 52r13
+20i9 Velocidad_Actual 9|9r13 34r26
+21i9 Altitud_Actual 9|15r13 40r24
+22i9 Pitch_Actual 9|21r13 46r22
+23i9 Roll_Actual 9|27r13 52r21
 X 10 devicesfss_v1.ads
-4U9*devicesFSS_V1 8|1r6 1r25
-24I10*Altitude_Samples_Type 8|14r46 21r26 9|48r46
+4U9*devicesFSS_V1 8|1r6 1r25 9|1r6 1r25
+24I10*Altitude_Samples_Type 8|14r46 21r26 9|37r46
 26U14*Read_Altitude 9|15r31
-31I10*Speed_Samples_Type 8|13r50 20r28 9|42r50
-33U14*Read_Speed 9|7r33
-58N37*x 9|25r52
-58N39*y 9|35r52
-59I10*Joystick_Samples_Values 8|15r52 16r52 22r29 23r29 9|54r52 60r52
-60A10*Joystick_Samples_Type 9|21r33 31r33
-62U15*Read_Joystick 9|24r13 34r13
-90U15*Display_Altitude 9|17r13
-91U15*Display_Speed 9|9r13
-97U15*Display_Joystick 9|27r13 37r13
+31I10*Speed_Samples_Type 8|13r50 20r28 9|31r50
+33U14*Read_Speed 9|9r33
+39I10*Pitch_Samples_Type 8|15r42 22r24 9|43r42
+41U14*Read_Pitch 9|21r29
+44I10*Roll_Samples_Type 8|16r40 23r23 9|49r40
+46U14*Read_Roll 9|27r28
 

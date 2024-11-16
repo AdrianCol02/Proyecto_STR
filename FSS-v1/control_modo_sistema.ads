@@ -10,15 +10,12 @@ package control_modo_sistema is
     -- Tareas para el control del modo del sistema de vuelo
 
     -- Se encarga de cambiar el modo de control del avión
-    task Control_Modo is
-    end Control_Modo;
+    task Control_Modo;
 
     -- Tarea para el control de avisos y alarmas del avión
-    task Control_Avisos_Alarmas is 
-    end Control_Avisos_Alarmas;
+    task Control_Avisos_Alarmas;
     
     -- Tarea para el control de las maniobras automáticas del avión
-    task Control_Maniobras_Automaticas is
-    end Control_Maniobras_Automaticas;
+    task Control_Maniobras_Automaticas;
 
 end control_modo_sistema;

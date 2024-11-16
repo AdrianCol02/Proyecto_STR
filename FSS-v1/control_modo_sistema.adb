@@ -1,7 +1,7 @@
 with Ada.Real_Time; use Ada.Real_Time;
 with Ada.Text_IO; use Ada.Text_IO;
 with devicesFSS_V1; use devicesFSS_V1;
-with Datos_Aeronave; -- Incluir el objeto protegido
+with datos_aeronave; -- Incluir el objeto protegido
 
 package body control_modo_sistema is
 
@@ -20,7 +20,6 @@ package body control_modo_sistema is
                     Put_Line("Modo de control cambiado a automático");
                 end if;
             end if;
-
             delay until Clock + Intervalo_Control;
         end loop;
     end Control_Modo;
@@ -28,7 +27,6 @@ package body control_modo_sistema is
     task body Control_Avisos_Alarmas is
         Velocidad_Actual : Speed_Samples_Type;
         Altitud_Actual : Altitude_Samples_Type;
-        Datos : Datos_Aeronave.Datos_Type;
     begin
         loop
             Datos_Aeronave.Leer_Datos(Datos); -- Leer datos del objeto protegido
@@ -57,7 +55,6 @@ package body control_modo_sistema is
         Velocidad_Actual : Speed_Samples_Type;
         Altitud_Actual : Altitude_Samples_Type;
         Pitch_Actual : Pitch_Samples_Type;
-        Datos : Datos_Aeronave.Datos_Type;
     begin
         loop
             if Modo_Actual = Automatico then

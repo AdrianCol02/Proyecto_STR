@@ -1,22 +1,25 @@
 with Ada.Real_Time;
-with devicesFSS_V1;
-with datos_posalt_vel; 
+with datos_posalt_vel;  -- Incluir el paquete que proporciona las funciones de lectura de Pitch y Roll
 
 package control_detector_obstaculos is
+   -- Declaración de tiempos y constantes
+   Tiempo_Desvio_Visibilidad_Baja : constant Duration := 5.0;
+   Tiempo_Visibilidad_Baja        : constant Duration := 10.0;
+   Tiempo_Desvio                  : constant Duration := 7.0;
+   Tiempo_Alarma                  : constant Duration := 15.0;
+   Periodo_Deteccion              : constant Duration := 0.250;
 
-   -- Constantes
-   Max_Distancia_Sin_Obstaculo : constant devicesFSS_V1.Distance_Samples_Type := 5000;
-   Tiempo_Alarma               : constant Duration := 10.0;
-   Tiempo_Desvio               : constant Duration := 5.0;
-   Tiempo_Visibilidad_Baja     : constant Duration := 15.0;
-   Tiempo_Desvio_Visibilidad_Baja : constant Duration := 10.0;
-   Periodo_Deteccion           : constant Duration := 0.25;  -- 250 ms
+   -- Protected object para control de desvío
+   protected Desvio_Control is
+      procedure Activate_Desvio;
+      function Is_Desvio_Active return Boolean;
+      procedure Reset_Desvio;
+   private
+      Desvio_Active : Boolean := False;
+   end Desvio_Control;
 
-   -- Declaración de tareas
-   task type Supervisor_Obstaculos;
-
-   task type Desviador_Obstaculos is
-      entry Set_Desvio;
-   end Desviador_Obstaculos;
+   -- Tareas
+   task Supervisor_Obstaculos;
+   task Desviador_Obstaculos;
 
 end control_detector_obstaculos;

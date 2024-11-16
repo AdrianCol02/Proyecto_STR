@@ -1,3 +1,5 @@
+with devicesFSS_V1; use devicesFSS_V1;
+with Ada.Real_Time; use Ada.Real_Time;
 package body datos_posalt_vel is
     protected body Datos_Vuelo is
 
@@ -5,64 +7,51 @@ package body datos_posalt_vel is
         begin
             -- Leer la velocidad usando `devicesFSS_V1`
             Velocidad_Actual := Read_Speed;
-            Set_Speed(Velocidad_Actual);
-            -- Actualizar visualización
-            Display_Speed(Velocidad_Actual);
         end Actualizar_Velocidad;
 
         procedure Actualizar_Altitud is
         begin
             -- Leer la altitud usando `devicesFSS_V1`
             Altitud_Actual := Read_Altitude;
-            -- Actualizar visualización
-            Display_Altitude(Altitud_Actual);
         end Actualizar_Altitud;
 
-        procedure Actualizar_Posicion_X is
-            Joystick_Posicion : Joystick_Samples_Type;
+        procedure Actualizar_Pitch is
         begin
-            -- Leer la posición del joystick
-            Read_Joystick(Joystick_Posicion);
-            Posicion_X_Actual := Joystick_Posicion(x);
-            -- Actualizar visualización
-            Display_Joystick(Joystick_Posicion);
-        end Actualizar_Posicion_X;
+            -- Leer el pitch usando `devicesFSS_V1`
+            Pitch_Actual := Read_Pitch;
+        end Actualizar_Pitch;
 
-        procedure Actualizar_Posicion_Y is
-            Joystick_Posicion : Joystick_Samples_Type;
+        procedure Actualizar_Roll is
         begin
-            -- Leer la posición del joystick
-            Read_Joystick(Joystick_Posicion);
-            Posicion_Y_Actual := Joystick_Posicion(y);
-            -- Actualizar visualización
-            Display_Joystick(Joystick_Posicion);
-        end Actualizar_Posicion_Y;
+            -- Leer el roll usando `devicesFSS_V1`
+            Roll_Actual := Read_Roll;
+        end Actualizar_Roll;
 
-        -- Procedimientos para leer los datos de cada variable
-
+        -- Procedimientos de lectura actualizados
         procedure Leer_Velocidad(Velocidad : out Speed_Samples_Type) is
         begin
-            -- Proporcionar el valor actual de la velocidad
-            Velocidad := Read_Speed;
+            -- Asignar el valor actual de la velocidad al parámetro `out`
+            Velocidad := Velocidad_Actual;
         end Leer_Velocidad;
 
         procedure Leer_Altitud(Altitud : out Altitude_Samples_Type) is
         begin
-            -- Proporcionar el valor actual de la altitud
-            Altitud := Read_Altitude;
+            -- Asignar el valor actual de la altitud al parámetro `out`
+            Altitud := Altitud_Actual;
         end Leer_Altitud;
 
-        procedure Leer_Posicion_X(Posicion_X : out Joystick_Samples_Values) is
+        procedure Leer_Pitch(Pitch : out Pitch_Samples_Type) is
         begin
-            -- Proporcionar el valor actual de la posición X
-            Posicion_X := Read_Pitch;
-        end Leer_Posicion_X;
+            -- Asignar el valor actual del pitch al parámetro `out`
+            Pitch := Pitch_Actual;
+        end Leer_Pitch;
 
-        procedure Leer_Posicion_Y(Posicion_Y : out Joystick_Samples_Values) is
+        procedure Leer_Roll(Roll : out Roll_Samples_Type) is
         begin
-            -- Proporcionar el valor actual de la posición Y
-            Posicion_Y := Read_Roll;
-        end Leer_Posicion_Y;
+            -- Asignar el valor actual del roll al parámetro `out`
+            Roll := Roll_Actual;
+        end Leer_Roll;
 
     end Datos_Vuelo;
 end datos_posalt_vel;
+
