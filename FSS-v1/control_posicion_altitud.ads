@@ -18,18 +18,9 @@ package control_posicion_altitud is
    Alert_Altitude_High : constant Altitude_Samples_Type := 9500;
 
    -- Tareas para el control de la posición y altitud de la aeronave
-   task control_pitch is
-      entry Set_Aircraft_Pitch(pitch : in Pitch_Samples_Type);
-   end control_pitch;
+   task control_pitch;
+   task control_altitude;
+   task control_roll;
 
-   task control_altitude is
-   end control_altitude;
-
-   task control_roll is
-      entry Set_Aircraft_Roll(roll : in Roll_Samples_Type);
-   end control_roll;
-
-   -- Actualización y lectura de datos en el objeto protegido
-   procedure Actualizar_Datos_Aeronave;
 
 end control_posicion_altitud;

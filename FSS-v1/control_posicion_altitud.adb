@@ -1,24 +1,11 @@
 with Ada.Real_Time; use Ada.Real_Time;
 with Ada.Text_IO; use Ada.Text_IO;
 with devicesFSS_V1; use devicesFSS_V1;
-with datos_posatl_vel; 
+with datos_posalt_vel; use datos_posalt_vel;
 
 package body control_posicion_altitud is
-
-    -- Constantes de control de ángulos
-    Max_Pitch_Angle : constant Pitch_Samples_Type := 30;
-    Min_Pitch_Angle : constant Pitch_Samples_Type := -30;
-    Max_Roll_Angle : constant Roll_Samples_Type := 45;
-    Min_Roll_Angle : constant Roll_Samples_Type := -45;
-    Alert_Roll_Angle : constant Roll_Samples_Type := 35;
-
-    -- Constantes de Altitud
-    Min_Altitude : constant Altitude_Samples_Type := 2000;
-    Alert_Altitude_Low : constant Altitude_Samples_Type := 2500;
-    Max_Altitude : constant Altitude_Samples_Type := 10000;
-    Alert_Altitude_High : constant Altitude_Samples_Type := 9500;
-
-    task body control_pitch is
+   
+       task body control_pitch is
         Joystick : Joystick_Samples_Type;
         Joystick_Pitch : Pitch_Samples_Type;
         Current_Altitude : Altitude_Samples_Type;
@@ -27,17 +14,9 @@ package body control_posicion_altitud is
         loop
             -- Leer datos del joystick y la altitud
             Read_Joystick(Joystick);
-            Joystick_Pitch := Joystick(x);
-            Current_Altitude := Read_Altitude;
-            Current_Speed := Read_Speed;
-
-            -- Actualizar datos en el objeto protegido `Datos_Vuelo`
-            datos_posatl_vel.Datos_Vuelo.Actualizar_Datos(
-                Velocidad  => Float(Current_Speed),
-                Altitud    => Float(Current_Altitude),
-                Posicion_X => Float(Joystick(x)),
-                Posicion_Y => Float(Joystick(y))
-            );
+            Joystick_Pitch := Pitch_Samples_Type(Joystick(x));
+            datos_aeronave.aeronave.Leer_Altitud(Current_Altitude);
+            datos_aeronave.aeronave.Leer_Velocidad(Current_Speed);
 
             -- Control de inclinación del cabeceo basado en la altitud
             if Joystick_Pitch <= Max_Pitch_Angle and Joystick_Pitch >= Min_Pitch_Angle then
@@ -70,16 +49,8 @@ package body control_posicion_altitud is
     begin
         loop
             -- Leer altitud y velocidad actuales
-            Current_Altitude := Read_Altitude;
-            Current_Speed := Read_Speed;
-
-            -- Actualizar datos en el objeto protegido `Datos_Vuelo`
-            datos_posatl_vel.Datos_Vuelo.Actualizar_Datos(
-                Velocidad  => Float(Current_Speed),
-                Altitud    => Float(Current_Altitude),
-                Posicion_X => 0.0, -- No se usa en esta tarea
-                Posicion_Y => 0.0  -- No se usa en esta tarea
-            );
+            datos_aeronave.aeronave.Leer_Altitud(Current_Altitude);
+            datos_aeronave.aeronave.Leer_Velocidad(Current_Speed);
 
             -- Control de altitudes críticas
             if Current_Altitude <= Min_Altitude then
@@ -103,17 +74,9 @@ package body control_posicion_altitud is
         loop
             -- Leer el joystick y otros datos
             Read_Joystick(Joystick);
-            Joystick_Roll := Joystick(y);
-            Current_Altitude := Read_Altitude;
-            Current_Speed := Read_Speed;
-
-            -- Actualizar datos en el objeto protegido `Datos_Vuelo`
-            datos_posatl_vel.Datos_Vuelo.Actualizar_Datos(
-                Velocidad  => Float(Current_Speed),
-                Altitud    => Float(Current_Altitude),
-                Posicion_X => Float(Joystick(x)),
-                Posicion_Y => Float(Joystick(y))
-            );
+            Joystick_Roll := Roll_Samples_Type(Joystick(y));
+            datos_aeronave.aeronave.Leer_Altitud(Current_Altitude);
+            datos_aeronave.aeronave.Leer_Velocidad(Current_Speed);
 
             -- Control de ángulo de alabeo
             if Joystick_Roll <= Max_Roll_Angle and Joystick_Roll >= Min_Roll_Angle then

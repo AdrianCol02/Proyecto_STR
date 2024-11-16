@@ -37,8 +37,8 @@ package body control_velocidad_aeronave is
     begin
         loop
             -- Obtener datos desde el objeto protegido `Datos_Vuelo`
-            Velocidad_Actual := Speed_Samples_Type(datos_posalt_vel.Datos_Vuelo.Leer_Velocidad);
-            Pitch_Actual := Pitch_Samples_Type(datos_posalt_vel.Datos_Vuelo.Leer_Posicion_Y);
+            datos_posalt_vel.Datos_Vuelo.Leer_Velocidad(Velocidad_Actual);
+            datos_posalt_vel.Datos_Vuelo.Leer_Pitch(Pitch_Actual);
 
             if Pitch_Actual > 0 and then Velocidad_Actual < Max_Velocidad then
                 Velocidad_Actual := Velocidad_Actual + Incremento_Cabeceo;
@@ -59,8 +59,8 @@ package body control_velocidad_aeronave is
     begin
         loop
             -- Obtener datos desde el objeto protegido `Datos_Vuelo`
-            Velocidad_Actual := Speed_Samples_Type(datos_posalt_vel.Datos_Vuelo.Leer_Velocidad);
-            Roll_Actual := Roll_Samples_Type(datos_posalt_vel.Datos_Vuelo.Leer_Posicion_X);
+            datos_posalt_vel.Datos_Vuelo.Leer_Velocidad(Velocidad_Actual);
+            datos_posalt_vel.Datos_Vuelo.Leer_Roll(Roll_Actual);
 
             if Roll_Actual > 0 and then Velocidad_Actual < Max_Velocidad then
                 Velocidad_Actual := Velocidad_Actual + Incremento_Alabeo;
@@ -82,9 +82,9 @@ package body control_velocidad_aeronave is
     begin
         loop
             -- Obtener datos desde el objeto protegido `Datos_Vuelo`
-            Velocidad_Actual := Speed_Samples_Type(datos_posalt_vel.Datos_Vuelo.Leer_Velocidad);
-            Pitch_Actual := Pitch_Samples_Type(datos_posalt_vel.Datos_Vuelo.Leer_Posicion_Y);
-            Roll_Actual := Roll_Samples_Type(datos_posalt_vel.Datos_Vuelo.Leer_Posicion_X);
+            datos_posalt_vel.Datos_Vuelo.Leer_Velocidad(Velocidad_Actual);
+            datos_posalt_vel.Datos_Vuelo.Leer_Pitch(Pitch_Actual);
+            datos_posalt_vel.Datos_Vuelo.Leer_Roll(Roll_Actual);
 
             if Pitch_Actual > 0 and then Roll_Actual > 0 and then Velocidad_Actual < Max_Velocidad then
                 Velocidad_Actual := Velocidad_Actual + Incremento_CabeceoAlabeo;
@@ -104,7 +104,7 @@ package body control_velocidad_aeronave is
     begin
         loop
             -- Obtener datos desde el objeto protegido `Datos_Vuelo`
-            Velocidad_Actual := Speed_Samples_Type(datos_posalt_vel.Datos_Vuelo.Leer_Velocidad);
+            datos_posalt_vel.Datos_Vuelo.Leer_Velocidad(Velocidad_Actual);
 
             -- Avisar si la velocidad está por debajo del mínimo permitido
             if Velocidad_Actual < Min_Velocidad then
