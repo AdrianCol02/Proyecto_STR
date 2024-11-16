@@ -1,21 +1,25 @@
 with Ada.Real_Time; use Ada.Real_Time;
+with datos_aeronave; use datos_aeronave;
 with devicesFSS_V1; use devicesFSS_V1;
 
 package control_modo_sistema is
 
-    type Modo_Sistema is (Manual, Automatico); -- Modos de control del sistema
+   -- Declaración del modo del sistema
+   type Modo_Sistema is (Manual, Automatico);
 
-    Modo_Inicial : constant Modo_Sistema := Automatico; -- Modo de control inicial automático, se da por hecho que comienza en el aire.
+   -- Constantes del sistema
+   Min_Velocidad : constant Speed_Samples_Type := 300;
+   Min_Altitude  : constant Altitude_Samples_Type := 500;
+   Max_Altitude  : constant Altitude_Samples_Type := 14000;
 
-    -- Tareas para el control del modo del sistema de vuelo
+   -- Tareas concurrentes del sistema
+   task Control_Modo;
+   task Control_Avisos_Alarmas;
+   task Control_Maniobras_Automaticas;
 
-    -- Se encarga de cambiar el modo de control del avión
-    task Control_Modo;
-
-    -- Tarea para el control de avisos y alarmas del avión
-    task Control_Avisos_Alarmas;
-    
-    -- Tarea para el control de las maniobras automáticas del avión
-    task Control_Maniobras_Automaticas;
+private
+   -- Estado actual del modo del sistema (inicia en automático)
+   Modo_Actual : Modo_Sistema := Automatico;
+   Intervalo_Control : constant Ada.Real_Time.Time_Span := Ada.Real_Time.Milliseconds(200);
 
 end control_modo_sistema;
