@@ -1,6 +1,7 @@
 with Ada.Real_Time; use Ada.Real_Time;
 with Ada.Text_IO; use Ada.Text_IO;
 with devicesFSS_V1; use devicesFSS_V1;
+with datos_aeronave;
 with datos_posalt_vel;
 
 package body control_detector_obstaculos is
@@ -37,13 +38,21 @@ package body control_detector_obstaculos is
       loop
          -- Leer datos de sensores
          devicesFSS_V1.Read_Distance(Distancia);
-         datos_posalt_vel.Datos_Vuelo.Leer_Velocidad(Velocidad);  -- Uso correcto de procedimiento
-         datos_posalt_vel.Datos_Vuelo.Leer_Altitud(Altitud);      -- Uso correcto de procedimiento
          devicesFSS_V1.Read_Light_Intensity(Visibilidad);
+         datos_aeronave.aeronave.Leer_Velocidad(Velocidad);  
+         datos_aeronave.aeronave.Leer_Altitud(Altitud);      
          Piloto_Presente := devicesFSS_V1.Read_PilotPresence;
+
+         datos_aeronave.aeronave.Actualizar_Distance(Distancia);
+         datos_aeronave.aeronave.Actualizar_Light_Intensity(Visibilidad);
+         datos_aeronave.aeronave.Actualizar_PilotPresence(Piloto_Presente);
 
          -- Leer posiciones del joystick
          devicesFSS_V1.Read_Joystick(Joystick);
+         datos_aeronave.aeronave.Actualizar_Pitch(Pitch_Samples_Type(Joystick(y)));
+         datos_aeronave.aeronave.Actualizar_Roll(Roll_Samples_Type(Joystick(x)));
+         datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(Pitch_Samples_Type(Joystick(y)));
+         datos_posalt_vel.Datos_Vuelo.Actualizar_Roll(Roll_Samples_Type(Joystick(x)));
 
          -- Calcular tiempo de colisión
          if Velocidad > 0 then
@@ -81,15 +90,19 @@ package body control_detector_obstaculos is
       loop
          if Desvio_Control.Is_Desvio_Active then
             -- Leer altitud y los valores de pitch y roll
-            datos_posalt_vel.Datos_Vuelo.Leer_Altitud(Altitud);  -- Uso correcto de procedimiento
-            datos_posalt_vel.Datos_Vuelo.Leer_Pitch(Pitch);      -- Uso correcto de procedimiento
-            datos_posalt_vel.Datos_Vuelo.Leer_Roll(Roll);        -- Uso correcto de procedimiento
+            datos_aeronave.aeronave.Leer_Altitud(Altitud);  
+            datos_aeronave.aeronave.Leer_Pitch(Pitch);      
+            datos_aeronave.aeronave.Leer_Roll(Roll);        
 
             -- Realizar maniobra basada en la altitud
             if Altitud <= 8500 then
-               devicesFSS_V1.Set_Aircraft_Pitch(20); -- Incrementar pitch
+               devicesFSS_V1.Set_Aircraft_Pitch(20);
+               datos_aeronave.aeronave.Actualizar_Pitch(20);
+               datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(20);
             else
-               devicesFSS_V1.Set_Aircraft_Roll(45); -- Realizar roll
+               devicesFSS_V1.Set_Aircraft_Roll(45); 
+               datos_aeronave.aeronave.Actualizar_Roll(45); 
+               datos_posalt_vel.Datos_Vuelo.Actualizar_Roll(45);
             end if;
 
             Next_Time := Ada.Real_Time.Clock + Milliseconds(3000); -- 3 segundos como Duration
@@ -97,9 +110,13 @@ package body control_detector_obstaculos is
 
             -- Estabilizar la nave después de la maniobra
             if Altitud <= 8500 then
-               devicesFSS_V1.Set_Aircraft_Pitch(0); -- Estabilizar pitch
+               devicesFSS_V1.Set_Aircraft_Pitch(0);
+               datos_aeronave.aeronave.Actualizar_Pitch(0);
+               datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(0);
             else
-               devicesFSS_V1.Set_Aircraft_Roll(0); -- Estabilizar roll
+               devicesFSS_V1.Set_Aircraft_Roll(0);
+               datos_aeronave.aeronave.Actualizar_Roll(0);
+               datos_posalt_vel.Datos_Vuelo.Actualizar_Roll(0);
             end if;
 
             -- Reiniciar el estado del desvío

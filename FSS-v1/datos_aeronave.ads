@@ -7,24 +7,31 @@ package datos_aeronave is
       procedure Leer_Altitud (Altitud : out Altitude_Samples_Type);
       procedure Leer_Potencia (Potencia : out Power_Samples_Type);
       procedure Leer_Velocidad (Velocidad : out Speed_Samples_Type);
-      procedure Leer_Joystick (Joystick_X : out Joystick_Samples_Values; 
-                               Joystick_Y : out Joystick_Samples_Values);
-      procedure Leer_Posicion (Posicion_X : out Float; Posicion_Y : out Float);
+      procedure Leer_Pitch (Pitch : out Pitch_Samples_Type);
+      procedure Leer_Roll (Roll : out Roll_Samples_Type);
+      procedure Leer_Light_Intensity (Light : out Light_Samples_Type);
+      procedure Leer_PilotPresence (PilotPresence : out PilotPresence_Samples_Type);
+      procedure Leer_Distance (Distance : out Distance_Samples_Type);
       
       -- Actualizar los datos
       procedure Actualizar_Altitud (Nueva_Altitud : in Altitude_Samples_Type);
       procedure Actualizar_Potencia (Nueva_Potencia : in Power_Samples_Type);
       procedure Actualizar_Velocidad (Nueva_Velocidad : in Speed_Samples_Type);
-      procedure Actualizar_Joystick (Nueva_Joystick_X : in Joystick_Samples_Values;
-                                     Nueva_Joystick_Y : in Joystick_Samples_Values);
-      procedure Actualizar_Posicion (Nueva_Posicion_X : in Float; Nueva_Posicion_Y : in Float);
+      procedure Actualizar_Pitch (Nuevo_Pitch : in Pitch_Samples_Type);
+      procedure Actualizar_Roll (Nuevo_Roll : in Roll_Samples_Type);
+      procedure Actualizar_Light_Intensity (Nueva_Luz : in Light_Samples_Type);
+      procedure Actualizar_PilotPresence (Nuevo_PilotPresence : in PilotPresence_Samples_Type);
+      procedure Actualizar_Distance (Nueva_Distance : in Distance_Samples_Type);
+      
    private
       Altitud : Altitude_Samples_Type := Initial_Altitude;
+      Light_Intensity : Light_Samples_Type := 0;
+      PilotPresence : PilotPresence_Samples_Type;
+      Distance : Distance_Samples_Type := 0;
       Potencia_Motores : Power_Samples_Type := 0;
-      Velocidad_Motores : Speed_Samples_Type := Read_Speed;
-      Joystick_X : Joystick_Samples_Values := 0;
-      Joystick_Y : Joystick_Samples_Values := 0;
-      Posicion_X : Float := 0.0;
-      Posicion_Y : Float := 0.0;
+      Velocidad_Motores : Speed_Samples_Type := 0;
+      Joystick : Joystick_Samples_Type;
+      Pitch : Pitch_Samples_Type := 0;
+      Roll : Roll_Samples_Type := 0;
    end aeronave;
 end datos_aeronave;

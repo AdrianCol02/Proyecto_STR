@@ -1,6 +1,7 @@
 with Ada.Real_Time; use Ada.Real_Time;
 with devicesFSS_V1; use devicesFSS_V1;
 with datos_posalt_vel;
+with datos_aeronave;
 
 package body control_velocidad_aeronave is
 
@@ -12,6 +13,7 @@ package body control_velocidad_aeronave is
         loop
             -- Leer la potencia del potenciometro y calcular la velocidad resultante
             Read_Power(Potenciometro);
+            datos_aeronave.aeronave.Actualizar_Potencia(Potenciometro);
             Velocidad_Potencia := Float(Potenciometro) * Factor_Potenciometro;
 
             -- Convertir y limitar la velocidad calculada al rango permitido
@@ -26,6 +28,8 @@ package body control_velocidad_aeronave is
             end if;
 
             Set_Speed(Nueva_Velocidad);
+            datos_posalt_vel.Datos_Vuelo.Actualizar_Velocidad(Nueva_Velocidad);
+            datos_aeronave.aeronave.Actualizar_Velocidad(Nueva_Velocidad);
 
             delay until Clock + Intervalo_Control;
         end loop;
@@ -47,6 +51,8 @@ package body control_velocidad_aeronave is
                     Light_2(On);
                 end if;
                 Set_Speed(Velocidad_Actual);
+                datos_aeronave.aeronave.Actualizar_Velocidad(Velocidad_Actual);
+                datos_posalt_vel.Datos_Vuelo.Actualizar_Velocidad(Velocidad_Actual);
             end if;
 
             delay until Clock + Intervalo_Control;
@@ -69,6 +75,8 @@ package body control_velocidad_aeronave is
                     Light_2(On);
                 end if;
                 Set_Speed(Velocidad_Actual);
+                datos_aeronave.aeronave.Actualizar_Velocidad(Velocidad_Actual);
+                datos_posalt_vel.Datos_Vuelo.Actualizar_Velocidad(Velocidad_Actual);
             end if;
 
             delay until Clock + Intervalo_Control;
@@ -93,6 +101,8 @@ package body control_velocidad_aeronave is
                     Light_2(On);
                 end if;
                 Set_Speed(Velocidad_Actual);
+                datos_aeronave.aeronave.Actualizar_Velocidad(Velocidad_Actual);
+                datos_posalt_vel.Datos_Vuelo.Actualizar_Velocidad(Velocidad_Actual);
             end if;
 
             delay until Clock + Intervalo_Control;
@@ -116,6 +126,8 @@ package body control_velocidad_aeronave is
             if Velocidad_Actual < Velocidad_Critica then
                 Alarm(5);
                 Set_Speed(Min_Velocidad);
+                datos_aeronave.aeronave.Actualizar_Velocidad(Min_Velocidad);
+                datos_posalt_vel.Datos_Vuelo.Actualizar_Velocidad(Min_Velocidad);
             end if;
 
             delay until Clock + Intervalo_Control;

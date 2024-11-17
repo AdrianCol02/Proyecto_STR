@@ -20,50 +20,71 @@ package body datos_aeronave is
          Velocidad := aeronave.Velocidad_Motores;
       end Leer_Velocidad;
 
-      procedure Leer_Joystick (Joystick_X : out Joystick_Samples_Values; 
-                               Joystick_Y : out Joystick_Samples_Values) is
+      procedure Leer_Pitch (Pitch : out Pitch_Samples_Type) is
       begin
-         Joystick_X := aeronave.Joystick_X;
-         Joystick_Y := aeronave.Joystick_Y;
-      end Leer_Joystick;
+         Pitch := aeronave.Pitch;
+      end Leer_Pitch;
 
-      procedure Leer_Posicion (Posicion_X : out Float; Posicion_Y : out Float) is
+      procedure Leer_Roll (Roll : out Roll_Samples_Type) is
       begin
-         Posicion_X := aeronave.Posicion_X;
-         Posicion_Y := aeronave.Posicion_Y;
-      end Leer_Posicion;
+         Roll := aeronave.Roll;
+      end Leer_Roll;
+
+      procedure Leer_Light_Intensity (Light : out Light_Samples_Type) is
+      begin
+         Light := aeronave.Light_Intensity;
+      end Leer_Light_Intensity;
+
+      procedure Leer_PilotPresence (PilotPresence : out PilotPresence_Samples_Type) is
+      begin
+         PilotPresence := aeronave.PilotPresence;
+      end Leer_PilotPresence;
+
+      procedure Leer_Distance (Distance : out Distance_Samples_Type) is
+      begin
+         Distance := aeronave.Distance;
+      end Leer_Distance;
 
       -- Actualizar datos
       procedure Actualizar_Altitud (Nueva_Altitud : in Altitude_Samples_Type) is
       begin
          aeronave.Altitud := Nueva_Altitud;
-         Display_Altitude(Nueva_Altitud);
       end Actualizar_Altitud;
 
       procedure Actualizar_Potencia (Nueva_Potencia : in Power_Samples_Type) is
       begin
          aeronave.Potencia_Motores := Nueva_Potencia;
-         Display_Pilot_Power(Nueva_Potencia);
       end Actualizar_Potencia;
 
       procedure Actualizar_Velocidad (Nueva_Velocidad : in Speed_Samples_Type) is
       begin
          aeronave.Velocidad_Motores := Nueva_Velocidad;
-         Display_Speed(Nueva_Velocidad);
       end Actualizar_Velocidad;
 
-      procedure Actualizar_Joystick (Nueva_Joystick_X : in Joystick_Samples_Values; 
-                                     Nueva_Joystick_Y : in Joystick_Samples_Values) is
+      procedure Actualizar_Pitch (Nuevo_Pitch : in Pitch_Samples_Type) is
       begin
-         aeronave.Joystick_X := Nueva_Joystick_X;
-         aeronave.Joystick_Y := Nueva_Joystick_Y;
-         Display_Joystick((x => Nueva_Joystick_X, y => Nueva_Joystick_Y));
-      end Actualizar_Joystick;
+         aeronave.Pitch := Nuevo_Pitch;
+      end Actualizar_Pitch;
 
-      procedure Actualizar_Posicion (Nueva_Posicion_X : in Float; Nueva_Posicion_Y : in Float) is
+      procedure Actualizar_Roll (Nuevo_Roll : in Roll_Samples_Type) is
       begin
-         aeronave.Posicion_X := Nueva_Posicion_X;
-         aeronave.Posicion_Y := Nueva_Posicion_Y;
-      end Actualizar_Posicion;
+         aeronave.Roll := Nuevo_Roll;
+      end Actualizar_Roll;
+
+      procedure Actualizar_Light_Intensity (Nueva_Luz : in Light_Samples_Type) is
+      begin
+         aeronave.Light_Intensity := Nueva_Luz;
+      end Actualizar_Light_Intensity;
+
+      procedure Actualizar_PilotPresence (Nuevo_PilotPresence : in PilotPresence_Samples_Type) is
+      begin
+         aeronave.PilotPresence := Nuevo_PilotPresence;
+      end Actualizar_PilotPresence;
+
+      procedure Actualizar_Distance (Nueva_Distance : in Distance_Samples_Type) is
+      begin
+         aeronave.Distance := Nueva_Distance;
+      end Actualizar_Distance;
+
    end aeronave;
 end datos_aeronave;

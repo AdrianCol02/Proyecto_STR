@@ -1,6 +1,7 @@
 with Ada.Text_IO; use Ada.Text_IO;
 with devicesFSS_V1; use devicesFSS_V1;
 with datos_aeronave; use datos_aeronave;
+with datos_posalt_vel; use datos_posalt_vel;
 
 package body control_modo_sistema is
 
@@ -68,15 +69,21 @@ package body control_modo_sistema is
             -- Control de altitud
             if Altitud_Actual <= Min_Altitude then
                Set_Aircraft_Pitch(10);  -- Asciende automáticamente
+               datos_aeronave.aeronave.Actualizar_Pitch(10);
+               datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(10);
                Display_Message("Ascendiendo automáticamente");
             elsif Altitud_Actual >= Max_Altitude then
                Set_Aircraft_Pitch(-10);  -- Desciende automáticamente
+               datos_aeronave.aeronave.Actualizar_Pitch(-10);
+               datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(-10);
                Display_Message("Descendiendo automáticamente");
             end if;
 
             -- Control de velocidad
             if Velocidad_Actual < Min_Velocidad then
                Set_Speed(Min_Velocidad);  -- Aumenta la velocidad automáticamente
+               datos_aeronave.aeronave.Actualizar_Velocidad(Min_Velocidad);
+               datos_posalt_vel.Datos_Vuelo.Actualizar_Velocidad(Min_Velocidad);
                Display_Message("Aumentando velocidad automáticamente");
             end if;
          else

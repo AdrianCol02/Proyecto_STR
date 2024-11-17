@@ -4,10 +4,6 @@ with devicesFSS_V1; use devicesFSS_V1;
 with datos_aeronave; -- Incluir el objeto protegido
 
 package body control_visualizacion_aeronave is
-
-    -- Intervalo de visualización: 1 segundo (1000 ms)
-    intervalo_visualizacion : constant Time_Span := Milliseconds(1000);
-
     task body visualizar_datos is
          Altitud : Altitude_Samples_Type;
          Velocidad : Speed_Samples_Type;
@@ -18,17 +14,23 @@ package body control_visualizacion_aeronave is
          Distancia : Distance_Samples_Type;
     begin
         loop
-        
+
+            Read_Joystick(Joystick);
+            datos_aeronave.aeronave.Leer_Altitud(Altitud);
+            datos_aeronave.aeronave.Leer_Velocidad(Velocidad);
+            datos_aeronave.aeronave.Leer_Potencia(Potencia_Motores);
+            Pitch := Pitch_Samples_Type(Joystick(x));
+            Roll := Roll_Samples_Type(Joystick(y));
+
+
             -- Mostrar los datos en el monitor
             Put_Line("=== Datos de la Aeronave ===");
-            Put_Line("Altitud: " & Altitude_Samples_Type'Image(Datos.Altitud) & " m");
-            Put_Line("Potencia de Motores: " & Integer'Image(Datos.Potencia_Motores));
-            Put_Line("Velocidad de Motores: " & Speed_Samples_Type'Image(Datos.Velocidad) & " Km/h");
-            Put_Line("Posición del Joystick: Jx=" & Joystick_Samples_Values'Image(Datos.Joystick_X) & 
-                      " Jy=" & Joystick_Samples_Values'Image(Datos.Joystick_Y));
-            Put_Line("Posición de la Aeronave: Nx=" & Float'Image(Datos.Posicion_X) & 
-                      " Ny=" & Float'Image(Datos.Posicion_Y));
-
+            Display_Altitude(Altitud);
+            Display_Pilot_Power(Potencia_Motores);
+            Display_Speed(Velocidad);
+            Display_Joystick(Joystick);
+            Display_Pitch(Pitch);
+            Display_Roll(Roll);
             Put_Line("============================");
 
             -- Esperar hasta el próximo ciclo (1 segundo)

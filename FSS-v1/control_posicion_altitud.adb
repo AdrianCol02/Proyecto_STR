@@ -2,6 +2,7 @@ with Ada.Real_Time; use Ada.Real_Time;
 with Ada.Text_IO; use Ada.Text_IO;
 with devicesFSS_V1; use devicesFSS_V1;
 with datos_posalt_vel; use datos_posalt_vel;
+with datos_aeronave; use datos_aeronave;
 
 package body control_posicion_altitud is
    
@@ -17,18 +18,26 @@ package body control_posicion_altitud is
             Joystick_Pitch := Pitch_Samples_Type(Joystick(x));
             datos_aeronave.aeronave.Leer_Altitud(Current_Altitude);
             datos_aeronave.aeronave.Leer_Velocidad(Current_Speed);
+            datos_aeronave.aeronave.Actualizar_Pitch(Joystick_Pitch);
+            datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(Joystick_Pitch);
 
             -- Control de inclinación del cabeceo basado en la altitud
             if Joystick_Pitch <= Max_Pitch_Angle and Joystick_Pitch >= Min_Pitch_Angle then
                 if Current_Altitude <= Min_Altitude then
                     Set_Aircraft_Pitch(0);
+                    datos_aeronave.aeronave.Actualizar_Pitch(0);
+                    datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(0);
                     Put_Line("Altitud crítica, nivelando aeronave");
                 elsif Current_Altitude >= Max_Altitude then
                     Set_Aircraft_Pitch(0);
+                    datos_aeronave.aeronave.Actualizar_Pitch(0);
+                    datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(0);
                     Put_Line("Altitud máxima alcanzada, nivelando aeronave");
                 elsif (Joystick_Pitch < 0 and Current_Altitude > Min_Altitude) or
                       (Joystick_Pitch > 0 and Current_Altitude < Max_Altitude) then
                     Set_Aircraft_Pitch(Joystick_Pitch);
+                    datos_aeronave.aeronave.Actualizar_Pitch(Joystick_Pitch);
+                    datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(Joystick_Pitch);
                 end if;
             end if;
 
@@ -55,9 +64,13 @@ package body control_posicion_altitud is
             -- Control de altitudes críticas
             if Current_Altitude <= Min_Altitude then
                 Set_Aircraft_Pitch(0);
+                datos_aeronave.aeronave.Actualizar_Pitch(0);
+                datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(0);
                 Put_Line("Altitud crítica, nivelando aeronave");
             elsif Current_Altitude >= Max_Altitude then
                 Set_Aircraft_Pitch(0);
+                datos_aeronave.aeronave.Actualizar_Pitch(0);
+                datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(0);
                 Put_Line("Altitud máxima alcanzada, nivelando aeronave");
             end if;
 
@@ -77,10 +90,14 @@ package body control_posicion_altitud is
             Joystick_Roll := Roll_Samples_Type(Joystick(y));
             datos_aeronave.aeronave.Leer_Altitud(Current_Altitude);
             datos_aeronave.aeronave.Leer_Velocidad(Current_Speed);
+            datos_aeronave.aeronave.Actualizar_Roll(Joystick_Roll);
+            datos_posalt_vel.Datos_Vuelo.Actualizar_Roll(Joystick_Roll);
 
             -- Control de ángulo de alabeo
             if Joystick_Roll <= Max_Roll_Angle and Joystick_Roll >= Min_Roll_Angle then
                 Set_Aircraft_Roll(Joystick_Roll);
+                datos_aeronave.aeronave.Actualizar_Roll(Joystick_Roll);
+                datos_posalt_vel.Datos_Vuelo.Actualizar_Roll(Joystick_Roll);
                 if Joystick_Roll >= Alert_Roll_Angle or Joystick_Roll <= -Alert_Roll_Angle then
                     Light_2(On);
                 else
