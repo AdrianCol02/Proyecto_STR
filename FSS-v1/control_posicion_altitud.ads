@@ -17,10 +17,9 @@ package control_posicion_altitud is
    Max_Altitude : constant Altitude_Samples_Type := 10000;
    Alert_Altitude_High : constant Altitude_Samples_Type := 9500;
 
-   -- Tareas para el control de la posición y altitud de la aeronave
-   task control_pitch;
-   task control_altitude;
-   task control_roll;
-
+   -- Tarea única para el control de la posición y altitud de la aeronave
+   task posicion_altitud is
+      pragma Priority (20);
+   end posicion_altitud;
 
 end control_posicion_altitud;

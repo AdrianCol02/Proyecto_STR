@@ -1,19 +1,20 @@
 V "GNAT Lib v3.13 "
 A -g
 P LC TF
-R nnvvrnvvnnnnvvvvnvvvnnnnvnnnnnvnnnnnnnnnnnn
+R nnvvrnvvnnnnvvvvvvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U control_velocidad_aeronave%b  control_velocidad_aeronave.adb  2A5F5012 PK IL
+U control_velocidad_aeronave%b  control_velocidad_aeronave.adb  7F2F3FE1 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W ada.real_time.delays%s  a-retide.adb		a-retide.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
 W datos_aeronave%s	datos_aeronave.adb	datos_aeronave.ali  ED
 W datos_posalt_vel%s	datos_posalt_vel.adb	datos_posalt_vel.ali  ED
 W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali  ED
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
 
-U control_velocidad_aeronave%s  control_velocidad_aeronave.ads  423AA6D4 PK IL
+U control_velocidad_aeronave%s  control_velocidad_aeronave.ads  5E9C6153 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W datos_posalt_vel%s	datos_posalt_vel.adb	datos_posalt_vel.ali  ED
@@ -28,15 +29,19 @@ D ada.ads		20000718095948 2359F9ED
 D a-except.ads		20000718095948 287FCF69
 D a-finali.ads		20000718095948 3F32DEEF
 D a-filico.ads		20000718095948 1DECB9AC
+D a-ioexce.ads		20000718095948 175CB67B
 D a-reatim.ads		20000718095948 5DBAB303
 D a-retide.ads		20000718095948 7F3C479C
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
-D control_velocidad_aeronave.ads  20241114191948 3BFBCF4A
-D control_velocidad_aeronave.adb  20241117103127 4AE4755A
-D datos_aeronave.ads	20241117102323 2281839C
+D a-textio.ads		20000718095948 2D24B708
+D control_velocidad_aeronave.ads  20241117201527 275D08CD
+D control_velocidad_aeronave.adb  20241117220356 2E166A26
+D datos_aeronave.ads	20241117223013 2281839C
 D datos_posalt_vel.ads	20241117093452 4168C533
-D devicesfss_v1.ads	20241114183330 65131FAE
+D devicesfss_v1.ads	20241117223113 65131FAE
+D interfac.ads		20000718095948 0357E00A
+D i-cstrea.ads		20000718095948 70A316EF
 D kernel.ads		20010312182047 56BBE4F1
 D kernel-cpu_primitives.ads  20010312182047 5746D7AD
 D kernel-interrupts.ads	20010312182047 72CD7AA3
@@ -46,6 +51,7 @@ D kernel-threads.ads	20010312182047 234DAE87
 D kernel-time.ads	20010312182047 7A57ECF4
 D system.ads		20010312182047 2AE5BAFE
 D s-exctab.ads		20000718095948 7A25F5F9
+D s-ficobl.ads		20000718095949 0C03FD47
 D s-finimp.ads		20000718095949 1C201C0F
 D s-finroo.ads		20000718095949 166D4EDA
 D s-osinte.ads		20010312182047 7BFC1094
@@ -66,66 +72,60 @@ D s-tarest.ads		20000718095949 1D177686
 D s-unstyp.ads		20000718095949 78AFB91D
 D unchconv.ads		20000718095949 72DC4539
 X 1 ada.ads
-18U9*Ada 9|1r6 1r25 10|1r6 1r25
-X 5 a-reatim.ads
-43U13*Real_Time 9|1r10 1r29 10|1r10 1r29
-50O9*Time_Span 9|15r40
-57U13*Clock 10|34r25 58r25 82r25 108r25 133r25
-59U13*"+" 10|34r31 58r31 82r31 108r31 133r31
-89U13*Milliseconds 9|15r53
-X 9 control_velocidad_aeronave.ads
-5U9*control_velocidad_aeronave 10|6b14
-8i4*Max_Velocidad 10|20r43 21r36 47r61 49r39 50r41 71r60 73r39 74r41 97r86
-. 99r39 100r41
-9i4*Min_Velocidad 10|23r46 24r36 120r35 128r27 129r62 130r67
-10i4*Velocidad_Critica 10|126r35
-11f4*Factor_Potenciometro 10|17r58
-12i4*Incremento_Cabeceo 10|48r56
-13i4*Incremento_Alabeo 10|72r56
-14i4*Incremento_CabeceoAlabeo 10|98r56
-15O4*Intervalo_Control 10|34r33 58r33 82r33 108r33 133r33
-18t9*Transferir_Potencia_Piloto
-22t9*Control_Velocidad_Cabeceo
-26t9*Control_Velocidad_Alabeo
-30t9*Control_Velocidad_CabeceoAlabeo
-34t9*Control_Potencia_Motor
-X 10 control_velocidad_aeronave.adb
-9i9 Potenciometro 15m24 16r57 17r41
-10f9 Velocidad_Potencia 17m13 20r16 23r19 27r55
-11i9 Nueva_Velocidad 21m17 24m17 27m17 30r23 31r63 32r58
-39i9 Velocidad_Actual 44m57 47r42 48m17 48r37 49r20 50m21 53r27 54r62 55r67
-40i9 Pitch_Actual 45m53 47r16
-63i9 Velocidad_Actual 68m57 71r41 72m17 72r37 73r20 74m21 77r27 78r62 79r67
-64i9 Roll_Actual 69m52 71r16
-87i9 Velocidad_Actual 93m57 97r67 98m17 98r37 99r20 100m21 103r27 104r62
-. 105r67
-88i9 Pitch_Actual 94m53 97r16
-89i9 Roll_Actual 95m52 97r42
-113i9 Velocidad_Actual 117m57 120r16 126r16
-X 11 datos_aeronave.ads
-3U9*datos_aeronave 10|4r6 16r13 32r13 54r17 78r17 104r17 129r17
-5w14*aeronave 10|16r28 32r28 54r32 78r32 104r32 129r32
-18U17 Actualizar_Potencia 10|16r37
-19U17 Actualizar_Velocidad 10|32r37 54r41 78r41 104r41 129r41
-X 12 datos_posalt_vel.ads
-4U9*datos_posalt_vel 9|3r6 10|3r6 31r13 44r13 45r13 55r17 68r13 69r13 79r17
-. 93r13 94r13 95r13 105r17 117r13 130r17
-5w15*Datos_Vuelo 10|31r30 44r30 45r30 55r34 68r30 69r30 79r34 93r30 94r30
-. 95r30 105r34 117r30 130r34
-8U19 Leer_Velocidad 10|44r42 68r42 93r42 117r42
-10U19 Leer_Pitch 10|45r42 94r42
-11U19 Leer_Roll 10|69r42 95r42
-14U19 Actualizar_Velocidad 10|31r42 55r46 79r46 105r46 130r46
-X 13 devicesfss_v1.ads
-4U9*devicesFSS_V1 9|2r6 2r25 10|2r6 2r25
-31I10*Speed_Samples_Type 9|8r40 9r40 10r40 12r40 13r40 14r40 10|11r27 27r36
-. 39r28 63r28 87r28 113r28
-34U15*Set_Speed 10|30r13 53r17 77r17 103r17 128r17
-39I10*Pitch_Samples_Type 10|40r24 88r24
-44I10*Roll_Samples_Type 10|64r23 89r23
-54I10*Power_Samples_Type 10|9r25
-55U15*Read_Power 10|15r13
-80N27*On 10|22r25 25r25 51r29 75r29 101r29 121r25
-82U15*Light_2 10|22r17 25r17 51r21 75r21 101r21 121r17
-86U15*Alarm 10|122r17 127r17
+18U9*Ada 11|1r6 1r25 12|1r6 1r25 2r6 2r23
+X 6 a-reatim.ads
+43U13*Real_Time 11|1r10 1r29 12|1r10 1r29
+50O9*Time_Span 11|15r40
+57U13*Clock 12|98r25
+59U13*"+" 12|98r31
+89U13*Milliseconds 11|15r53
+X 10 a-textio.ads
+51U13*Text_IO 12|2r10 2r27
+X 11 control_velocidad_aeronave.ads
+5U9*control_velocidad_aeronave 12|7b14
+8i4*Max_Velocidad 12|27r43 28r36 47r61 49r39 50r41 59r60 61r39 62r41 71r86
+. 73r39 74r41
+9i4*Min_Velocidad 12|30r46 31r36 83r35 91r27 92r62 93r67
+10i4*Velocidad_Critica 12|89r35
+11f4*Factor_Potenciometro 12|23r58
+12i4*Incremento_Cabeceo 12|48r56
+13i4*Incremento_Alabeo 12|60r56
+14i4*Incremento_CabeceoAlabeo 12|72r56
+15O4*Intervalo_Control 12|98r33
+18t9*control_velocidad
+X 12 control_velocidad_aeronave.adb
+10i9 Potenciometro 21m24 22r57 23r41
+11f9 Velocidad_Potencia 23m13 27r16 30r19 34r55
+12i9 Nueva_Velocidad 28m17 31m17 34m17 37r23 38r63 39r58
+13i9 Velocidad_Actual 19r26 42m57 47r42 48m17 48r37 49r20 50m21 53r27 54r62
+. 55r67 59r41 60m17 60r37 61r20 62m21 65r27 66r62 67r67 71r67 72m17 72r37
+. 73r20 74m21 77r27 78r62 79r67 83r16 89r16 95r27
+14i9 Pitch_Actual 43m53 47r16 71r16
+15i9 Roll_Actual 44m52 59r16 71r42
+X 13 datos_aeronave.ads
+3U9*datos_aeronave 12|5r6 22r13 39r13 54r17 66r17 78r17 92r17
+5w14*aeronave 12|22r28 39r28 54r32 66r32 78r32 92r32
+18U17 Actualizar_Potencia 12|22r37
+19U17 Actualizar_Velocidad 12|39r37 54r41 66r41 78r41 92r41
+X 14 datos_posalt_vel.ads
+4U9*datos_posalt_vel 11|3r6 12|4r6 38r13 42r13 43r13 44r13 55r17 67r17 79r17
+. 93r17
+5w15*Datos_Vuelo 12|38r30 42r30 43r30 44r30 55r34 67r34 79r34 93r34
+8U19 Leer_Velocidad 12|42r42
+10U19 Leer_Pitch 12|43r42
+11U19 Leer_Roll 12|44r42
+14U19 Actualizar_Velocidad 12|38r42 55r46 67r46 79r46 93r46
+X 15 devicesfss_v1.ads
+4U9*devicesFSS_V1 11|2r6 2r25 12|3r6 3r25
+31I10*Speed_Samples_Type 11|8r40 9r40 10r40 12r40 13r40 14r40 12|12r27 13r28
+. 34r36
+34U15*Set_Speed 12|37r13 53r17 65r17 77r17 91r17
+39I10*Pitch_Samples_Type 12|14r24
+44I10*Roll_Samples_Type 12|15r23
+54I10*Power_Samples_Type 12|10r25
+55U15*Read_Power 12|21r13
+80N27*On 12|29r25 32r25 51r29 63r29 75r29 84r25
+82U15*Light_2 12|29r17 32r17 51r21 63r21 75r21 84r17
+86U15*Alarm 12|85r17 90r17
+91U15*Display_Speed 12|19r12 95r13
 

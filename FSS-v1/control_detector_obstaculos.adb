@@ -6,7 +6,7 @@ with datos_posalt_vel;
 
 package body control_detector_obstaculos is
 
-   -- Implementación del objeto protegido
+   -- Implementación del objeto protegido para control de desvío
    protected body Desvio_Control is
       procedure Activate_Desvio is
       begin
@@ -24,8 +24,8 @@ package body control_detector_obstaculos is
       end Reset_Desvio;
    end Desvio_Control;
 
-   -- Implementación de la tarea Supervisor_Obstaculos
-   task body Supervisor_Obstaculos is
+   -- Implementación de la tarea Control_Obstaculos
+   task body Control_Obstaculos is
       Distancia       : devicesFSS_V1.Distance_Samples_Type;
       Velocidad       : devicesFSS_V1.Speed_Samples_Type;
       Altitud         : devicesFSS_V1.Altitude_Samples_Type;
@@ -33,10 +33,13 @@ package body control_detector_obstaculos is
       Piloto_Presente : devicesFSS_V1.PilotPresence_Samples_Type;
       Joystick        : devicesFSS_V1.Joystick_Samples_Type;
       Tiempo_Colision : Duration;
+      Pitch           : devicesFSS_V1.Pitch_Samples_Type;
+      Roll            : devicesFSS_V1.Roll_Samples_Type;
       Next_Time       : Ada.Real_Time.Time := Ada.Real_Time.Clock;
    begin
       loop
          -- Leer datos de sensores
+         Display_Distance(Distancia);
          devicesFSS_V1.Read_Distance(Distancia);
          devicesFSS_V1.Read_Light_Intensity(Visibilidad);
          datos_aeronave.aeronave.Leer_Velocidad(Velocidad);  
@@ -53,7 +56,7 @@ package body control_detector_obstaculos is
          datos_aeronave.aeronave.Actualizar_Roll(Roll_Samples_Type(Joystick(x)));
          datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(Pitch_Samples_Type(Joystick(y)));
          datos_posalt_vel.Datos_Vuelo.Actualizar_Roll(Roll_Samples_Type(Joystick(x)));
-
+         
          -- Calcular tiempo de colisión
          if Velocidad > 0 then
             Tiempo_Colision := Duration(Float(Distancia) / Float(Velocidad));
@@ -74,20 +77,7 @@ package body control_detector_obstaculos is
             devicesFSS_V1.Alarm(4);
          end if;
 
-         -- Control de tiempo
-         Next_Time := Ada.Real_Time.Clock + Milliseconds(250); -- 250 ms como Duration
-         delay until Next_Time;
-      end loop;
-   end Supervisor_Obstaculos;
-
-   -- Implementación de la tarea Desviador_Obstaculos
-   task body Desviador_Obstaculos is
-      Altitud : devicesFSS_V1.Altitude_Samples_Type;
-      Pitch   : devicesFSS_V1.Pitch_Samples_Type;
-      Roll    : devicesFSS_V1.Roll_Samples_Type;
-      Next_Time : Ada.Real_Time.Time := Ada.Real_Time.Clock;
-   begin
-      loop
+         -- Comprobación de desvío y maniobra
          if Desvio_Control.Is_Desvio_Active then
             -- Leer altitud y los valores de pitch y roll
             datos_aeronave.aeronave.Leer_Altitud(Altitud);  
@@ -105,11 +95,11 @@ package body control_detector_obstaculos is
                datos_posalt_vel.Datos_Vuelo.Actualizar_Roll(45);
             end if;
 
-            Next_Time := Ada.Real_Time.Clock + Milliseconds(3000); -- 3 segundos como Duration
+            Next_Time := Ada.Real_Time.Clock + Milliseconds(3000);
             delay until Next_Time; 
 
             -- Estabilizar la nave después de la maniobra
-            if Altitud <= 8500 then
+            if Altitud > 8500 then
                devicesFSS_V1.Set_Aircraft_Pitch(0);
                datos_aeronave.aeronave.Actualizar_Pitch(0);
                datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(0);
@@ -121,12 +111,13 @@ package body control_detector_obstaculos is
 
             -- Reiniciar el estado del desvío
             Desvio_Control.Reset_Desvio;
-         else
-            -- Sin desvío pendiente, esperar el siguiente ciclo
-            Next_Time := Ada.Real_Time.Clock + Milliseconds(250); -- 250 ms como Duration
-            delay until Next_Time;
          end if;
+         Display_Distance(Distancia);
+
+         -- Control de tiempo
+         Next_Time := Ada.Real_Time.Clock + Milliseconds(250); -- 250 ms como Duration
+         delay until Next_Time;
       end loop;
-   end Desviador_Obstaculos;
+   end Control_Obstaculos;
 
 end control_detector_obstaculos;

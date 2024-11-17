@@ -3,20 +3,24 @@ A -g
 P LC TF
 R nnvvrnvvnnnnvvvvvvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U control_detector_obstaculos%b  control_detector_obstaculos.adb  3209CA40 PK IL
+U control_detector_obstaculos%b  control_detector_obstaculos.adb  4BAE8D60 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W ada.real_time.delays%s  a-retide.adb		a-retide.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
+W datos_aeronave%s	datos_aeronave.adb	datos_aeronave.ali  ED
 W datos_posalt_vel%s	datos_posalt_vel.adb	datos_posalt_vel.ali  ED
 W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali  ED
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
 
-U control_detector_obstaculos%s  control_detector_obstaculos.ads  416B36A8 PK IL
+U control_detector_obstaculos%s  control_detector_obstaculos.ads  2D5B0A3F PK IL
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W datos_aeronave%s	datos_aeronave.adb	datos_aeronave.ali  ED
 W datos_posalt_vel%s	datos_posalt_vel.adb	datos_posalt_vel.ali  ED
+W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali  ED
 W system%s		system.ads		system.ali
 W system.parameters%s	s-parame.adb		s-parame.ali
 W system.task_info%s	s-tasinf.adb		s-tasinf.ali
@@ -34,10 +38,11 @@ D a-retide.ads		20000718095948 7F3C479C
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
 D a-textio.ads		20000718095948 2D24B708
-D control_detector_obstaculos.ads  20241116110950 058EDF06
-D control_detector_obstaculos.adb  20241116111617 3B55544E
-D datos_posalt_vel.ads	20241116110304 195F5AAD
-D devicesfss_v1.ads	20241114183330 65131FAE
+D control_detector_obstaculos.ads  20241117201457 5B3F5735
+D control_detector_obstaculos.adb  20241117220440 66F5875F
+D datos_aeronave.ads	20241117223013 2281839C
+D datos_posalt_vel.ads	20241117093452 4168C533
+D devicesfss_v1.ads	20241117223113 65131FAE
 D interfac.ads		20000718095948 0357E00A
 D i-cstrea.ads		20000718095948 70A316EF
 D kernel.ads		20010312182047 56BBE4F1
@@ -70,67 +75,76 @@ D s-tarest.ads		20000718095949 1D177686
 D s-unstyp.ads		20000718095949 78AFB91D
 D unchconv.ads		20000718095949 72DC4539
 X 1 ada.ads
-18U9*Ada 11|1r6 12|1r6 1r25 2r6 2r23 35r25 35r47 69r23 79r19 79r41 95r26
-. 109r26
+18U9*Ada 11|1r6 2r6 12|1r6 1r25 2r6 2r23 38r25 38r47 98r26 118r23
 X 6 a-reatim.ads
-43U13*Real_Time 11|1r10 12|1r10 1r29 35r29 35r51 69r27 79r23 79r45 95r30
-. 109r30
-45O9*Time 12|35r39 79r33
-57U13*Clock 12|35r61 69r37 79r55 95r40 109r40
-59U13*"+" 12|69r43 95r46 109r46
-89U13*Milliseconds 12|69r45 95r48 109r48
+43U13*Real_Time 11|1r10 12|1r10 1r29 38r29 38r51 98r30 118r27
+45O9*Time 12|38r39
+57U13*Clock 12|38r61 98r40 118r37
+59U13*"+" 12|98r46 118r43
+89U13*Milliseconds 12|98r48 118r45
 X 10 a-textio.ads
-51U13*Text_IO 12|2r10 2r27
+51U13*Text_IO 11|2r10 12|2r10 2r27
 X 11 control_detector_obstaculos.ads
-4U9*control_detector_obstaculos 12|6b14
-6o4*Tiempo_Desvio_Visibilidad_Baja 12|57r34
-7o4*Tiempo_Visibilidad_Baja 12|59r37
-8o4*Tiempo_Desvio 12|62r34
-9o4*Tiempo_Alarma 12|52r32 64r34
-10o4*Periodo_Deteccion
-13w14*Desvio_Control 12|58r16 63r13 82r13 106r13
-14U17 Activate_Desvio 12|10b17 58r31 63r28
-15U16 Is_Desvio_Active 12|15b16 82r28
-16U17 Reset_Desvio 12|20b17 106r28
-18e7 Desvio_Active 12|12r10 17r17 22r10
-22t9*Supervisor_Obstaculos
-23t9*Desviador_Obstaculos
+7U9*control_detector_obstaculos 12|7b14
+10o4*Tiempo_Alarma 12|64r32 76r34
+11o4*Tiempo_Desvio_Visibilidad_Baja 12|69r34
+12o4*Tiempo_Visibilidad_Baja 12|71r37
+13o4*Tiempo_Desvio 12|74r34
+16w14*Desvio_Control 12|70r16 75r13 81r13 113r13
+17U17 Activate_Desvio 12|11b17 70r31 75r28
+18U16 Is_Desvio_Active 12|16b16 81r28
+19U17 Reset_Desvio 12|21b17 113r28
+21e7 Desvio_Active 12|13r10 18r17 23r10
+25t9*Control_Obstaculos
 X 12 control_detector_obstaculos.adb
-28i7 Distancia 39m38 50r47
-29i7 Velocidad 40m54 49r13 50r66
-30i7 Altitud 41m52
-31i7 Visibilidad 42m45 56r14
-32i7 Piloto_Presente 43m10 56r40
-33a7 Joystick 46m38
-34o7 Tiempo_Colision 50m13 52m13 57r16 59r19 62r16 64r16
-35O7 Next_Time 69m10 70r22
-76i7 Altitud 84m55 89r16 99r16
-77i7 Pitch 85m53
-78i7 Roll 86m52
-79O7 Next_Time 95m13 96r25 109m13 110r25
-X 13 datos_posalt_vel.ads
-4U9*datos_posalt_vel 11|2r6 12|4r6 40r10 41r10 84r13 85r13 86r13
-5w15*Datos_Vuelo 12|40r27 41r27 84r30 85r30 86r30
-15U19 Leer_Velocidad 12|40r39
-16U19 Leer_Altitud 12|41r39 84r42
-19U19 Leer_Pitch 12|85r42
-20U19 Leer_Roll 12|86r42
-X 14 devicesfss_v1.ads
-4U9*devicesFSS_V1 12|3r6 3r25 28r25 29r25 30r25 31r25 32r25 33r25 39r10 42r10
-. 43r29 46r10 60r16 65r13 76r17 77r17 78r17 90r16 92r16 100r16 102r16
-11I10*Distance_Samples_Type 12|28r39
-12U15*Read_Distance 12|39r24
-15I10*Light_Samples_Type 12|31r39
-16U15*Read_Light_Intensity 12|42r24
-24I10*Altitude_Samples_Type 12|30r39 76r31
-31I10*Speed_Samples_Type 12|29r39
-39I10*Pitch_Samples_Type 12|77r31
-42U15*Set_Aircraft_Pitch 12|90r30 100r30
-44I10*Roll_Samples_Type 12|78r31
-47U15*Set_Aircraft_Roll 12|92r30 102r30
-60A10*Joystick_Samples_Type 12|33r39
-62U15*Read_Joystick 12|46r24
-68I10*PilotPresence_Samples_Type 12|32r39
-69U14*Read_PilotPresence 12|43r43
-86U15*Alarm 12|60r30 65r27
+29i7 Distancia 42r27 43m38 49r54 62r47 115r27
+30i7 Velocidad 45m49 61r13 62r66
+31i7 Altitud 46m47 83m50 88r16 102r16
+32i7 Visibilidad 44m45 50r61 68r14
+33i7 Piloto_Presente 47m10 51r59 68r40
+34a7 Joystick 54m38 55r70 56r68 57r75 58r73
+35o7 Tiempo_Colision 62m13 64m13 69r16 71r19 74r16 76r16
+36i7 Pitch 84m48
+37i7 Roll 85m47
+38O7 Next_Time 98m13 99r25 118m10 119r22
+X 13 datos_aeronave.ads
+3U9*datos_aeronave 11|4r6 12|4r6 45r10 46r10 49r10 50r10 51r10 55r10 56r10
+. 83r13 84r13 85r13 90r16 94r16 104r16 108r16
+5w14*aeronave 12|45r25 46r25 49r25 50r25 51r25 55r25 56r25 83r28 84r28 85r28
+. 90r31 94r31 104r31 108r31
+7U17 Leer_Altitud 12|46r34 83r37
+9U17 Leer_Velocidad 12|45r34
+10U17 Leer_Pitch 12|84r37
+11U17 Leer_Roll 12|85r37
+20U17 Actualizar_Pitch 12|55r34 90r40 104r40
+21U17 Actualizar_Roll 12|56r34 94r40 108r40
+22U17 Actualizar_Light_Intensity 12|50r34
+23U17 Actualizar_PilotPresence 12|51r34
+24U17 Actualizar_Distance 12|49r34
+X 14 datos_posalt_vel.ads
+4U9*datos_posalt_vel 11|5r6 12|5r6 57r10 58r10 91r16 95r16 105r16 109r16
+5w15*Datos_Vuelo 12|57r27 58r27 91r33 95r33 105r33 109r33
+15U19 Actualizar_Pitch 12|57r39 91r45 105r45
+16U19 Actualizar_Roll 12|58r39 95r45 109r45
+X 15 devicesfss_v1.ads
+4U9*devicesFSS_V1 11|3r6 12|3r6 3r25 29r25 30r25 31r25 32r25 33r25 34r25
+. 36r25 37r25 43r10 44r10 47r29 54r10 72r16 77r13 89r16 93r16 103r16 107r16
+11I10*Distance_Samples_Type 12|29r39
+12U15*Read_Distance 12|43r24
+15I10*Light_Samples_Type 12|32r39
+16U15*Read_Light_Intensity 12|44r24
+24I10*Altitude_Samples_Type 12|31r39
+31I10*Speed_Samples_Type 12|30r39
+39I10*Pitch_Samples_Type 12|36r39 55r51 57r56
+42U15*Set_Aircraft_Pitch 12|89r30 103r30
+44I10*Roll_Samples_Type 12|37r39 56r50 58r55
+47U15*Set_Aircraft_Roll 12|93r30 107r30
+58N37*x 12|56r77 58r82
+58N39*y 12|55r79 57r84
+60A10*Joystick_Samples_Type 12|34r39
+62U15*Read_Joystick 12|54r24
+68I10*PilotPresence_Samples_Type 12|33r39
+69U14*Read_PilotPresence 12|47r43
+86U15*Alarm 12|72r30 77r27
+92U15*Display_Distance 12|42r10 115r10
 

@@ -14,7 +14,7 @@ package body control_visualizacion_aeronave is
          Distancia : Distance_Samples_Type;
     begin
         loop
-
+            -- Put_Line("Visualización de datos de la aeronave activada");
             Read_Joystick(Joystick);
             datos_aeronave.aeronave.Leer_Altitud(Altitud);
             datos_aeronave.aeronave.Leer_Velocidad(Velocidad);
@@ -31,6 +31,7 @@ package body control_visualizacion_aeronave is
             Display_Joystick(Joystick);
             Display_Pitch(Pitch);
             Display_Roll(Roll);
+            Put_Line("");
             Put_Line("============================");
 
             -- Esperar hasta el próximo ciclo (1 segundo)

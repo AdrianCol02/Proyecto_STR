@@ -3,7 +3,7 @@ A -g
 P LC TF
 R nnvvrnvvnnnnvvvvvvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U control_visualizacion_aeronave%b  control_visualizacion_aeronave.adb  1FC6DA31 PK IL
+U control_visualizacion_aeronave%b  control_visualizacion_aeronave.adb  60625B3D PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -13,7 +13,7 @@ W datos_aeronave%s	datos_aeronave.adb	datos_aeronave.ali  ED
 W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali  ED
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
 
-U control_visualizacion_aeronave%s  control_visualizacion_aeronave.ads  11EC0F96 PK IL
+U control_visualizacion_aeronave%s  control_visualizacion_aeronave.ads  711663DE PK IL
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W system%s		system.ads		system.ali
@@ -32,10 +32,10 @@ D a-retide.ads		20000718095948 7F3C479C
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
 D a-textio.ads		20000718095948 2D24B708
-D control_visualizacion_aeronave.ads  20241117103312 4C56BC95
-D control_visualizacion_aeronave.adb  20241117103339 649CFE9D
-D datos_aeronave.ads	20241117102323 2281839C
-D devicesfss_v1.ads	20241114183330 65131FAE
+D control_visualizacion_aeronave.ads  20241117204941 2CACD0DD
+D control_visualizacion_aeronave.adb  20241117202728 7BC213D9
+D datos_aeronave.ads	20241117223013 2281839C
+D devicesfss_v1.ads	20241117223113 65131FAE
 D interfac.ads		20000718095948 0357E00A
 D i-cstrea.ads		20000718095948 70A316EF
 D kernel.ads		20010312182047 56BBE4F1
@@ -72,15 +72,15 @@ X 1 ada.ads
 X 6 a-reatim.ads
 43U13*Real_Time 11|1r10 1r29 12|1r10 1r29
 50O9*Time_Span 11|6r40
-57U13*Clock 12|37r25
-59U13*"+" 12|37r31
+57U13*Clock 12|38r25
+59U13*"+" 12|38r31
 89U13*Milliseconds 11|6r53
 X 10 a-textio.ads
 51U13*Text_IO 12|2r10 2r27
-260U14*Put_Line 12|27r13 34r13
+260U14*Put_Line 12|27r13 34r13 35r13
 X 11 control_visualizacion_aeronave.ads
 3U9*control_visualizacion_aeronave 12|6b14
-6O5*intervalo_visualizacion 12|37r33
+6O5*intervalo_visualizacion 12|38r33
 8t10*visualizar_datos
 X 12 control_visualizacion_aeronave.adb
 8i10 Altitud 19m50 28r30

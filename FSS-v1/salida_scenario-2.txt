@@ -1,0 +1,524 @@
+
+ TSIM/ERC32 - remote SPARC simulator, version 1.0.10 (evaluation version)
+
+ Copyright (C) 2001, Gaisler Research - all rights reserved.
+ For latest updates, go to http://www.gaisler.com/
+ Comments or bug-reports to tsim@gaisler.com
+
+libreadline.so.3: cannot open shared object file: No such file or directory
+serial port A on stdin/stdout
+allocated 4096 K RAM memory
+allocated 2048 K ROM memory
+section: .text at 0x2000000, size 240512 bytes
+section: .data at 0x203ab80, size 12068 bytes
+tsim> resuming at 0x02000000
+=== Datos de la Aeronave ===
+
+[ 0.0184] ..# Altitude:  8000
+[ 0.0376] ..# Pilot_Power:  0
+[ 0.0568] ..# Speed:  0
+[ 0.0730] ..# Joystick:  81 3
+[ 0.0922] ..# Pitch:  81
+[ 0.1088] ..# Roll:  3
+============================
+
+[ 0.1399] ..# Distance:  0
+[ 0.1649] ..# Distance:  5555
+[ 0.1852] ..# Altitude:  0
+[ 0.2179] %L(1): off
+[ 0.2349] %L(2): off
+[ 0.2462] ..# Altitude:  8000
+[ 0.2665] ..# Speed:  0
+[ 0.2870] %Light(2): ON
+[ 0.3022] ..# Speed:  1000
+[ 0.3200] >>> Programa Principal
+[ 0.3369] --- Programa Principal
+[ 0.4344] ..# Distance:  5555
+[ 0.4609]
+[ 0.4660] ..# Altitude:  8000
+[ 0.5003] %L(1): off
+[ 0.5173] %L(2): off
+[ 0.5286] ..# Altitude:  8000 %BEEEEEEEEEEP 4
+[ 0.5567] ..# Distance:  5555
+[ 0.6201] ..# Speed:  1000
+[ 0.6422] ..# Speed:  960
+[ 0.7481] ..# Altitude:  8000
+[ 0.7888] %L(1): off
+[ 0.8057] %L(2): off
+[ 0.8170] ..# Altitude:  8000
+[ 0.8364] ..# Distance:  5555
+[ 0.8629] %BEEEEEEEEEEP 4
+[ 0.8768] ..# Distance:  5555
+[ 0.9595] ..# Speed:  960
+[ 0.9810] %Light(2): ON
+[ 0.9963] ..# Speed:  1000
+[ 1.0365] ..# Altitude:  8000
+[ 1.0772] %L(1): off
+[ 1.0942] %L(2): off
+[ 1.1054] ..# Altitude:  8000
+[ 1.1464] ..# Distance:  5555
+[ 1.1729] %BEEEEEEEEEEP 4
+[ 1.1868] ..# Distance:  5555
+[ 1.3142] ..# Speed: 
+[ 1.3255] ..# Altitude:  8000
+[ 1.3598] %L(1): off
+[ 1.3768] %L(2): off
+[ 1.3880] ..# Altitude:  8000 1000
+[ 1.4181] %Light(2): ON
+[ 1.4333] ..# Speed:  1000
+[ 1.4563] ..# Distance:  5555
+[ 1.4829] %BEEEEEEEEEEP 4
+[ 1.4968] ..# Distance:  5555
+[ 1.6075] ..# Altitude:  8000
+[ 1.6418] %L(1): off
+[ 1.6588] %L(2): off
+[ 1.6701] ..# Altitude:  8000
+[ 1.7513] ..# Speed:  1000
+[ 1.7663] ..# Distance:  5555
+[ 1.7928] %BEEEEEEEEEEP 4
+[ 1.8068] ..# Distance:  5555
+[ 1.8334] %Light(2): ON
+[ 1.8486] ..# Speed:  1000
+[ 1.8895] ..# Altitude:  8000
+[ 1.9238] %L(1): off
+[ 1.9408] %L(2): off
+[ 1.9521] ..# Altitude:  8000
+[ 2.0763] ..# Distance:  5555
+[ 2.1028] %BEEEEEEEEEEP 4
+[ 2.1167] ..# Distance:  5555
+[ 2.1665] 
+[ 2.1721] ..# Altitude:  8000
+[ 2.2065] %L(1): off
+[ 2.2234] %L(2): off
+[ 2.2347] ..# Altitude:  8000..# Speed:  1000
+[ 2.2704] %Light(2): ON
+[ 2.2856] ..# Speed:  1000
+[ 2.3862] ..# Distance:  5555
+[ 2.4128] %BEEEEEEEEEEP 4
+[ 2.4267] ..# Distance:  5555
+[ 2.4542] ..# Altitude:  8000
+[ 2.4885] %L(1): off
+[ 2.5055] %L(2): off
+[ 2.5168] ..# Altitude:  8000
+[ 2.6036] ..# Speed:  1000
+[ 2.6256] ..# Speed:  480
+[ 2.6962] ..# Distance:  5555
+[ 2.7228] ..# Distance:  5
+[ 2.7366] ..# Altitude:  8000
+[ 2.7709] %L(1): off
+[ 2.7879] %L(2): off
+[ 2.7992] ..# Altitude:  8000555
+[ 2.9430] ..# Speed:  480
+[ 2.9670] ..# Speed:  630
+[ 3.0187] ..# Altitude:  8000
+[ 3.0530] %L(1): off
+[ 3.0699] %L(2): off
+[ 3.0812] ..# Altitude:  8000
+[ 3.1006] ..# Distance:  5555
+[ 3.1271] %BEEEEEEEEEEP 4
+[ 3.1410] ..# Distance:  4440
+[ 3.2845] ..# Speed:  630
+[ 3.3007] ..# Altitude:  8000
+[ 3.3350] %L(1): off
+[ 3.3520] %L(2): off
+[ 3.3633] ..# Altitude:  8000
+[ 3.3905] ..# Speed:  750
+[ 3.4105] ..# Distance:  4440
+[ 3.4371] %BEEEEEEEEEEP 4
+[ 3.4510] ..# Distance:  4440
+[ 3.5828] ..# Altitude:  8000
+[ 3.6171] %L(1): off
+[ 3.6341] %L(2): off
+[ 3.6453] ..# Altitude:  8000
+[ 3.7080] ..# Speed:  75
+[ 3.7208] ..# Distance:  44400
+[ 3.7737] %Light(2): ON
+[ 3.7889] ..# Speed:  1000
+[ 3.8648] ..# Altitude:  8000
+[ 3.8991] %L(1): off
+[ 3.9160] %L(2): off
+[ 3.9273] ..# Altitude:  8040
+[ 4.1069] ..# Speed:  1000
+[ 4.1313] ..# Speed:  870
+[ 4.1468] ..# Altitude:  8040
+[ 4.1810] %L(1): off
+[ 4.1923] ..# Altitude:  8040
+[ 4.4118] ..# Altitude:  8040
+[ 4.4461] %L(1): off
+[ 4.4574] ..# Altitude:  8040
+[ 4.5139] ..# Speed:  870
+[ 4.5378] ..# Speed:  870
+[ 4.6769] ..# Altitude:  8040
+[ 4.7112] %L(1): off
+[ 4.7225] ..# Altitude:  8040
+[ 4.8553] ..# Speed:  870
+[ 4.8792] ..# Speed:  870
+[ 4.9419] ..# Altitude:  8040
+[ 4.9764] %L(1): off
+[ 4.9876] ..# Altitude:  8040=== Datos de la Aeronave ===
+
+[ 5.1559] ..# Altitude:  8040
+[ 5.1751] ..# Pilot_Power:  600
+[ 5
+[ 5.1973] ..# Speed
+[ 5.2076] ..# Altitude:  8040
+[ 5.2419] %L(1): off
+[ 5.2589] %L(2): off
+[ 5.2702] ..# Altitude:  8040:  870
+[ 5.2982] %Light(2): ON
+[ 5.3136] ..# Speed:  1000.1953] ..# Speed:  870
+[ 5.3465] ..# Joystick:  47 20
+[ 5.3662] ..# Pitch:  47
+[ 5.3828] ..# Roll:  20
+============================
+
+[ 5.4897] ..# Altitude:  8040
+[ 5.5240] %L(1): off
+[ 5.5409] %L(2): off
+[ 5.5522] ..# Altitude:  8040
+[ 5.6316] ..# Speed:  1000
+[ 5.6510] %Light(2): ON
+[ 5.6664] ..# Speed:  1000
+[ 5.7717] ..# Altitude:  8040
+[ 5.8059] %L(1): off
+[ 5.8229] %Light(2): ON
+[ 5.8357] ..# Altitude:  8040
+[ 5.9844] ..# Speed:  1000
+[ 6.0038] %Light(2): ON
+[ 6.0192] ..# Speed:  1000
+[ 6.0552] ..# Altitude:  8040
+[ 6.0895] %L(1): off
+[ 6.1008] ..# Altitude:  8040
+[ 6.3203] ..# Altitude:  8040
+[ 6.3548] %L(1): off
+[ 6.3661] ..# Altitude:  8040
+[ 6.3855] ..# Speed:  1000
+[ 6.4049] %Light(2): ON
+[ 6.4203] ..# Speed:  1000
+[ 6.5856] ..# Altitude:  8040
+[ 6.6199] %L(1): off
+[ 6.6311] ..# Altitude:  8040
+[ 6.7383] ..# Speed:  1000
+[ 6.
+[ 6.7657] ..# Distance:  44407577] %Light(2): ON
+[ 6.7979] ..# Speed:  1000
+[ 6.8506] ..# Altitude:  8040
+[ 6.8849] %L(1): off
+[ 6.8961] ..# Altitude:  8040
+[ 7.0352] ..# Distance:  4440
+[ 7.1157] ..# Altitude:  8040
+[ 7.1564] %L(1): off
+[ 7.1734] %L(2): off
+[ 7.1847] ..# Altitude:  8080
+[ 7.2041] ..# Speed:  1000
+[ 7.2235] %Light(2): ON
+[ 7.2389] ..# Speed:  1000
+[ 7.4042] ..# Altitude:  8080
+[ 7.4448] %L(1): off
+[ 7.4618] %L(2): off
+[ 7.4731] ..# Altitude:  8080
+[ 7.5569] ..# Speed:  1000
+[ 7.5763] %Light(2): ON
+[ 7.5917] ..# Speed:  1000
+[ 7.6926] ..# Altitude:  8080
+[ 7.7333] %L(1): off
+[ 7.7502] %L(2): off
+[ 7.7615] ..# Altitude:  8080
+[ 7.9096] ..# Speed:  1000
+[ 7.9290] %Light(2): ON
+[ 7.9445] ..# Speed:  1000
+[ 7.9810] ..# Altitude:  8080
+[ 8.0217] %L(1): off
+[ 8.0387] %L(2): off
+[ 8.0500] ..# Altitude:  8080
+[ 8.2624] ..# 
+[ 8.2701] ..# Altitude:  8080
+[ 8.3108] %L(1): off
+[ 8.3278] %L(2): off
+[ 8.3390] ..# Altitude:  8080Speed:  1000
+[ 8.3701] %Light(2): ON
+[ 8.3856] ..# Speed:  1000
+[ 8.5586] ..# Altitude:  8080
+[ 8.5992] %L(1): off
+[ 8.6162] %L(2): off
+[ 8.6275] ..# Altitude:  8080
+[ 8.7035] ..# Speed:  1000
+[ 8.7229] %Light(2): ON
+[ 8.7384] ..# Speed:  1000
+[ 8.8469] ..# Altitude:  8080
+[ 8.8876] %L(1): off
+[ 8.9046] %L(2): off
+[ 8.9158] ..# Altitude:  8080
+[ 9.0563] ..# Speed:  1000
+[ 9.0758] %Light(2): ON
+[ 9.0912] ..# Speed:  1000
+[ 9.1353] ..# Altitude:  8080
+[ 9.1760] %L(1): off
+[ 9.1930] %L(2): off
+[ 9.2043] ..# Altitude:  8080
+[ 9.4092] ..# Speed:  1000
+[ 9.4237] ..# Altitude:  8080
+[ 9.4644] %L(1): off
+[ 9.4814] %L(2): off
+[ 9.4926] ..# Altitude:  8080
+[ 9.5171] %Light(2): ON
+[ 9.5325] ..# Speed:  1000
+[ 9.7122] ..# Altitude:  8080
+[ 9.7528] %L(1): off
+[ 9.7698] %L(2): off
+[ 9.7811] ..# Altitude:  8080
+[ 9.8504] ..# Speed:  1000
+[ 9.8698] %Light(2): ON
+[ 9.8852] ..# Speed:  1000
+[ 10.000] ..# Altitude:  8080
+[ 10.041] %L(1): off
+[ 10.058] %L(2): off
+[ 10.069] ..# Altitude:  8080
+[ 10.094] ..# Distance:  2400
+[ 10.203] ..# Speed:  1000
+[ 10.225] ..# Speed:  720
+[ 10.289] ..# Altitude:  8080
+[ 10.329] %L(1): off
+[ 10.346] %L(2): off
+[ 10.357] ..# Altitude:  8080
+[ 10.377] ..# Distance:  2400=== Datos de la Aeronave ===
+
+[ 10.433] ..# Altitude:  8080
+[ 10.452] ..# Pilot_Power:  600
+[ 10.472] ..# Speed:  720
+[ 10.489] ..# Joystick:  1-3
+[ 10.508] ..# Pitch:  1
+[ 10.524] ..# Roll: -3
+=====
+[ 10.543] ..# Speed:  720
+[ 10.569] %Ligh
+[ 10.577] ..# Altitude:  8080
+[ 10.618] %L(1): off
+[ 10.635] %L(2): off
+[ 10.646] ..# Altitude:  8120t(2): ON
+[ 10.673] ..# Speed:  1000=======================
+
+[ 10.866] ..# Altitude:  8120
+[ 10.906] %L(1): off
+[ 10.923] %L(2): off
+[ 10.935] ..# Altitude:  8120
+[ 10.991] ..# Speed:  1000
+[ 11.013] ..# Speed:  720
+[ 11.154] ..# Altitude:  8120
+[ 11.195] %L(1): off
+[ 11.212] %L(2): off
+[ 11.223] ..# Altitude:  8120
+[ 11.330] ..# Speed:  720
+[ 11.354] ..# Speed:  820
+[ 11.443] ..# Altitude:  8120
+[ 11.483] %L(1): off
+[ 11.500] %L(2): off
+[ 11.512] ..# Altitude:  8120
+[ 11.671] ..# Speed:  820
+[ 11.693] ..# Speed:  720
+[ 11.731] ..# Altitude:  8120
+[ 11.772] %L(1): off
+[ 11.789] %L(2): off
+[ 11.800] ..# Altitude:  8120
+[ 12.010] ..# Spe
+[ 12.020] ..# Altitude:  8120
+[ 12.060] %L(1): off
+[ 12.077] %L(2): off
+[ 12.089] ..# Altitude:  8120ed:  720
+[ 12.123] ..# Speed:  820
+[ 12.308] ..# Altitude:  8120
+[ 12.349] %L(1): off
+[ 12.366] %L(2): off
+[ 12.377] ..# Altitude:  8120
+[ 12.440] ..# Speed:  820
+[ 12.462] ..# Speed:  720
+[ 12.597] ..# Altitude:  8120
+[ 12.637] %L(1): off
+[ 12.654] %L(2): off
+[ 12.665] ..# Altitude:  8120
+[ 12.779] ..# Speed:  720
+[ 12.801] %Light(2): ON
+[ 12.816] ..# Speed:  1000
+[ 12.885] ..# Altitude:  8120
+[ 12.926] %L(1): off
+[ 12.943] %L(2): off
+[ 12.954] ..# Altitude:  8120
+[ 13.134] ..# Speed:  1000
+[ 13.156] ..# Speed:  960
+[ 13.173] ..# Altitude:  8120
+[ 13.208] %L(1): off
+[ 13.225] %L(2): off
+[ 13.236] ..# Altitude:  8120
+[ 13.422] ..# Distance:  411
+[ 13.455] ..# Altitude:  8120
+[ 13.490] %L(1): off
+[ 13.507] %L(2): off
+[ 13.518] ..# Altitude:  8120
+[ 13.537] ..# Speed:  960
+[ 13.559] ..# Speed:  960
+[ 13.691] ..# Distance:  411
+[ 13.738] ..# Altitude:  8120
+[ 13.772] %L(1): off
+[ 13.789] %L(2): off
+[ 13.800] ..# Altitude:  8160
+[ 13.876] ..# Speed:  960
+[ 13.898] %Light(2): ON
+[ 13.913] ..# Speed:  1000
+[ 14.020] ..# Altitude:  8160
+[ 14.054] %L(1): off
+[ 14.071] %L(2): off
+[ 14.082] ..# Altitude:  8160
+[ 14.231] ..# Speed:  1000
+[ 14.253] %Light(2): ON
+[ 14.268] ..# Speed:  1000
+[ 14.302] ..# Altitude:  8160
+[ 14.336] %L(1): off
+[ 14.353] %L(2): off
+[ 14.364] ..# Altitude:  8160
+[ 14.584] ..# Altitude:  8160
+[ 14.618] %L(1): off
+[ 14.635] %L(2): off
+[ 14.646] ..# Altitude:  8160
+[ 14.666] ..# Speed:  1000
+[ 14.688] %Light(2): ON
+[ 14.703] ..# Speed:  1000
+[ 14.866] ..# Altitude:  8160
+[ 14.900] %L(1): off
+[ 14.917] %L(2): off
+[ 14.928] ..# Altitude:  8160
+[ 15.021] ..# Speed:  1000
+[ 15.040] %Light(2): ON
+[ 15.056] ..# Speed:  1000
+[ 15.148] ..# Altitude:  8160
+[ 15.182] %L(1): off
+[ 15.199] %L(2): off
+[ 15.210] ..# Altitude:  8160
+[ 15.374] ..# Speed:  1000
+[ 15.393] %Light(2): ON
+[ 15.409] ..# Speed:  1000
+[ 15.430] ..# Altitude:  8160
+[ 15.464] %L(1): off
+[ 15.481] %L(2): off
+[ 15.492] ..# Altitude:  8160=== Datos de la A
+[ 15.713] ..# Altitude:  8160
+[ 15.747] %L(1): off
+[ 15.764] %L(2): off
+[ 15.775] ..# Altitude:  8160
+[ 15.795] ..# Speed:  1000
+[ 15.814] %Light(2): ON
+[ 15.829] ..# Speed:  1000eronave ===
+
+[ 15.853] ..# Altitude:  8160
+[ 15.873] ..# Pilot_Power:  900
+[ 15.893] ..# Speed:  1000
+[ 15.910] ..# Joystick: -47 1
+[ 15.930] ..# Pitch: -47
+[ 15.946] ..# Roll:  1
+============================
+
+[ 15.995] ..# Altitude:  8160
+[ 16.035] %L(1): off
+[ 16.052] %L(2): off
+[ 16.064] ..# Altitude:  8160
+[ 16.147] ..# Speed:  1000
+[ 16.167] %Light(2): ON
+[ 16.182] ..# Speed:  1000
+[ 16.283] ..# Altitude:  8160
+[ 16.324] %L(1): off
+[ 16.341] %L(2): off
+[ 16.352] ..# Altitude:  8160
+[ 16.500] ..# Speed:  1000
+[ 16.520] %Light(2): ON
+[ 16.535] ..# Speed:  1000
+[ 16.572] ..# Altitude:  8160
+[ 16.612] %L(1): off
+[ 16.629] %L(2): off
+[ 16.640] ..# Altitude:  8160
+[ 16.735] ..# Distance:  5555
+[ 16.853] ..# 
+[ 16.861] ..# Altitude:  8160
+[ 16.901] %L(1): off
+[ 16.918] %L(2): off
+[ 16.930] ..# Altitude:  8160Speed:  1000
+[ 16.963] ..# Speed:  360
+[ 17.005] ..# Distance:  5555
+[ 17.031] ..# Distance:  5555
+[ 17.149] ..# Altitude:  8160
+[ 17.190] %L(1): off
+[ 17.207] %L(2): off
+[ 17.218] ..# Altitude:  8160
+[ 17.281] ..# Speed:  360
+[ 
+[ 17.301] ..# Distance:  5555
+[ 17.328] ..# Distance:  555517.300] %Light(2): ON
+[ 17.363] ..# Speed:  400
+[ 17.438] ..# Altitude:  8160
+[ 17.478] %L(1): off
+[ 17.495] %L(2): off
+[ 17.506] ..# Altitude:  8160
+[ 17.597] ..# Distance:  5555
+[ 17.624] ..# Distance:  5555
+[ 17.681] ..# Speed:  400
+[ 17.700] %Light(2): ON
+[ 17.72
+[ 17.726] ..# Altitude:  8160
+[ 17.767] %L(1): off
+[ 17.784] %L(2): off
+[ 17.795] ..# Altitude:  81602] ..# Speed:  800
+[ 17.893] ..# Distance:  5555
+[ 17.920] %BEEEEEEEEEEP 4
+[ 17.934] ..# Distance:  5555
+[ 18.015] ..# Altitude:  8160
+[ 18.055] %L(1): off
+[ 18.072] %L(2): off
+[ 18.084] ..# Altitude:  8160
+[ 18.128] ..# Speed:  800
+[ 18.147] %Light(2): ON
+[ 18.165] ..# Speed:  400
+[ 18.203] ..# Distance:  5555
+[ 18.230] ..# Distance:  5555
+[ 18.303] ..# Altitude:  8160
+[ 18.344] %L(1): off
+[ 18.361] %L(2): off
+[ 18.372] ..# Altitude:  8160
+[ 18.482] ..# Speed:  400
+[ 18.499] ..# Distance:  5555
+[ 18.526] ..# Distance:  5555
+[ 18.547] %Light(2): ON
+[ 18.570] ..# Speed:  800
+[ 18.592] ..# Altitude:  8160
+[ 18.632] %L(1): off
+[ 18.649] %L(2): off
+[ 18.661] ..# Altitude:  8160
+[ 18.796] ..# Distance:  5555
+[ 18.822] %BEEEEEEEEEEP 4
+[ 18.836] ..# Distance:  5555
+[ 18.880] ..# Altitude:  8160
+[ 18.921] %L(1): off
+[ 18.938] %L(2): off
+[ 18.949] ..# Altitude:  8160
+[ 18.969] ..# Speed:  800
+[ 18.987] %Light(2): ON
+[ 19.003] ..# Speed:  300
+[ 19.105] ..# Distance:  5555
+[ 19.132] ..# Distance:  5555
+[ 19.169] ..# Altitude:  8160
+[ 19.209] %L(1): off
+[ 19.226] %L(2): off
+[ 19.238] ..# Altitude:  8160
+[ 19.325] ..# Speed:  300
+[ 19.342] %Light(2): ON
+[ 19.357] ..# Speed:  1000
+[ 19.402] ..# Distance:  5555
+[ 19.428] %BEEEEEEEEEEP 4
+[ 19.442] ..# Distance:  5555
+[ 19.457] ..# Altitude:  8160
+[ 19.498] %L(1): off
+[ 19.515] %L(2): off
+[ 19.526] ..# Altitude:  8160
+[ 19.675] ..# Speed:  1000
+[ 19.697] ..# Speed:  960
+[ 19.746] ..# Altitude:  8160
+Interrupt!
+ Stopped at time 200038365 (1.429e+01 s)
+tsim> 

@@ -3,7 +3,7 @@ A -g
 P LC TF
 R nnvvrnvvnnnnvvvvvvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U control_posicion_altitud%b  control_posicion_altitud.adb  237DF9D6 PK IL
+U control_posicion_altitud%b  control_posicion_altitud.adb  3D73AA63 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -14,7 +14,7 @@ W datos_posalt_vel%s	datos_posalt_vel.adb	datos_posalt_vel.ali  ED
 W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali  ED
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
 
-U control_posicion_altitud%s  control_posicion_altitud.ads  7C9D6D66 PK IL
+U control_posicion_altitud%s  control_posicion_altitud.ads  79C702C4 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W datos_aeronave%s	datos_aeronave.adb	datos_aeronave.ali  ED
@@ -35,11 +35,11 @@ D a-retide.ads		20000718095948 7F3C479C
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
 D a-textio.ads		20000718095948 2D24B708
-D control_posicion_altitud.ads  20241116195237 66B54257
-D control_posicion_altitud.adb  20241117102824 33ACE68B
-D datos_aeronave.ads	20241117102323 2281839C
+D control_posicion_altitud.ads  20241117201518 63EF2DF5
+D control_posicion_altitud.adb  20241117220328 28F8DA9C
+D datos_aeronave.ads	20241117223013 2281839C
 D datos_posalt_vel.ads	20241117093452 4168C533
-D devicesfss_v1.ads	20241114183330 65131FAE
+D devicesfss_v1.ads	20241117223113 65131FAE
 D interfac.ads		20000718095948 0357E00A
 D i-cstrea.ads		20000718095948 70A316EF
 D kernel.ads		20010312182047 56BBE4F1
@@ -75,68 +75,58 @@ X 1 ada.ads
 18U9*Ada 11|1r6 1r25 12|1r6 1r25 2r6 2r23
 X 6 a-reatim.ads
 43U13*Real_Time 11|1r10 1r29 12|1r10 1r29
-57U13*Clock 12|51r25 77r25 108r25
-59U13*"+" 12|51r31 77r31 108r31
-89U13*Milliseconds 12|51r33 77r33 108r33
+57U13*Clock 12|73r22
+59U13*"+" 12|73r28
+89U13*Milliseconds 12|73r30
 X 10 a-textio.ads
 51U13*Text_IO 12|2r10 2r27
-260U14*Put_Line 12|30r21 35r21 69r17 74r17
+260U14*Put_Line 12|32r16 37r16
 X 11 control_posicion_altitud.ads
 5U9*control_posicion_altitud 12|7b14
-8i4*Max_Pitch_Angle 12|25r34
-9i4*Min_Pitch_Angle 12|25r72
-10i4*Max_Roll_Angle 12|97r33
-11i4*Min_Roll_Angle 12|97r69
-12i4*Alert_Roll_Angle 12|101r37 101r75
-15i4*Min_Altitude 12|26r40 36r66 65r36
-16i4*Alert_Altitude_Low 12|45r35
-17i4*Max_Altitude 12|31r43 37r66 70r39
-18i4*Alert_Altitude_High 12|45r76
-21t9*control_pitch
-22t9*control_altitude
-23t9*control_roll
+8i4*Max_Pitch_Angle 12|27r31
+9i4*Min_Pitch_Angle 12|27r69
+10i4*Max_Roll_Angle 12|60r30
+11i4*Min_Roll_Angle 12|60r66
+12i4*Alert_Roll_Angle 12|64r33 64r71
+15i4*Min_Altitude 12|28r36 38r62
+16i4*Alert_Altitude_Low 12|52r32
+17i4*Max_Altitude 12|33r39 39r62
+18i4*Alert_Altitude_High 12|52r73
+21t9*posicion_altitud
 X 12 control_posicion_altitud.adb
-10a9 Joystick 17m27 18r50
-11i9 Joystick_Pitch 18m13 21r54 22r59 25r16 25r54 36r24 37r24 38r40 39r62
-. 40r67
-12i9 Current_Altitude 19m50 26r20 31r23 36r47 37r47 45r16 45r57
-13i9 Current_Speed 20m52
-56i9 Current_Altitude 61m50 65r16 70r19
-57i9 Current_Speed 62m52
-82a9 Joystick 89m27 90r48
-83i9 Joystick_Roll 90m13 93r53 94r58 97r16 97r52 98r35 99r57 100r62 101r20
-. 101r57
-84i9 Current_Altitude 91m50
-85i9 Current_Speed 92m52
+10a7 Joystick 20m24 21r47 22r45
+11i7 Joystick_Pitch 21m10 27r13 27r51 38r20 39r20 44r35 45r57 46r62
+12i7 Joystick_Roll 22m10 60r13 60r49 61r31 62r53 63r58 64r16 64r53
+13i7 Current_Altitude 18r27 23m10 28r16 33r19 38r43 39r43 52r13 52r54 70r27
+14i7 Current_Speed 24m10
 X 13 datos_aeronave.ads
-3U9*datos_aeronave 11|3r6 12|5r6 5r26 19r13 20r13 21r13 28r21 33r21 39r21
-. 61r13 62r13 67r17 72r17 91r13 92r13 93r13 99r17
-5w14*aeronave 12|19r28 20r28 21r28 28r36 33r36 39r36 61r28 62r28 67r32 72r32
-. 91r28 92r28 93r28 99r32
-7U17 Leer_Altitud 12|19r37 61r37 91r37
-9U17 Leer_Velocidad 12|20r37 62r37 92r37
-20U17 Actualizar_Pitch 12|21r37 28r45 33r45 39r45 67r41 72r41
-21U17 Actualizar_Roll 12|93r37 99r41
+3U9*datos_aeronave 11|3r6 12|5r6 5r26 30r16 35r16 41r16 45r16 50r10 62r13
+5w14*aeronave 12|30r31 35r31 41r31 45r31 50r25 62r28
+17U17 Actualizar_Altitud 12|50r34
+20U17 Actualizar_Pitch 12|30r40 35r40 41r40 45r40
+21U17 Actualizar_Roll 12|62r37
 X 14 datos_posalt_vel.ads
-4U9*datos_posalt_vel 12|4r6 4r28 22r13 29r21 34r21 40r21 68r17 73r17 94r13
-. 100r17
-5w15*Datos_Vuelo 12|22r30 29r38 34r38 40r38 68r34 73r34 94r30 100r34
-15U19 Actualizar_Pitch 12|22r42 29r50 34r50 40r50 68r46 73r46
-16U19 Actualizar_Roll 12|94r42 100r46
+4U9*datos_posalt_vel 12|4r6 4r28 31r16 36r16 42r16 46r16 63r13
+5w15*Datos_Vuelo 12|31r33 36r33 42r33 46r33 63r30
+15U19 Actualizar_Pitch 12|31r45 36r45 42r45 46r45
+16U19 Actualizar_Roll 12|63r42
 X 15 devicesfss_v1.ads
 4U9*devicesFSS_V1 11|2r6 2r25 12|3r6 3r25
-24I10*Altitude_Samples_Type 11|15r28 16r34 17r28 18r35 12|12r28 56r28 84r28
-31I10*Speed_Samples_Type 12|13r25 57r25 85r25
-39I10*Pitch_Samples_Type 11|8r31 9r31 12|11r26 18r31
-42U15*Set_Aircraft_Pitch 12|27r21 32r21 38r21 66r17 71r17
-44I10*Roll_Samples_Type 11|10r30 11r30 12r32 12|83r25 90r30
-47U15*Set_Aircraft_Roll 12|98r17
-58N37*x 12|18r59
-58N39*y 12|90r57
-60A10*Joystick_Samples_Type 12|10r20 82r20
-62U15*Read_Joystick 12|17r13 89r13
-80N27*On 12|46r25 102r29
-80N31*Off 12|48r25 104r29
-81U15*Light_1 12|46r17 48r17
-82U15*Light_2 12|102r21 104r21
+24I10*Altitude_Samples_Type 11|15r28 16r34 17r28 18r35 12|13r26
+26U14*Read_Altitude 12|23r30 50r53
+31I10*Speed_Samples_Type 12|14r23
+33U14*Read_Speed 12|24r27
+39I10*Pitch_Samples_Type 11|8r31 9r31 12|11r24 21r28
+42U15*Set_Aircraft_Pitch 12|29r16 34r16 40r16 44r16
+44I10*Roll_Samples_Type 11|10r30 11r30 12r32 12|12r23 22r27
+47U15*Set_Aircraft_Roll 12|61r13
+58N37*x 12|21r56
+58N39*y 12|22r54
+60A10*Joystick_Samples_Type 12|10r18
+62U15*Read_Joystick 12|20r10
+80N27*On 12|53r21 65r24
+80N31*Off 12|55r21 67r24
+81U15*Light_1 12|53r13 55r13
+82U15*Light_2 12|65r16 67r16
+90U15*Display_Altitude 12|18r10 70r10
 

@@ -3,7 +3,7 @@ A -g
 P LC TF
 R nnvvrnvvnnnnvvvvvvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U control_modo_sistema%b  control_modo_sistema.adb  32536612 PK IL
+U control_modo_sistema%b  control_modo_sistema.adb  249EE0F2 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time.delays%s  a-retide.adb		a-retide.ali
@@ -13,7 +13,7 @@ W datos_posalt_vel%s	datos_posalt_vel.adb	datos_posalt_vel.ali  ED
 W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali  ED
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
 
-U control_modo_sistema%s  control_modo_sistema.ads  62F9CB0A PK IL
+U control_modo_sistema%s  control_modo_sistema.ads  1E66B365 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W datos_aeronave%s	datos_aeronave.adb	datos_aeronave.ali  ED
@@ -34,8 +34,8 @@ D a-retide.ads		20000718095948 7F3C479C
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
 D a-textio.ads		20000718095948 2D24B708
-D control_modo_sistema.ads  20241116163052 78D1E43B
-D control_modo_sistema.adb  20241117101736 615C6C20
+D control_modo_sistema.ads  20241117201551 044E9C54
+D control_modo_sistema.adb  20241117203408 0B0E92AF
 D datos_aeronave.ads	20241117102323 2281839C
 D datos_posalt_vel.ads	20241117093452 4168C533
 D devicesfss_v1.ads	20241114183330 65131FAE
@@ -71,60 +71,59 @@ D s-tarest.ads		20000718095949 1D177686
 D s-unstyp.ads		20000718095949 78AFB91D
 D unchconv.ads		20000718095949 72DC4539
 X 1 ada.ads
-18U9*Ada 11|1r6 1r25 23r33 23r60 12|1r6 1r23 23r22 53r22 95r22
+18U9*Ada 11|1r6 1r25 26r33 26r60 12|1r6 1r23 85r22
 X 6 a-reatim.ads
-43U13*Real_Time 11|1r10 1r29 23r37 23r64 12|23r26 53r26 95r26
-50O9*Time_Span 11|23r47
-57U13*Clock 12|23r36 53r36 95r36
-59U13*"+" 12|23r42 53r42 95r42
-89U13*Milliseconds 11|23r74
+43U13*Real_Time 11|1r10 1r29 26r37 26r64 12|85r26
+50O9*Time_Span 11|26r47
+57U13*Clock 12|85r36
+59U13*"+" 12|85r42
+89U13*Milliseconds 11|26r74
 X 10 a-textio.ads
 51U13*Text_IO 12|1r10 1r27
-260U14*Put_Line 12|15r16 18r16
+260U14*Put_Line 12|30r16 33r16
 X 11 control_modo_sistema.ads
 5U9*control_modo_sistema 12|6b14
-8E9*Modo_Sistema 22r18
-8N26*Manual 12|14r31
-8N34*Automatico 12|13r30 11|22r34 12|17r31 64r27
-11i4*Min_Velocidad 12|37r32 83r35 84r26 85r61 86r66
-12i4*Min_Altitude 12|41r33 70r34
-13i4*Max_Altitude 12|44r33 75r37
-16t9*Control_Modo
-17t9*Control_Avisos_Alarmas
-18t9*Control_Maniobras_Automaticas
-22e4 Modo_Actual 12|13r16 14m16 17m16 64r13
-23O4 Intervalo_Control 12|23r44 53r44 95r44
+8E9*Modo_Sistema 12|8r43 11|15r43 16r45 12|13r45 11|25r18
+8N26*Manual 12|29r31
+8N34*Automatico 25r34 12|28r30 32r31 58r27
+11i4*Min_Velocidad 12|42r32 73r35 74r26 75r61 76r66
+12i4*Min_Altitude 12|46r33 60r34
+13i4*Max_Altitude 12|49r33 65r37
+15U14*Leer_Modo_Sistema 12|8b14
+15e32 Modo 12|8b32 10m7
+16U14*Cambiar_Modo_Sistema 12|13b14
+16e35 Modo 12|13b35 15r22
+19t9*Control_Sistema
+25e4 Modo_Actual 12|10r15 15m7 28r16 29m16 32m16 58r13
+26O4 Intervalo_Control 12|85r44
 X 12 control_modo_sistema.adb
-28i7 Velocidad_Actual 33m49 37r13
-29i7 Altitud_Actual 34m47 41r16 44r16
-58i7 Velocidad_Actual 66m52 83r16
-59i7 Altitud_Actual 67m50 70r16 75r19
-60i7 Pitch_Actual
+20i7 Velocidad_Actual 38m49 42r13 73r16
+21i7 Altitud_Actual 39m47 46r16 49r16 60r16 65r19
+22i7 Pitch_Actual
 X 13 datos_aeronave.ads
-3U9*datos_aeronave 11|2r6 2r26 12|3r6 3r26 33r10 34r10 66r13 67r13 72r16
-. 77r16 85r16
-5w14*aeronave 12|33r25 34r25 66r28 67r28 72r31 77r31 85r31
-7U17 Leer_Altitud 12|34r34 67r37
-9U17 Leer_Velocidad 12|33r34 66r37
-19U17 Actualizar_Velocidad 12|85r40
-20U17 Actualizar_Pitch 12|72r40 77r40
+3U9*datos_aeronave 11|2r6 2r26 12|3r6 3r26 38r10 39r10 62r16 67r16 75r16
+5w14*aeronave 12|38r25 39r25 62r31 67r31 75r31
+7U17 Leer_Altitud 12|39r34
+9U17 Leer_Velocidad 12|38r34
+19U17 Actualizar_Velocidad 12|75r40
+20U17 Actualizar_Pitch 12|62r40 67r40
 X 14 datos_posalt_vel.ads
-4U9*datos_posalt_vel 12|4r6 4r28 73r16 78r16 86r16
-5w15*Datos_Vuelo 12|73r33 78r33 86r33
-14U19 Actualizar_Velocidad 12|86r45
-15U19 Actualizar_Pitch 12|73r45 78r45
+4U9*datos_posalt_vel 12|4r6 4r28 63r16 68r16 76r16
+5w15*Datos_Vuelo 12|63r33 68r33 76r33
+14U19 Actualizar_Velocidad 12|76r45
+15U19 Actualizar_Pitch 12|63r45 68r45
 X 15 devicesfss_v1.ads
 4U9*devicesFSS_V1 11|3r6 3r25 12|2r6 2r25
-24I10*Altitude_Samples_Type 11|12r29 13r29 12|29r24 59r24
-31I10*Speed_Samples_Type 11|11r29 12|28r26 58r26
-34U15*Set_Speed 12|84r16
-39I10*Pitch_Samples_Type 12|60r22
-42U15*Set_Aircraft_Pitch 12|71r16 76r16
-73U14*Read_PilotButton 12|12r13
-80N27*On 12|38r21 42r21 45r21
-80N31*Off 12|48r21 49r21
-81U15*Light_1 12|42r13 45r13 48r13
-82U15*Light_2 12|38r13 49r13
-86U15*Alarm 12|39r13
-100U15*Display_Message 12|40r13 43r13 46r13 74r16 79r16 87r16 91r13
+24I10*Altitude_Samples_Type 11|12r29 13r29 12|21r24
+31I10*Speed_Samples_Type 11|11r29 12|20r26
+34U15*Set_Speed 12|74r16
+39I10*Pitch_Samples_Type 12|22r22
+42U15*Set_Aircraft_Pitch 12|61r16 66r16
+73U14*Read_PilotButton 12|27r13
+80N27*On 12|43r21 47r21 50r21
+80N31*Off 12|53r21 54r21
+81U15*Light_1 12|47r13 50r13 53r13
+82U15*Light_2 12|43r13 54r13
+86U15*Alarm 12|44r13
+100U15*Display_Message 12|45r13 48r13 51r13 64r16 69r16 77r16 81r13
 

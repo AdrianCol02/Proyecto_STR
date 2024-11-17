@@ -12,14 +12,17 @@ package control_modo_sistema is
    Min_Altitude  : constant Altitude_Samples_Type := 500;
    Max_Altitude  : constant Altitude_Samples_Type := 14000;
 
-   -- Tareas concurrentes del sistema
-   task Control_Modo;
-   task Control_Avisos_Alarmas;
-   task Control_Maniobras_Automaticas;
+   procedure Leer_Modo_Sistema(Modo : out Modo_Sistema);
+   procedure Cambiar_Modo_Sistema(Modo : in Modo_Sistema);
+
+   -- Tarea unificada del sistema
+   task Control_Sistema is
+      pragma Priority (16);
+   end Control_Sistema;
 
 private
    -- Estado actual del modo del sistema (inicia en automático)
    Modo_Actual : Modo_Sistema := Automatico;
-   Intervalo_Control : constant Ada.Real_Time.Time_Span := Ada.Real_Time.Milliseconds(200);
+   Intervalo_Control : constant Ada.Real_Time.Time_Span := Ada.Real_Time.Milliseconds(1000);
 
 end control_modo_sistema;

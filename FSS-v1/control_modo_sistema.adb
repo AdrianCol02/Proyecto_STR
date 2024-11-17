@@ -5,10 +5,25 @@ with datos_posalt_vel; use datos_posalt_vel;
 
 package body control_modo_sistema is
 
-   -- Tareas Concurrentes
-   task body Control_Modo is
+   procedure Leer_Modo_Sistema(Modo : out Modo_Sistema) is
+   begin
+      Modo := Modo_Actual;
+   end Leer_Modo_Sistema;
+
+   procedure Cambiar_Modo_Sistema(Modo : in Modo_Sistema) is
+   begin
+      Modo_Actual := Modo;
+   end Cambiar_Modo_Sistema;
+
+   -- Tarea unificada
+   task body Control_Sistema is
+      Velocidad_Actual : Speed_Samples_Type;  -- Tipo para almacenar la velocidad actual
+      Altitud_Actual : Altitude_Samples_Type;  -- Tipo para almacenar la altitud actual
+      Pitch_Actual : Pitch_Samples_Type;  -- Tipo para el cabeceo (pitch)
    begin
       loop
+         
+         -- Control de modo del sistema
          if Read_PilotButton = 1 then
             if Modo_Actual = Automatico then
                Modo_Actual := Manual;
@@ -19,16 +34,6 @@ package body control_modo_sistema is
             end if;
          end if;
 
-         -- Usamos el intervalo de control para ejecutar cada 200ms
-         delay until Ada.Real_Time.Clock + Intervalo_Control;
-      end loop;
-   end Control_Modo;
-
-   task body Control_Avisos_Alarmas is
-      Velocidad_Actual : Speed_Samples_Type;  -- Tipo para almacenar la velocidad actual
-      Altitud_Actual : Altitude_Samples_Type;  -- Tipo para almacenar la altitud actual
-   begin
-      loop
          -- Leer datos de velocidad y altitud de la aeronave
          datos_aeronave.aeronave.Leer_Velocidad(Velocidad_Actual);  -- Leer velocidad
          datos_aeronave.aeronave.Leer_Altitud(Altitud_Actual);  -- Leer altitud
@@ -49,23 +54,8 @@ package body control_modo_sistema is
             Light_2(Off);
          end if;
 
-         -- Usamos el intervalo de control para ejecutar cada 200ms
-         delay until Ada.Real_Time.Clock + Intervalo_Control;
-      end loop;
-   end Control_Avisos_Alarmas;
-
-   task body Control_Maniobras_Automaticas is
-      Velocidad_Actual : Speed_Samples_Type;  -- Tipo para la velocidad
-      Altitud_Actual : Altitude_Samples_Type;  -- Tipo para la altitud
-      Pitch_Actual : Pitch_Samples_Type;  -- Tipo para el cabeceo (pitch)
-   begin
-      loop
          -- Realizar maniobras solo en modo automático
          if Modo_Actual = Automatico then
-            -- Leer datos de velocidad, altitud y pitch de la aeronave
-            datos_aeronave.aeronave.Leer_Velocidad(Velocidad_Actual);  -- Leer velocidad
-            datos_aeronave.aeronave.Leer_Altitud(Altitud_Actual);  -- Leer altitud
-
             -- Control de altitud
             if Altitud_Actual <= Min_Altitude then
                Set_Aircraft_Pitch(10);  -- Asciende automáticamente
@@ -94,6 +84,6 @@ package body control_modo_sistema is
          -- Usamos el intervalo de control para ejecutar cada 200ms
          delay until Ada.Real_Time.Clock + Intervalo_Control;
       end loop;
-   end Control_Maniobras_Automaticas;
+   end Control_Sistema;
 
 end control_modo_sistema;
