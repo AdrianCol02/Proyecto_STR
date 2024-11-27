@@ -1,3 +1,5 @@
+-- Hecho por: Nicolás Clavo Collado, Adrián Ruiz Serrano y Adrián Colomer Ugrinovic
+
 with Ada.Real_Time; use Ada.Real_Time;
 with devicesFSS_V1; use devicesFSS_V1;
 with Datos_Aeronave; 

@@ -1,3 +1,5 @@
+-- Hecho por: Nicolás Clavo Collado, Adrián Ruiz Serrano y Adrián Colomer Ugrinovic
+
 with Ada.Real_Time; use Ada.Real_Time;
 
 package control_visualizacion_aeronave is

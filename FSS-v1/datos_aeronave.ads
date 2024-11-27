@@ -1,4 +1,7 @@
+-- Hecho por: Nicolás Clavo Collado, Adrián Ruiz Serrano y Adrián Colomer Ugrinovic
+
 with devicesFSS_V1; use devicesFSS_V1;
+with Ada.Execution_Time; use Ada.Execution_Time;
 
 package datos_aeronave is
    -- Objeto protegido para los datos de la aeronave

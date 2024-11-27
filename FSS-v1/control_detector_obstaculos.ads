@@ -1,3 +1,5 @@
+-- Hecho por: Nicolás Clavo Collado, Adrián Ruiz Serrano y Adrián Colomer Ugrinovic
+
 with Ada.Real_Time;  -- Asegúrate de que esta unidad está importada correctamente
 with Ada.Text_IO;
 with devicesFSS_V1;
