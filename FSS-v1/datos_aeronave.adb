@@ -10,8 +10,8 @@ package body datos_aeronave is
 
       procedure Simular_Consumo_CPU is
             CPU_Timer : Execution_Time.Timer;
-            Consumo : Execution_Time.Execution_Time
-        begin
+            Consumo : Execution_Time.Execution_Time;
+      begin
             Execution_Time.Set (CPU_Timer, Delay_For => Tiempo);
             delay Tiempo;
             Consumo := Execution_Time.Time_Used (CPU_Timer);

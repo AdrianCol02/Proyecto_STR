@@ -9,7 +9,7 @@ package body datos_posalt_vel is
 
         procedure Simular_Consumo_CPU is
             CPU_Timer : Execution_Time.Timer;
-            Consumo : Execution_Time.Execution_Time
+            Consumo : Execution_Time.Execution_Time;
         begin
             Execution_Time.Set (CPU_Timer, Delay_For => Tiempo);
             delay Tiempo;
