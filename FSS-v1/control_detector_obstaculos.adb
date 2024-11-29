@@ -45,23 +45,11 @@ package body control_detector_obstaculos is
          Start_Time := Clock;
 
          -- Leer datos de sensores
-         Display_Distance(Distancia);
-         devicesFSS_V1.Read_Distance(Distancia);
-         devicesFSS_V1.Read_Light_Intensity(Visibilidad);
+         datos_aeronave.aeronave.Leer_Distance(Distancia);
+         datos_aeronave.aeronave.Leer_Light_Intensity(Visibilidad);
          datos_aeronave.aeronave.Leer_Velocidad(Velocidad);  
          datos_aeronave.aeronave.Leer_Altitud(Altitud);      
-         Piloto_Presente := devicesFSS_V1.Read_PilotPresence;
-
-         datos_aeronave.aeronave.Actualizar_Distance(Distancia);
-         datos_aeronave.aeronave.Actualizar_Light_Intensity(Visibilidad);
-         datos_aeronave.aeronave.Actualizar_PilotPresence(Piloto_Presente);
-
-         -- Leer posiciones del joystick
-         devicesFSS_V1.Read_Joystick(Joystick);
-         datos_aeronave.aeronave.Actualizar_Pitch(Pitch_Samples_Type(Joystick(y)));
-         datos_aeronave.aeronave.Actualizar_Roll(Roll_Samples_Type(Joystick(x)));
-         datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(Pitch_Samples_Type(Joystick(y)));
-         datos_posalt_vel.Datos_Vuelo.Actualizar_Roll(Roll_Samples_Type(Joystick(x)));
+         datos_aeronave.aeronave.Leer_PilotPresence(Piloto_Presente);
          
          -- Calcular tiempo de colisión
          if Velocidad > 0 then
