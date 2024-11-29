@@ -31,8 +31,8 @@ D control_detector_obstaculos.ads  20241129165733 5B3F5735
 D control_posicion_altitud.ads  20241129165733 63EF2DF5
 D control_velocidad_aeronave.ads  20241129165733 275D08CD
 D control_visualizacion_aeronave.ads  20241129165733 2CACD0DD
-D datos_aeronave.ads	20241129165733 2281839C
-D datos_posalt_vel.ads	20241129165733 4168C533
+D datos_aeronave.ads	20241129200751 11725C75
+D datos_posalt_vel.ads	20241129195611 69211BAB
 D devicesfss_v1.ads	20241117223113 65131FAE
 D fss.ads		20241114183330 40408672
 D fss.adb		20241129165733 29076FF8

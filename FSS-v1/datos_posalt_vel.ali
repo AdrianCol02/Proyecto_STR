@@ -3,7 +3,7 @@ A -g
 P LC TF
 R nnvnrnnvnnnnvvvvnvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U datos_posalt_vel%b	datos_posalt_vel.adb	0A47A487 PK IL
+U datos_posalt_vel%b	datos_posalt_vel.adb	03C4D524 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -11,7 +11,7 @@ W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
 W tools%s		tools.adb		tools.ali
 
-U datos_posalt_vel%s	datos_posalt_vel.ads	79C1699E PK IL
+U datos_posalt_vel%s	datos_posalt_vel.ads	5188B706 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali
@@ -25,8 +25,8 @@ D a-filico.ads		20000718095948 1DECB9AC
 D a-reatim.ads		20000718095948 5DBAB303
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
-D datos_posalt_vel.ads	20241129165733 4168C533
-D datos_posalt_vel.adb	20241129165733 332CEBFE
+D datos_posalt_vel.ads	20241129195611 69211BAB
+D datos_posalt_vel.adb	20241129194427 12E644C5
 D devicesfss_v1.ads	20241117223113 65131FAE
 D kernel.ads		20010312182047 56BBE4F1
 D kernel-cpu_primitives.ads  20010312182047 5746D7AD
@@ -59,38 +59,44 @@ X 1 ada.ads
 18U9*Ada 8|4r6 4r25 9|4r6 4r25
 X 5 a-reatim.ads
 43U13*Real_Time 8|4r10 4r29 9|4r10 4r29
-89U13*Milliseconds 9|14r28 21r28 28r28 35r28 43r28 50r28 57r28 64r28
+89U13*Milliseconds 9|14r28 22r28 30r28 38r28 47r28 55r28 63r28
 X 8 datos_posalt_vel.ads
 6U9*datos_posalt_vel 9|7b14
-7w15*Datos_Vuelo
+7w15*Datos_Vuelo 9|16r13 24r13 32r13 40r13
 10U19 Leer_Velocidad 9|11b19
-10i34 Velocidad 9|11b34 15r13
-11U19 Leer_Altitud 9|18b19
-11i32 Altitud 9|18b32 22r13
-12U19 Leer_Pitch 9|25b19
-12i30 Pitch 9|25b30 29r13
-13U19 Leer_Roll 9|32b19
-13i29 Roll 9|32b29 36r13
-15U19 Actualizar_Altitud 9|40b19
-15i39 Nueva_Altitud 9|40b39 44r31
-16U19 Actualizar_Velocidad 9|47b19
-16i41 Nueva_Velocidad 9|47b41 51r33
-17U19 Actualizar_Pitch 9|54b19
-17i37 Nuevo_Pitch 9|54b37 58r29
-18U19 Actualizar_Roll 9|61b19
-18i36 Nuevo_Roll 9|61b36 65r28
-22i9 Velocidad_Actual 9|15r26 51r13
-23i9 Altitud_Actual 9|22r24 44r13
-24i9 Pitch_Actual 9|29r22 58r13
-25i9 Roll_Actual 9|36r21 65r13
+10i34 Velocidad 9|11b34 15r13 16r45
+11U19 Leer_Altitud 9|19b19
+11i32 Altitud 9|19b32 23r13 24r43
+12U19 Leer_Pitch 9|27b19
+12i30 Pitch 9|27b30 31r13 32r41
+13U19 Leer_Roll 9|35b19
+13i29 Roll 9|35b29 39r13 40r40
+15U19 Actualizar_Velocidad 9|44b19
+15i41 Nueva_Velocidad 9|44b41 48r37 49r33
+16U19 Actualizar_Pitch 9|52b19
+16i37 Nuevo_Pitch 9|52b37 56r46 57r29
+17U19 Actualizar_Roll 9|60b19
+17i36 Nuevo_Roll 9|60b36 64r45 65r28
+21i9 Velocidad_Actual 9|16r25 49r13
+22i9 Altitud_Actual 9|24r25
+23i9 Pitch_Actual 9|32r25 57r13
+24i9 Roll_Actual 9|40r25 65r13
 X 10 devicesfss_v1.ads
-4U9*devicesFSS_V1 8|3r6 3r25 9|3r6 3r25
-24I10*Altitude_Samples_Type 8|11r46 15r58 23r26 9|18r46 40r58
-27i5*Initial_Altitude 8|23r51
-31I10*Speed_Samples_Type 8|10r50 16r62 22r28 9|11r50 47r62
-39I10*Pitch_Samples_Type 8|12r42 17r54 24r24 9|25r42 54r54
-44I10*Roll_Samples_Type 8|13r40 18r52 25r23 9|32r40 61r52
+4U9*devicesFSS_V1 8|3r6 3r25 9|3r6 3r25 15r26 23r24 31r22 39r21 48r13 56r13
+. 64r13
+24I10*Altitude_Samples_Type 8|11r46 22r26 9|19r46
+26U14*Read_Altitude 9|23r38
+27i5*Initial_Altitude 8|22r51
+31I10*Speed_Samples_Type 8|10r50 15r62 21r28 9|11r50 44r62
+33U14*Read_Speed 9|15r40
+34U15*Set_Speed 9|48r27
+39I10*Pitch_Samples_Type 8|12r42 16r54 23r24 9|27r42 52r54
+41U14*Read_Pitch 9|31r36
+42U15*Set_Aircraft_Pitch 9|56r27
+44I10*Roll_Samples_Type 8|13r40 17r52 24r23 9|35r40 60r52
+46U14*Read_Roll 9|39r35
+47U15*Set_Aircraft_Roll 9|64r27
 X 36 tools.ads
 6U9*tools 9|5r6 5r17
-17U15*Execution_Time 9|14r13 21r13 28r13 35r13 43r13 50r13 57r13 64r13
+17U15*Execution_Time 9|14r13 22r13 30r13 38r13 47r13 55r13 63r13
 

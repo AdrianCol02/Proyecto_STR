@@ -3,13 +3,12 @@ A -g
 P LC TF
 R nnvvrnvvnnnnvvvvvvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U control_posicion_altitud%b  control_posicion_altitud.adb  5AD145BC PK IL
+U control_posicion_altitud%b  control_posicion_altitud.adb  00B188AB PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W ada.real_time.delays%s  a-retide.adb		a-retide.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
-W datos_aeronave%s	datos_aeronave.adb	datos_aeronave.ali  ED
 W datos_posalt_vel%s	datos_posalt_vel.adb	datos_posalt_vel.ali  ED
 W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali  ED
 W system.img_real%s	s-imgrea.adb		s-imgrea.ali
@@ -17,10 +16,10 @@ W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
 W system.string_ops%s	s-strops.adb		s-strops.ali
 
-U control_posicion_altitud%s  control_posicion_altitud.ads  79C702C4 PK IL
+U control_posicion_altitud%s  control_posicion_altitud.ads  4A34DD2D PK IL
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
-W datos_aeronave%s	datos_aeronave.adb	datos_aeronave.ali  ED
+W datos_aeronave%s	datos_aeronave.adb	datos_aeronave.ali
 W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali  ED
 W system%s		system.ads		system.ali
 W system.parameters%s	s-parame.adb		s-parame.ali
@@ -39,9 +38,9 @@ D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
 D a-textio.ads		20000718095948 2D24B708
 D control_posicion_altitud.ads  20241129165733 63EF2DF5
-D control_posicion_altitud.adb  20241129165733 4F5A3543
-D datos_aeronave.ads	20241129165733 2281839C
-D datos_posalt_vel.ads	20241129165733 4168C533
+D control_posicion_altitud.adb  20241129201444 1FF2A550
+D datos_aeronave.ads	20241129200751 11725C75
+D datos_posalt_vel.ads	20241129195611 69211BAB
 D devicesfss_v1.ads	20241117223113 65131FAE
 D interfac.ads		20000718095948 0357E00A
 D i-cstrea.ads		20000718095948 70A316EF
@@ -77,67 +76,61 @@ D s-tarest.ads		20000718095949 1D177686
 D s-unstyp.ads		20000718095949 78AFB91D
 D unchconv.ads		20000718095949 72DC4539
 X 1 ada.ads
-18U9*Ada 11|3r6 3r25 12|3r6 3r25 4r6 4r23 82r10 85r22
+18U9*Ada 11|3r6 3r25 12|3r6 3r25 4r6 4r23 68r10 71r22
 X 6 a-reatim.ads
-43U13*Real_Time 11|3r10 3r29 12|3r10 3r29 85r26
-45O9*Time 12|17r30
-57U13*Clock 12|21r24 77r22 85r36
-59U13*"+" 12|85r42
-62U13*"-" 12|78r58
-84U13*To_Duration 12|78r37
-89U13*Milliseconds 12|85r44
+43U13*Real_Time 11|3r10 3r29 12|3r10 3r29 71r26
+45O9*Time 12|16r30
+57U13*Clock 12|20r24 63r22 71r36
+59U13*"+" 12|71r42
+62U13*"-" 12|64r58
+84U13*To_Duration 12|64r37
+89U13*Milliseconds 12|71r44
 X 10 a-textio.ads
-51U13*Text_IO 12|4r10 4r27 82r14
-260U14*Put_Line 12|37r16 42r16 81r10 82r22
+51U13*Text_IO 12|4r10 4r27 68r14
+260U14*Put_Line 12|33r16 36r16 67r10 68r22
 X 11 control_posicion_altitud.ads
-7U9*control_posicion_altitud 12|9b14
-10i4*Max_Pitch_Angle 12|32r31
-11i4*Min_Pitch_Angle 12|32r69
-12i4*Max_Roll_Angle 12|65r30
-13i4*Min_Roll_Angle 12|65r66
-14i4*Alert_Roll_Angle 12|69r33 69r71
-17i4*Min_Altitude 12|33r36 43r62
-18i4*Alert_Altitude_Low 12|57r32
-19i4*Max_Altitude 12|38r39 44r62
-20i4*Alert_Altitude_High 12|57r73
+7U9*control_posicion_altitud 12|8b14
+10i4*Max_Pitch_Angle 12|30r31
+11i4*Min_Pitch_Angle 12|30r69
+12i4*Max_Roll_Angle 12|53r30
+13i4*Min_Roll_Angle 12|53r66
+14i4*Alert_Roll_Angle 12|55r33 55r71
+17i4*Min_Altitude 12|31r36 37r62
+18i4*Alert_Altitude_Low 12|45r32
+19i4*Max_Altitude 12|34r39 38r62
+20i4*Alert_Altitude_High 12|45r73
 23t9*posicion_altitud
 X 12 control_posicion_altitud.adb
-12a7 Joystick 25m24 26r47 27r45
-13i7 Joystick_Pitch 26m10 32r13 32r51 43r20 44r20 49r35 50r57 51r62
-14i7 Joystick_Roll 27m10 65r13 65r49 66r31 67r53 68r58 69r16 69r53
-15i7 Current_Altitude 23r27 28m10 33r16 38r19 43r43 44r43 57r13 57r54 75r27
-16i7 Current_Speed 29m10
-17O7 Start_Time 21m10 78r60
-17O19 End_Time 77m10 78r49
-18o7 WCET 78m10 78r31 82r64
+11a7 Joystick 23m24 24r47 25r45
+12i7 Joystick_Pitch 24m10 30r13 30r51 37r20 38r20 41r62
+13i7 Joystick_Roll 25m10 53r13 53r49 54r58 55r16 55r53
+14i7 Current_Altitude 26m52 31r16 34r19 37r43 38r43 45r13 45r54 61r27
+15i7 Current_Speed 27m54
+16O7 Start_Time 20m10 64r60
+16O19 End_Time 63m10 64r49
+17o7 WCET 64m10 64r31 68r64
 X 13 datos_aeronave.ads
-5U9*datos_aeronave 11|5r6 12|7r6 7r26 35r16 40r16 46r16 50r16 55r10 67r13
-7w14*aeronave 12|35r31 40r31 46r31 50r31 55r25 67r28
-19U17 Actualizar_Altitud 12|55r34
-22U17 Actualizar_Pitch 12|35r40 40r40 46r40 50r40
-23U17 Actualizar_Roll 12|67r37
+5U9*datos_aeronave 11|5r6
 X 14 datos_posalt_vel.ads
-6U9*datos_posalt_vel 12|6r6 6r28 36r16 41r16 47r16 51r16 68r13
-7w15*Datos_Vuelo 12|36r33 41r33 47r33 51r33 68r30
-17U19 Actualizar_Pitch 12|36r45 41r45 47r45 51r45
-18U19 Actualizar_Roll 12|68r42
+6U9*datos_posalt_vel 12|6r6 6r28 26r10 27r10 32r16 35r16 39r16 41r16 54r13
+7w15*Datos_Vuelo 12|26r27 27r27 32r33 35r33 39r33 41r33 54r30
+10U19 Leer_Velocidad 12|27r39
+11U19 Leer_Altitud 12|26r39
+16U19 Actualizar_Pitch 12|32r45 35r45 39r45 41r45
+17U19 Actualizar_Roll 12|54r42
 X 15 devicesfss_v1.ads
 4U9*devicesFSS_V1 11|4r6 4r25 12|5r6 5r25
-24I10*Altitude_Samples_Type 11|17r28 18r34 19r28 20r35 12|15r26
-26U14*Read_Altitude 12|28r30 55r53
-31I10*Speed_Samples_Type 12|16r23
-33U14*Read_Speed 12|29r27
-39I10*Pitch_Samples_Type 11|10r31 11r31 12|13r24 26r28
-42U15*Set_Aircraft_Pitch 12|34r16 39r16 45r16 49r16
-44I10*Roll_Samples_Type 11|12r30 13r30 14r32 12|14r23 27r27
-47U15*Set_Aircraft_Roll 12|66r13
-58N37*x 12|26r56
-58N39*y 12|27r54
-60A10*Joystick_Samples_Type 12|12r18
-62U15*Read_Joystick 12|25r10
-80N27*On 12|58r21 70r24
-80N31*Off 12|60r21 72r24
-81U15*Light_1 12|58r13 60r13
-82U15*Light_2 12|70r16 72r16
-90U15*Display_Altitude 12|23r10 75r10
+24I10*Altitude_Samples_Type 11|17r28 18r34 19r28 20r35 12|14r26
+31I10*Speed_Samples_Type 12|15r23
+39I10*Pitch_Samples_Type 11|10r31 11r31 12|12r24 24r28
+44I10*Roll_Samples_Type 11|12r30 13r30 14r32 12|13r23 25r27
+58N37*x 12|24r56
+58N39*y 12|25r54
+60A10*Joystick_Samples_Type 12|11r18
+62U15*Read_Joystick 12|23r10
+80N27*On 12|46r21 56r24
+80N31*Off 12|48r21 58r24
+81U15*Light_1 12|46r13 48r13
+82U15*Light_2 12|56r16 58r16
+90U15*Display_Altitude 12|61r10
 

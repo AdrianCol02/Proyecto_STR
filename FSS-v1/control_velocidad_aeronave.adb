@@ -22,8 +22,7 @@ package body control_velocidad_aeronave is
             Start_Time := Clock;
 
             -- Primero, leer la potencia del potenciometro y actualizar la velocidad
-            Read_Power(Potenciometro);
-            datos_aeronave.aeronave.Actualizar_Potencia(Potenciometro);
+            datos_aeronave.aeronave.Leer_Potencia(Potenciometro);
             Velocidad_Potencia := Float(Potenciometro) * Factor_Potenciometro;
 
             -- Limitar la velocidad calculada al rango permitido
@@ -90,11 +89,13 @@ package body control_velocidad_aeronave is
             Pitch_Anterior := Pitch_Actual;
             Roll_Anterior := Roll_Actual;
 
-            -- Regular la velocidad del avión cada 300 milisegundos
-            delay 0.3;
-
             End_Time := Clock;
             WCET := Duration'Max(WCET, To_Duration(End_Time - Start_Time));
+
+            Put_Line(" ");
+            Ada.Text_IO.Put_Line("WCET velocidad: " & Duration'Image(WCET));
+
+            delay until Clock + Intervalo_Control;
         end loop;
     end control_velocidad;
 end control_velocidad_aeronave;

@@ -14,16 +14,7 @@ package datos_aeronave is
       procedure Leer_Light_Intensity (Light : out Light_Samples_Type);
       procedure Leer_PilotPresence (PilotPresence : out PilotPresence_Samples_Type);
       procedure Leer_Distance (Distance : out Distance_Samples_Type);
-      
-      -- Actualizar los datos
-      procedure Actualizar_Altitud (Nueva_Altitud : in Altitude_Samples_Type);
-      procedure Actualizar_Potencia (Nueva_Potencia : in Power_Samples_Type);
-      procedure Actualizar_Velocidad (Nueva_Velocidad : in Speed_Samples_Type);
-      procedure Actualizar_Pitch (Nuevo_Pitch : in Pitch_Samples_Type);
-      procedure Actualizar_Roll (Nuevo_Roll : in Roll_Samples_Type);
-      procedure Actualizar_Light_Intensity (Nueva_Luz : in Light_Samples_Type);
-      procedure Actualizar_PilotPresence (Nuevo_PilotPresence : in PilotPresence_Samples_Type);
-      procedure Actualizar_Distance (Nueva_Distance : in Distance_Samples_Type);
+      procedure Leer_Joystick (Joystick : out Joystick_Samples_Type);
       
    private
       Altitud : Altitude_Samples_Type := Initial_Altitude;

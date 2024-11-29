@@ -22,6 +22,7 @@ package body control_visualizacion_aeronave is
             datos_aeronave.aeronave.Leer_Altitud(Altitud);
             datos_aeronave.aeronave.Leer_Velocidad(Velocidad);
             datos_aeronave.aeronave.Leer_Potencia(Potencia_Motores);
+            datos_aeronave.aeronave.Leer_Joystick(Joystick);
             datos_aeronave.aeronave.Leer_Pitch(Pitch);
             datos_aeronave.aeronave.Leer_Roll(Roll);
 

@@ -12,7 +12,6 @@ package datos_posalt_vel is
         procedure Leer_Pitch(Pitch : out Pitch_Samples_Type);
         procedure Leer_Roll(Roll : out Roll_Samples_Type);
 
-        procedure Actualizar_Altitud (Nueva_Altitud : in Altitude_Samples_Type);
         procedure Actualizar_Velocidad (Nueva_Velocidad : in Speed_Samples_Type);
         procedure Actualizar_Pitch (Nuevo_Pitch : in Pitch_Samples_Type);
         procedure Actualizar_Roll (Nuevo_Roll : in Roll_Samples_Type);

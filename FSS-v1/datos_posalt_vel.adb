@@ -41,19 +41,11 @@ package body datos_posalt_vel is
         end Leer_Roll;
 
         -- Procedimientos de actualización datos
-        procedure Actualizar_Altitud (Nueva_Altitud : in Altitude_Samples_Type) is
-        begin
-            -- Asignar el valor de la nueva altitud a la variable privada
-            Execution_Time(Milliseconds(5));
-            devicesFSS_V1.Write_Altitude(Nueva_Altitud);
-            Altitud_Actual := Nueva_Altitud;
-        end Actualizar_Altitud;
-
         procedure Actualizar_Velocidad (Nueva_Velocidad : in Speed_Samples_Type) is
         begin
             -- Asignar el valor de la nueva velocidad a la variable privada
             Execution_Time(Milliseconds(5));
-            devicesFSS_V1.Write_Speed(Nueva_Velocidad);
+            devicesFSS_V1.Set_Speed(Nueva_Velocidad);
             Velocidad_Actual := Nueva_Velocidad;
         end Actualizar_Velocidad;
 
@@ -61,7 +53,7 @@ package body datos_posalt_vel is
         begin
             -- Asignar el valor del nuevo pitch a la variable privada
             Execution_Time(Milliseconds(5));
-            devicesFSS_V1.Write_Pitch(Nuevo_Pitch);
+            devicesFSS_V1.Set_Aircraft_Pitch(Nuevo_Pitch);
             Pitch_Actual := Nuevo_Pitch;
         end Actualizar_Pitch;
 
@@ -69,7 +61,7 @@ package body datos_posalt_vel is
         begin
             -- Asignar el valor del nuevo roll a la variable privada
             Execution_Time(Milliseconds(5));
-            devicesFSS_V1.Write_Roll(Nuevo_Roll);
+            devicesFSS_V1.Set_Aircraft_Roll(Nuevo_Roll);
             Roll_Actual := Nuevo_Roll;
         end Actualizar_Roll;
 

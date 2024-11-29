@@ -3,16 +3,18 @@ A -g
 P LC TF
 R nnvnrnnvnnnnvvvvvvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U datos_aeronave%b	datos_aeronave.adb	080EDBE6 PK IL
+U datos_aeronave%b	datos_aeronave.adb	44A9C67E PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali
+W system%s		system.ads		system.ali
 W system.soft_links%s	s-soflin.adb		s-soflin.ali
+W system.storage_elements%s  s-stoele.adb	s-stoele.ali
 W tools%s		tools.adb		tools.ali
 
-U datos_aeronave%s	datos_aeronave.ads	47929C32 PK IL
+U datos_aeronave%s	datos_aeronave.ads	746143DB PK IL
 W devicesfss_v1%s	devicesfss_v1.adb	devicesfss_v1.ali
 W system.tasking%s	s-taskin.adb		s-taskin.ali
 W system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
@@ -26,8 +28,8 @@ D a-reatim.ads		20000718095948 5DBAB303
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
 D a-textio.ads		20000718095948 2D24B708
-D datos_aeronave.ads	20241129165733 2281839C
-D datos_aeronave.adb	20241129170823 7FA86538
+D datos_aeronave.ads	20241129200751 11725C75
+D datos_aeronave.adb	20241129200748 00FCA749
 D devicesfss_v1.ads	20241117223113 65131FAE
 D interfac.ads		20000718095948 0357E00A
 D i-cstrea.ads		20000718095948 70A316EF
@@ -63,69 +65,62 @@ X 1 ada.ads
 18U9*Ada 11|4r6 4r23 5r6 5r25
 X 6 a-reatim.ads
 43U13*Real_Time 11|5r10 5r29
-89U13*Milliseconds 11|15r25 21r25 27r25 33r25 39r25 45r25 51r25 57r25 64r25
-. 70r25 76r25 82r25 88r25 94r25 100r25 106r25
+89U13*Milliseconds 11|15r25 22r25 29r25 36r25 43r25 50r25 57r25 64r25 71r25
 X 9 a-textio.ads
 51U13*Text_IO 11|4r10 4r27
 X 10 datos_aeronave.ads
 5U9*datos_aeronave 11|8b14
-7w14*aeronave 11|16r21 22r22 28r23 34r19 40r18 46r19 52r27 58r22 65r10 71r10
-. 77r10 83r10 89r10 95r10 101r10 107r10
+7w14*aeronave 11|17r10 24r10 31r10 38r10 45r10 52r10 59r10 66r10 73r10
 9U17 Leer_Altitud 11|13b17
-9i31 Altitud 11|13b31 16r10
-10U17 Leer_Potencia 11|19b17
-10i32 Potencia 11|19b32 22r10
-11U17 Leer_Velocidad 11|25b17
-11i33 Velocidad 11|25b33 28r10
-12U17 Leer_Pitch 11|31b17
-12i29 Pitch 11|31b29 34r10
-13U17 Leer_Roll 11|37b17
-13i28 Roll 11|37b28 40r10
-14U17 Leer_Light_Intensity 11|43b17
-14i39 Light 11|43b39 46r10
-15U17 Leer_PilotPresence 11|49b17
-15i37 PilotPresence 11|49b37 52r10
-16U17 Leer_Distance 11|55b17
-16i32 Distance 11|55b32 58r10
-19U17 Actualizar_Altitud 11|62b17
-19i37 Nueva_Altitud 11|62b37 65r30
-20U17 Actualizar_Potencia 11|68b17
-20i38 Nueva_Potencia 11|68b38 71r39
-21U17 Actualizar_Velocidad 11|74b17
-21i39 Nueva_Velocidad 11|74b39 77r40
-22U17 Actualizar_Pitch 11|80b17
-22i35 Nuevo_Pitch 11|80b35 83r28
-23U17 Actualizar_Roll 11|86b17
-23i34 Nuevo_Roll 11|86b34 89r27
-24U17 Actualizar_Light_Intensity 11|92b17
-24i45 Nueva_Luz 11|92b45 95r38
-25U17 Actualizar_PilotPresence 11|98b17
-25i43 Nuevo_PilotPresence 11|98b43 101r36
-26U17 Actualizar_Distance 11|104b17
-26i38 Nueva_Distance 11|104b38 107r31
-29i7 Altitud 11|16r30 65r19
-30i7 Light_Intensity 11|46r28 95r19
-31i7 PilotPresence 11|52r36 101r19
-32i7 Distance 11|58r31 107r19
-33i7 Potencia_Motores 11|22r31 71r19
-34i7 Velocidad_Motores 11|28r32 77r19
-35a7 Joystick
-36i7 Pitch 11|34r28 83r19
-37i7 Roll 11|40r27 89r19
+9i31 Altitud 11|13b31 16r10 17r30
+10U17 Leer_Potencia 11|20b17
+10i32 Potencia 11|20b32 23r35 24r39
+11U17 Leer_Velocidad 11|27b17
+11i33 Velocidad 11|27b33 30r10 31r40
+12U17 Leer_Pitch 11|34b17
+12i29 Pitch 11|34b29 37r10 38r28
+13U17 Leer_Roll 11|41b17
+13i28 Roll 11|41b28 44r10 45r27
+14U17 Leer_Light_Intensity 11|48b17
+14i39 Light 11|48b39 51r45 52r38
+15U17 Leer_PilotPresence 11|55b17
+15i37 PilotPresence 11|55b37 58r10 59r36
+16U17 Leer_Distance 11|62b17
+16i32 Distance 11|62b32 65r38 66r31
+17U17 Leer_Joystick 11|69b17
+17a32 Joystick 11|69b32 72r38 73r31
+20i7 Altitud 11|17r19
+21i7 Light_Intensity 11|52r19
+22i7 PilotPresence 11|59r19
+23i7 Distance 11|66r19
+24i7 Potencia_Motores 11|24r19
+25i7 Velocidad_Motores 11|31r19
+26a7 Joystick 11|73r19
+27i7 Pitch 11|38r19
+28i7 Roll 11|45r19
 X 12 devicesfss_v1.ads
-4U9*devicesFSS_V1 10|3r6 3r25 11|3r6 3r25
-11I10*Distance_Samples_Type 10|16r47 26r58 32r18 11|55r47 104r58
-15I10*Light_Samples_Type 10|14r51 24r60 30r25 11|43r51 92r60
-24I10*Altitude_Samples_Type 10|9r45 19r56 29r17 11|13r45 62r56
-27i5*Initial_Altitude 10|29r42
-31I10*Speed_Samples_Type 10|11r49 21r60 34r27 11|25r49 74r60
-39I10*Pitch_Samples_Type 10|12r41 22r52 36r15 11|31r41 80r52
-44I10*Roll_Samples_Type 10|13r39 23r50 37r14 11|37r39 86r50
-54I10*Power_Samples_Type 10|10r47 20r58 33r26 11|19r47 68r58
-60A10*Joystick_Samples_Type 10|35r18
-68I10*PilotPresence_Samples_Type 10|15r57 25r68 31r23 11|49r57 98r68
+4U9*devicesFSS_V1 10|3r6 3r25 11|3r6 3r25 16r21 23r10 30r23 37r19 44r18 51r10
+. 58r27 65r10 72r10
+11I10*Distance_Samples_Type 10|16r47 23r18 11|62r47
+12U15*Read_Distance 11|65r24
+15I10*Light_Samples_Type 10|14r51 21r25 11|48r51
+16U15*Read_Light_Intensity 11|51r24
+24I10*Altitude_Samples_Type 10|9r45 20r17 11|13r45
+26U14*Read_Altitude 11|16r35
+27i5*Initial_Altitude 10|20r42
+31I10*Speed_Samples_Type 10|11r49 25r27 11|27r49
+33U14*Read_Speed 11|30r37
+39I10*Pitch_Samples_Type 10|12r41 27r15 11|34r41
+41U14*Read_Pitch 11|37r33
+44I10*Roll_Samples_Type 10|13r39 28r14 11|41r39
+46U14*Read_Roll 11|44r32
+54I10*Power_Samples_Type 10|10r47 24r26 11|20r47
+55U15*Read_Power 11|23r24
+60A10*Joystick_Samples_Type 10|17r47 26r18 11|69r47
+62U15*Read_Joystick 11|72r24
+68I10*PilotPresence_Samples_Type 10|15r57 22r23 11|55r57
+69U14*Read_PilotPresence 11|58r41
 X 41 tools.ads
 6U9*tools 11|6r6 6r17
-17U15*Execution_Time 11|15r10 21r10 27r10 33r10 39r10 45r10 51r10 57r10 64r10
-. 70r10 76r10 82r10 88r10 94r10 100r10 106r10
+17U15*Execution_Time 11|15r10 22r10 29r10 36r10 43r10 50r10 57r10 64r10 71r10
 

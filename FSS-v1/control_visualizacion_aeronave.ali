@@ -3,7 +3,7 @@ A -g
 P LC TF
 R nnvvrnvvnnnnvvvvvvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U control_visualizacion_aeronave%b  control_visualizacion_aeronave.adb  57433A96 PK IL
+U control_visualizacion_aeronave%b  control_visualizacion_aeronave.adb  0766E451 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -36,8 +36,8 @@ D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
 D a-textio.ads		20000718095948 2D24B708
 D control_visualizacion_aeronave.ads  20241129165733 2CACD0DD
-D control_visualizacion_aeronave.adb  20241129184145 4CE37272
-D datos_aeronave.ads	20241129165733 2281839C
+D control_visualizacion_aeronave.adb  20241129195108 2F35735C
+D datos_aeronave.ads	20241129200751 11725C75
 D devicesfss_v1.ads	20241117223113 65131FAE
 D interfac.ads		20000718095948 0357E00A
 D i-cstrea.ads		20000718095948 70A316EF
@@ -91,34 +91,34 @@ X 11 control_visualizacion_aeronave.ads
 9O5*intervalo_visualizacion 12|47r33
 11t10*visualizar_datos
 X 12 control_visualizacion_aeronave.adb
-8i10 Altitud 23m50 32r30
-9i10 Velocidad 24m52 34r27
-10i10 Potencia_Motores 25m51 33r33
-11a10 Joystick 22m27 26r41 27r39 35r30
-12i10 Pitch 26m13 36r27
-13i10 Roll 27m13 37r26
+8i10 Altitud 22m50 32r30
+9i10 Velocidad 23m52 34r27
+10i10 Potencia_Motores 24m51 33r33
+11a10 Joystick 25m51 35r30
+12i10 Pitch 26m48 36r27
+13i10 Roll 27m47 37r26
 14i10 Distancia
 15O10 Start_Time 19m13 42r63
 15O22 End_Time 41m13 42r52
 16o10 WCET 42m13 42r34 44r68
 X 13 datos_aeronave.ads
-5U9*datos_aeronave 12|4r6 23r13 24r13 25r13
-7w14*aeronave 12|23r28 24r28 25r28
-9U17 Leer_Altitud 12|23r37
-10U17 Leer_Potencia 12|25r37
-11U17 Leer_Velocidad 12|24r37
+5U9*datos_aeronave 12|4r6 22r13 23r13 24r13 25r13 26r13 27r13
+7w14*aeronave 12|22r28 23r28 24r28 25r28 26r28 27r28
+9U17 Leer_Altitud 12|22r37
+10U17 Leer_Potencia 12|24r37
+11U17 Leer_Velocidad 12|23r37
+12U17 Leer_Pitch 12|26r37
+13U17 Leer_Roll 12|27r37
+17U17 Leer_Joystick 12|25r37
 X 14 devicesfss_v1.ads
 4U9*devicesFSS_V1 12|3r6 3r25
 11I10*Distance_Samples_Type 12|14r22
 24I10*Altitude_Samples_Type 12|8r20
 31I10*Speed_Samples_Type 12|9r22
-39I10*Pitch_Samples_Type 12|12r18 26r22
-44I10*Roll_Samples_Type 12|13r17 27r21
+39I10*Pitch_Samples_Type 12|12r18
+44I10*Roll_Samples_Type 12|13r17
 54I10*Power_Samples_Type 12|10r29
-58N37*x 12|26r50
-58N39*y 12|27r48
 60A10*Joystick_Samples_Type 12|11r21
-62U15*Read_Joystick 12|22r13
 90U15*Display_Altitude 12|32r13
 91U15*Display_Speed 12|34r13
 93U15*Display_Pitch 12|36r13

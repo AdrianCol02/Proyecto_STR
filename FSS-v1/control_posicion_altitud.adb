@@ -29,19 +29,15 @@ package body control_posicion_altitud is
          -- Control de inclinación del cabeceo basado en la altitud
          if Joystick_Pitch <= Max_Pitch_Angle and Joystick_Pitch >= Min_Pitch_Angle then
             if Current_Altitude <= Min_Altitude then
-               Set_Aircraft_Pitch(+10);
                datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(+10);
                Put_Line("Altitud crítica, nivelando aeronave");
             elsif Current_Altitude >= Max_Altitude then
-               Set_Aircraft_Pitch(-10);
                datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(-10);
                Put_Line("Altitud máxima alcanzada, nivelando aeronave");
             elsif (Joystick_Pitch < 0 and Current_Altitude > Min_Altitude) or
                   (Joystick_Pitch > 0 and Current_Altitude < Max_Altitude) then
-               Set_Aircraft_Pitch(0);
                datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(0);
             else
-               Set_Aircraft_Pitch(Joystick_Pitch);
                datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(Joystick_Pitch);
             end if;
          end if;
@@ -55,7 +51,6 @@ package body control_posicion_altitud is
          
          -- Control de ángulo de alabeo
          if Joystick_Roll <= Max_Roll_Angle and Joystick_Roll >= Min_Roll_Angle then
-            Set_Aircraft_Roll(Joystick_Roll);
             datos_posalt_vel.Datos_Vuelo.Actualizar_Roll(Joystick_Roll);
             if Joystick_Roll >= Alert_Roll_Angle or Joystick_Roll <= -Alert_Roll_Angle then
                Light_2(On);
