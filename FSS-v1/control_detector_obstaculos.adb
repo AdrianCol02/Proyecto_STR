@@ -128,7 +128,7 @@ package body control_detector_obstaculos is
          Ada.Text_IO.Put_Line("WCET colision: " & Duration'Image(WCET));
 
          -- Esperar hasta el próximo ciclo
-         delay until Ada.Real_Time.Clock + Milliseconds(250); -- Ajusta el periodo según sea necesario
+         delay until Ada.Real_Time.Clock + Milliseconds(250); 
       end loop;
    end Control_Obstaculos;
 
