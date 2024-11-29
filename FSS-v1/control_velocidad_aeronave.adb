@@ -15,8 +15,8 @@ package body control_velocidad_aeronave is
         Velocidad_Actual : Speed_Samples_Type;
         Pitch_Actual : Pitch_Samples_Type;
         Roll_Actual : Roll_Samples_Type;
-        Start_Time, End_Time : CPU_Time;
-        WCET : CPU_Time := To_CPU_Time(0);
+        Start_Time, End_Time : Time;
+        WCET : Duration := 0.0;
     begin
         loop
             Start_Time := Clock;
@@ -48,12 +48,10 @@ package body control_velocidad_aeronave is
             datos_posalt_vel.Datos_Vuelo.Leer_Roll(Roll_Actual);
 
             End_Time := Clock;
-            if End_Time - Start_Time > WCET then
-                WCET := End_Time - Start_Time;
-            end if;
+            WCET := Duration'Max(WCET, To_Duration(End_Time - Start_Time));
 
             -- Mostrar el WCET
-            Ada.Text_IO.Put_Line("WCET: " & CPU_Time'Image(WCET));
+            Ada.Text_IO.Put_Line("WCET: " & Duration'Image(WCET));
             delay until Clock + Intervalo_Control;
         end loop;
     end control_velocidad;

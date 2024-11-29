@@ -14,8 +14,8 @@ package body control_posicion_altitud is
       Joystick_Roll : Roll_Samples_Type;
       Current_Altitude : Altitude_Samples_Type;
       Current_Speed : Speed_Samples_Type;
-      Start_Time, End_Time : CPU_Time;
-      WCET : CPU_Time := To_CPU_Time(0);
+      Start_Time, End_Time : Time;
+      WCET : Duration := 0.0;
    begin
       loop
          Start_Time := Clock;
@@ -75,12 +75,10 @@ package body control_posicion_altitud is
          Display_Altitude(Current_Altitude);
 
          End_Time := Clock;
-         if End_Time - Start_Time > WCET then
-            WCET := End_Time - Start_Time;
-         end if;
+         WCET := Duration'Max(WCET, To_Duration(End_Time - Start_Time));
 
          -- Mostrar el WCET
-         Ada.Text_IO.Put_Line("WCET: " & CPU_Time'Image(WCET));
+         Ada.Text_IO.Put_Line("WCET: " & Duration'Image(WCET));
 
          -- Esperar hasta el próximo ciclo
          delay until Ada.Real_Time.Clock + Milliseconds(200); -- Ajusta el periodo según sea necesario

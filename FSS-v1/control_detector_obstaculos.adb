@@ -34,12 +34,8 @@ package body control_detector_obstaculos is
       Visibilidad     : devicesFSS_V1.Light_Samples_Type;
       Piloto_Presente : devicesFSS_V1.PilotPresence_Samples_Type;
       Joystick        : devicesFSS_V1.Joystick_Samples_Type;
-      Tiempo_Colision : Duration;
-      Pitch           : devicesFSS_V1.Pitch_Samples_Type;
-      Roll            : devicesFSS_V1.Roll_Samples_Type;
-      Start_Time, End_Time : CPU_Time;
-      WCET : CPU_Time := To_CPU_Time(0);
-      Next_Time       : Ada.Real_Time.Time := Ada.Real_Time.Clock;
+      Start_Time, End_Time : Time;
+      WCET : Duration := 0.0;
    begin
       loop
          Start_Time := Clock;
@@ -121,12 +117,10 @@ package body control_detector_obstaculos is
          Display_Distance(Distancia);
 
          End_Time := Clock;
-         if End_Time - Start_Time > WCET then
-            WCET := End_Time - Start_Time;
-         end if;
+         WCET := Duration'Max(WCET, To_Duration(End_Time - Start_Time));
 
          -- Mostrar el WCET
-         Ada.Text_IO.Put_Line("WCET: " & CPU_Time'Image(WCET));
+         Ada.Text_IO.Put_Line("WCET: " & Duration'Image(WCET));
 
          -- Esperar hasta el próximo ciclo
          delay until Ada.Real_Time.Clock + Milliseconds(250); -- Ajusta el periodo según sea necesario
