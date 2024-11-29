@@ -5,6 +5,7 @@ with Ada.Text_IO; use Ada.Text_IO;
 with devicesFSS_V1; use devicesFSS_V1;
 with datos_aeronave;
 with datos_posalt_vel;
+with Ada.Execution_Time; use Ada.Execution_Time;
 
 package body control_detector_obstaculos is
 
@@ -37,9 +38,13 @@ package body control_detector_obstaculos is
       Tiempo_Colision : Duration;
       Pitch           : devicesFSS_V1.Pitch_Samples_Type;
       Roll            : devicesFSS_V1.Roll_Samples_Type;
+      Start_Time, End_Time : CPU_Time;
+      WCET : CPU_Time := To_CPU_Time(0);
       Next_Time       : Ada.Real_Time.Time := Ada.Real_Time.Clock;
    begin
       loop
+         Start_Time := Clock;
+
          -- Leer datos de sensores
          Display_Distance(Distancia);
          devicesFSS_V1.Read_Distance(Distancia);
@@ -116,9 +121,16 @@ package body control_detector_obstaculos is
          end if;
          Display_Distance(Distancia);
 
-         -- Control de tiempo
-         Next_Time := Ada.Real_Time.Clock + Milliseconds(250); -- 250 ms como Duration
-         delay until Next_Time;
+         End_Time := Clock;
+         if End_Time - Start_Time > WCET then
+            WCET := End_Time - Start_Time;
+         end if;
+
+         -- Mostrar el WCET
+         Ada.Text_IO.Put_Line("WCET: " & CPU_Time'Image(WCET));
+
+         -- Esperar hasta el próximo ciclo
+         delay until Ada.Real_Time.Clock + Milliseconds(250); -- Ajusta el periodo según sea necesario
       end loop;
    end Control_Obstaculos;
 

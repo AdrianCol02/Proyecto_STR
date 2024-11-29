@@ -5,6 +5,7 @@ with Ada.Text_IO; use Ada.Text_IO;
 with devicesFSS_V1; use devicesFSS_V1;
 with datos_posalt_vel; use datos_posalt_vel;
 with datos_aeronave; use datos_aeronave;
+with Ada.Execution_Time; use Ada.Execution_Time;
 
 package body control_posicion_altitud is
    
@@ -14,9 +15,12 @@ package body control_posicion_altitud is
       Joystick_Roll : Roll_Samples_Type;
       Current_Altitude : Altitude_Samples_Type;
       Current_Speed : Speed_Samples_Type;
+      Start_Time, End_Time : CPU_Time;
+      WCET : CPU_Time := To_CPU_Time(0);
    begin
       loop
-         
+         Start_Time := Clock;
+
          Display_Altitude(Current_Altitude);
          -- Leer datos del joystick y la altitud
          Read_Joystick(Joystick);
@@ -71,8 +75,16 @@ package body control_posicion_altitud is
          end if;
          Display_Altitude(Current_Altitude);
 
-         -- Control cada 200 ms
-         delay until Clock + Milliseconds(200);
+         End_Time := Clock;
+         if End_Time - Start_Time > WCET then
+            WCET := End_Time - Start_Time;
+         end if;
+
+         -- Mostrar el WCET
+         Ada.Text_IO.Put_Line("WCET: " & CPU_Time'Image(WCET));
+
+         -- Esperar hasta el próximo ciclo
+         delay until Ada.Real_Time.Clock + Milliseconds(200); -- Ajusta el periodo según sea necesario
       end loop;
    end posicion_altitud;
 
