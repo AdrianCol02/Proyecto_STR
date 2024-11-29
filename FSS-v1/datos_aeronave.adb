@@ -2,6 +2,7 @@
 
 with devicesFSS_V1; use devicesFSS_V1;
 with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Real_Time; use Ada.Real_Time;
 with tools; use tools;
 
 package body datos_aeronave is

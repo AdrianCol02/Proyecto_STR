@@ -35,10 +35,10 @@ D a-retide.ads		20000718095948 7F3C479C
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
 D a-textio.ads		20000718095948 2D24B708
-D control_visualizacion_aeronave.ads  20241129130753 2CACD0DD
-D control_visualizacion_aeronave.adb  20241129130346 4CE37272
-D datos_aeronave.ads	20241129093319 2281839C
-D devicesfss_v1.ads	20241108091459 65131FAE
+D control_visualizacion_aeronave.ads  20241129165733 2CACD0DD
+D control_visualizacion_aeronave.adb  20241129184145 4CE37272
+D datos_aeronave.ads	20241129165733 2281839C
+D devicesfss_v1.ads	20241117223113 65131FAE
 D interfac.ads		20000718095948 0357E00A
 D i-cstrea.ads		20000718095948 70A316EF
 D kernel.ads		20010312182047 56BBE4F1
