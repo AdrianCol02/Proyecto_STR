@@ -78,7 +78,8 @@ package body control_posicion_altitud is
          WCET := Duration'Max(WCET, To_Duration(End_Time - Start_Time));
 
          -- Mostrar el WCET
-         Ada.Text_IO.Put_Line("WCET: " & Duration'Image(WCET));
+         Put_Line(" ");
+         Ada.Text_IO.Put_Line("WCET posalt: " & Duration'Image(WCET));
 
          -- Esperar hasta el próximo ciclo
          delay until Ada.Real_Time.Clock + Milliseconds(200); -- Ajusta el periodo según sea necesario

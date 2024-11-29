@@ -1,0 +1,553 @@
+
+ TSIM/ERC32 - remote SPARC simulator, version 1.0.10 (evaluation version)
+
+ Copyright (C) 2001, Gaisler Research - all rights reserved.
+ For latest updates, go to http://www.gaisler.com/
+ Comments or bug-reports to tsim@gaisler.com
+
+libreadline.so.3: cannot open shared object file: No such file or directory
+serial port A on stdin/stdout
+allocated 4096 K RAM memory
+allocated 2048 K ROM memory
+section: .text at 0x2000000, size 242544 bytes
+section: .data at 0x203b370, size 12068 bytes
+tsim> resuming at 0x02000000
+=== Datos de la Aeronave ===
+
+[ 0.0184] ..# Altitude:  8000
+[ 0.0376] ..# Pilot_Power:  0
+[ 0.0568] ..# Speed:  0
+[ 0.0730] ..# Joystick:  81 3
+[ 0.0922] ..# Pitch:  81
+[ 0.1088] ..# Roll:  3
+============================
+WCET display:  0.137187200
+
+[ 0.1537] ..# Distance:  0
+[ 0.1787] ..# Distance:  5555 
+WCET colision:  0.044223800
+
+[ 0.2135] ..# Altitude:  0
+[ 0.2462] %L(1): off
+[ 0.2632] %L(2): off
+[ 0.2745] ..# Altitude:  8000 
+WCET posalt:  0.080227400
+
+[ 0.3082] ..# Speed:  0 
+WCET velocidad:  0.020494600
+
+[ 0.3445] >>> Programa Principal
+[ 0.3614] --- Programa Principal
+[ 0.4627] ..# Distance:  5555
+[ 0.4892] %BEEEEEEEEEEP 4
+[ 0.5032
+[ 0.5077] ..# Altitude:  8000
+[ 0.5484] %L(1): off
+[ 0.5654] %L(2): off
+[ 0.5767] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+] ..# Distance:  5555 
+WCET colision:  0.162158300
+
+[ 0.6439] ..# Speed:  960 
+WCET velocidad:  0.021518500
+
+[ 0.8096] ..# Altitude:  8000
+[ 0.8503] %L(1): off
+[ 0.8673] %L(2): off
+[ 0.8785] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+
+[ 0.9121] ..# Distance:  5555
+[ 0.9386] %BEEEEEEEEEEP 4
+[ 0.9526] ..# Distance:  5555 
+WCET colision:  0.162158300
+
+[ 0.9871] ..# Speed:  960 
+WCET velocidad:  0.022273500
+
+[ 1.1115] ..# Altitude:  8000
+[ 1.1521] %L(1): off
+[ 1.1691] %L(2): off
+[ 1.1804] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+
+[ 1.2365] ..# Distance:  5555
+[ 1.2631] %BEEEEEEEEEEP 4
+[ 1.2770] ..# Distance:  5555 
+WCET colision:  0.162158300
+
+[ 1.3239] ..# Speed:  960 
+WCET velocidad:  0.022273500
+
+[ 1.4133] ..# Altitude:  8000
+[ 1.4476] %L(1): off
+[ 1.4646] %L(2): off
+[ 1.4759] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+
+[ 1.5610] ..# Distance:  5555
+[ 1.5875] %BEEEEEEEEEEP 4
+[ 1.6014] ..# Distance:  5555 
+WCET colision:  0.162158300
+
+[ 1.6607] ..# Speed:  960 
+WCET velocidad:  0.022273500
+
+[ 1.7088] ..# Altitude:  8000
+[ 1.7431] %L(1): off
+[ 1.7601] %L(2): off
+[ 1.7713] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+
+[ 1.8853] ..# Distance:  5555
+[ 1.9118] %BEEEEEEEEEEP 4
+[ 1.9258] ..# Distance:  5555 
+WCET colision:  0.162158300
+
+[ 1.9974] ..#
+[ 2.0046] ..# Altitude:  8000
+[ 2.0453] %L(1): off
+[ 2.0623] %L(2): off
+[ 2.0735] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+ Speed:  960 
+WCET velocidad:  0.124005200
+
+[ 2.2097] ..# Distance:  5555
+[ 2.2363] %BEEEEEEEEEEP 4
+[ 2.2502] ..# Distance:  5555 
+WCET colision:  0.162158300
+
+[ 2.3065] ..# Altitude:  8000
+[ 2.3407] %L(1): off
+[ 2.3577] %L(2): off
+[ 2.3690] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+
+[ 2.4367] ..# Speed:  960 
+WCET velocidad:  0.124005200
+
+[ 2.5341] ..# Distance:  5555
+[ 2.5607] %BEEEEEEEEEEP 4
+[ 2.5746] ..# Distance:  5555 
+WCET colision: 
+[ 2.6025] ..# Altitude:  8000
+[ 2.6368] %L(1): off
+[ 2.6538] %L(2): off
+[ 2.6651] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+ 0.162158300
+
+[ 2.7735] ..# Speed:  960 
+WCET velocidad:  0.124005200
+
+[ 2.8980] ..# Altitude:  8000
+[ 2.9323] %L(1): off
+[ 2.9493] %L(2): off
+[ 2.9606] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+
+[ 2.9941] ..# Distance:  5555
+[ 3.0207] %BEEEEEEEEEEP 4
+[ 3.0346] ..# Distance:  4440 
+WCET colision:  0.162158300
+
+[ 3.1102] ..# Speed:  480 
+WCET velocidad:  0.124005200
+
+[ 3.1935] ..# Altitude:  8000
+[ 3.2278] %L(1): off
+[ 3.2448] %L(2): off
+[ 3.2560] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+
+[ 3.3185] ..# Distance:  4440
+[ 3.3451] %BEEEEEEEEEEP 4
+[ 3.3590] ..# Distance:  4440 
+WCET colision:  0.162158300
+
+[ 3.4470] ..# Speed:  600 
+WCET velocidad:  0.124005200
+
+[ 3.4890] ..# Altitude:  8000
+[ 3.5232] %L(1): off
+[ 3.5402] %L(2): off
+[ 3.5515] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+
+[ 3.6430] ..# Distance:  4440
+[ 3.6695] %BEEEEEEEEEEP 4
+[ 3.6834] ..# Distance:  4440 
+WCET colision:  0.162158300
+
+[
+[ 3.7847] ..# Altitude:  8000
+[ 3.8190] %L(1): off
+[ 3.8360] %L(2): off
+[ 3.8473] ..# Altitude:  8000 
+WCET posalt:  0.088472400
+ 3.7837] ..# Speed:  600 
+WCET velocidad:  0.124005200
+
+[ 3.9674] ..# Distance:  4440
+[ 4.0802] ..# Altitude:  8000
+[ 4.1145] %L(1): off
+[ 4.1258] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+
+[ 4.2166] ..# Speed:  600 
+WCET velocidad:  0.124005200
+
+[ 4.3587] ..# Altitude:  8040
+[ 4.3930] %L(1): off
+[ 4.4043] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+
+[ 4.5534] ..# Speed:  720 
+WCET velocidad:  0.124005200
+
+[ 4.6372] ..# Altitude:  8040
+[ 4.6715] %L(1): off
+[ 4.6828] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+
+[ 4.8901] ..# Speed:  720 
+WCET ve
+[ 4.9162] ..# Altitude:  8040
+[ 4.9506] %L(1): off
+[ 4.9618] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+locidad:  0.124005200
+=== Datos de la Aeronave ===
+
+[ 5.1697] ..# Altitude:  8040
+[ 5.1890] .
+[ 5.1951] ..# Altitude:  8040
+[ 5.2294] %L(1): off
+[ 5.2464] %L(2): off
+[ 5.2576] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+.# Pilot_Power:  600
+[
+[ 5.3063] ..# Speed:  720
+[ 5.3252] %Light(2): ON 
+WCET velocidad:  0.124005200
+ 5.3053] ..# Speed:  720
+[ 5.3727] ..# Joystick:  47 20
+[ 5.3924] ..# Pitch:  47
+[ 5.4090] ..# Roll:  20
+============================
+WCET display:  0.286575600
+
+[ 5.4906] ..# Altitude:  8040
+[ 5.5249] %L(1): off
+[ 5.5418] %L(2): off
+[ 5.5531] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+
+[ 5.6559] ..# Speed:  1000
+[ 5.6753] %Light(2): ON 
+WCET velocidad:  0.124005200
+
+[ 5.7860] ..# Altitude:  8040
+[ 5.8203] %L(1): off
+[ 5.8372] %Light(2): ON
+[ 5.8501] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+
+[ 6.0060] ..# Speed:  1000
+[ 6.0254] %Light(2): ON 
+WCET velocidad:  0.124005200
+
+[ 6.0830] ..# Altitude:  8040
+[ 6.1173] %L(1): off
+[ 6.1285] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+
+[ 6.3561] .
+[ 6.3622] ..# Altitude:  8040
+[ 6.3965] %L(1): off
+[ 6.4078] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+.# Speed:  1000
+[ 6.4546] %Light(2): ON 
+WCET velocidad:  0.124005200
+
+[ 6.6407] ..# Altitude:  8040
+[ 6.6750] %L(1): off
+[ 6.6863] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+
+[ 6.7853] ..# Speed:  1000
+[ 6.8047] %Light(2): ON 
+WCET velocidad:  0.124005200
+
+[ 6.9191] ..# Altitude:  8040
+[ 6.9534] %L(1): off
+[ 6.9649] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+
+[ 7.0122] ..# Distance:  4440 
+WCET colision:  3.064109400
+
+[ 7.1354] ..# Speed:  1000
+[ 7.1548] %Light(2): ON 
+WCET velocidad:  0.124005200
+
+[ 7.1978] ..# Altitude:  8040
+[ 7.2384] %L(1): off
+[ 7.2554] %L(2): off
+[ 7.2667] ..# Altitude:  8040 
+WCET posalt:  0.088472400
+
+[ 7.3002] ..# Distance:  4440
+[ 7.4855] ..# Speed:  1000
+[ 7.4996] ..# Altitude:  8040
+[ 7.5403] %L(1): off
+[ 7.5572] %L(2): off
+[ 7.5685] ..# Altitude:  8080 
+WCET posalt:  0.088472400
+
+[ 7.6068] %Light(2): ON 
+WCET velocidad:  0.136767300
+
+[ 7.8015] ..# Altitude:  8080
+[ 7.8421] %L(1): off
+[ 7.8591] %L(2): off
+[ 7.8704] ..# Altitude:  8080 
+WCET posalt:  0.088472400
+
+[ 7.9374] ..# Speed:  1000
+[ 7.9568] %Light(2): ON 
+WCET velocidad:  0.136767300
+
+[ 8.1033] ..# Altitude:  8080
+[ 8.1440] %L(1): off
+[ 8.1610] %L(2): off
+[ 8.1722] ..# Altitude:  8080 
+WCET posalt:  0.088472400
+
+[ 8.2875] ..# Speed:  1000
+[ 8.3069] %Light(2): ON 
+WCET velocidad:  0.136767300
+
+[ 8.4052] ..# Altitude:  8080
+[ 8.4458] %L(1): off
+[ 8.4628] %L(2): off
+[ 8.4741] ..# Altitude:  8080 
+WCET posalt:  0.088472400
+
+[ 8.6376] ..# Speed:  1000
+[ 8.6570] %Light(2): ON 
+WCET velocidad:  0.136767300
+
+[ 8.7069] ..# Altitude:  8080
+[ 8.7476] %L(1): off
+[ 8.7646] %L(2): off
+[ 8.7759] ..# Altitude:  8080 
+WCET posalt:  0.088472400
+
+[ 8.9877] ..# Speed:  1000
+[ 9
+[ 9.0091] ..# Altitude:  8080
+[ 9.0498] %L(1): off
+[ 9.0668] %L(2): off
+[ 9.0780] ..# Altitude:  8080 
+WCET posalt:  0.088532600
+.0071] %Light(2): ON 
+WCET velocidad:  0.137333800
+
+[ 9.3110] ..# Altitude:  8080
+[ 9.3516] %L(1): off
+[ 9.3686] %L(2): off
+[ 9.3799] ..# Altitude:  8080 
+WCET posalt:  0.088532600
+
+[ 9.4402] ..# Speed:  1000
+[ 9.4597] %Light(2): ON 
+WCET velocidad:  0.137333800
+
+[ 9.6128] ..# Altitude:  8080
+[ 9.6535] %L(1): off
+[ 9.6705] %L(2): off
+[ 9.6818] ..# Altitude:  8080 
+WCET posalt:  0.088532600
+
+[ 9.7903] ..# Speed:  1000
+[ 9.8097] %Light(2): ON 
+WCET velocidad:  0.137333800
+
+[ 9.9146] ..# Altitude:  8080
+[ 9.9553] %L(1): off
+[ 9.9723] %L(2): off
+[ 9.9835] ..# Altitude:  8080 
+WCET posalt:  0.088532600
+
+[ 10.140] ..# Speed:  1000 
+WCET velocidad:  0.137333800
+
+[ 10.216] ..# Altitude:  8080
+[ 10.257] %L(1): off
+[ 10.274] %L(2): off
+[ 10.285] ..# Altitude:  8080 
+WCET posalt:  0.088532600
+
+[ 10.345] ..# Distance:  2400 
+WCET colision:  3.064870800
+=== Datos de la Aeronave ===
+
+[ 10.470] ..# 
+[ 10.478] ..# Speed:  720 
+WCET velocidad:  0.137333800
+Altitu
+[ 10.518] ..# Altitude:  8080
+[ 10.559] %L(1): off
+[ 10.576] %L(2): off
+[ 10.587] ..# Altitude:  8080 
+WCET posalt:  0.088532600
+de:  8080
+[ 10.629] ..# Distance:  2400
+[ 10.668] ..# Pilot_Power:  600
+[ 10.689] ..# Speed:  720
+[ 10.706] ..# Joystick:  1-3
+[ 10.724] ..# Pitch:  1
+[ 10.741] ..# Roll: -3
+============================
+WCET display:  0.317308300
+
+[ 10.814] .
+[ 10.821] ..# Altitude:  8080
+[ 10.861] %L(1): off
+[ 10.878] %L(2): off
+[ 10.890] ..# Altitude:  8120 
+WCET posalt:  0.088796500
+.# Speed:  720 
+WCET velocidad:  0.137333800
+
+[ 11.122] ..# Altitude:  8120
+[ 11.163] %L(1): off
+[ 11.180] %L(2): off
+[ 11.191] ..# Altitude:  8120 
+WCET posalt:  0.088796500
+
+[ 11.254] ..# Speed:  720 
+WCET velocidad:  0.137333800
+
+[ 11.424] ..# Altitude:  8120
+[ 11.465] %L(1): off
+[ 11.482] %L(2): off
+[ 11.493] ..# Altitude:  8120 
+WCET posalt:  0.088796500
+
+[ 11.590] ..# Speed:  720 
+WCET velocidad:  0.137333800
+
+[ 11.726] ..# Altitude:  8120
+[ 11.767] %L(1): off
+[ 11.784] %L(2): off
+[ 11.795] ..# Altitude:  8120 
+WCET posalt:  0.088796500
+
+[ 11.927] ..# Speed:  720 
+WCET velocidad:  0.137333800
+
+[ 12.028] ..# Altitude:  8120
+[ 12.069] %L(1): off
+[ 12.086] %L(2): off
+[ 12.097] ..# Altitude:  8120 
+WCET posalt:  0.088796500
+
+[ 12.264] ..# Speed:  720 
+WCET velocidad:  0.137333800
+
+[ 12.330] ..# Altitude:  8120
+[ 12.370] %L(1): off
+[ 12.387] %L(2): off
+[ 12.399] ..# Altitude:  8120 
+WCET posalt:  0.088796500
+
+[ 12.601] ..# Speed:  720 
+WCET velocidad:  
+[ 12.632] ..# Altitude:  8120
+[ 12.673] %L(1): off
+[ 12.690] %L(2): off
+[ 12.701] ..# Altitude:  8120 
+WCET posalt:  0.088796500
+0.137333800
+
+[ 12.934] ..# Altitude:  8120
+[ 12.975] %L(1): off
+[ 12.992] %L(2): off
+[ 13.003] ..# Altitude:  8120 
+WCET posalt:  0.088796500
+
+[ 13.040] ..# Speed:  960 
+WCET velocidad:  0.137333800
+
+[ 13.236] ..# Altitude:  8120
+[ 13.270] %L(1): off
+[ 13.287] %L(2): off
+[ 13.298] ..# Altitude:  8120 
+WCET posalt:  0.088796500
+
+[ 13.377] ..# Speed:  960 
+WCET velocidad:  0.137333800
+
+[ 13.531] ..# Altitude:  8120
+[ 13.566] %L(1): off
+[ 13.583] %L(2): off
+[ 13.594] ..# Altitude:  8120 
+WCET posalt:  0.088796500
+
+[ 13.674] ..# Distance:  411 
+WCET colision:  3.064870800
+
+[ 13.713] ..# Speed:  960 
+WCET velocidad:  0.137333800
+
+[ 13.827] ..# Altitude:  8120
+[ 13.861] %L(1): off
+[ 13.878] %L(2): off
+[ 13.889] ..# Altitude:  8120 
+WCET posalt:  0.088796500
+
+[ 13.957] ..# Distance:  411
+[ 14.050] ..# Speed:  960 
+WCET velocidad:  0.137333800
+
+[ 14.122] ..# Altitude:  8120
+[ 14.156] %L(1): off
+[ 14.173] %L(2): off
+[ 14.185] ..# Altitude:  8160 
+WCET posalt:  0.088796500
+
+[ 14.387] ..# Speed:  960 
+WCET velocidad:  
+[ 14.418] ..# Altitude:  8160
+[ 14.453] %L(1): off
+[ 14.470] %L(2): off
+[ 14.481] ..# Altitude:  8160 
+WCET posalt:  0.088796500
+0.137333800
+
+[ 14.714] ..# Altitude:  8160
+[ 14.748] %L(1): off
+[ 14.765] %L(2): off
+[ 14.776] ..# Altitude:  8160 
+WCET posalt:  0.088796500
+
+[ 14.820] ..# Speed:  960 
+WCET velocidad:  0.137333800
+
+[ 15.009] ..# Altitude:  8160
+[ 15.044] %L(1): off
+[ 15.060] %L(2): off
+[ 15.072] ..# Altitude:  8160 
+WCET posalt:  0.088796500
+
+[ 15.157] ..# Speed:  960
+[ 15.175] %Li
+Interrupt!
+ Stopped at time 154154033 (1.101e+01 s)
+tsim> 

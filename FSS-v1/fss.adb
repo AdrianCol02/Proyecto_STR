@@ -9,10 +9,10 @@ with Tools; use Tools;
 with devicesFSS_V1; use devicesFSS_V1;
 
  with control_detector_obstaculos; use control_detector_obstaculos;
- -- with control_modo_sistema; use control_modo_sistema; -- NO SE DEBE USAR NO IMPLEMENTADO CON INTERRUPCIONES
+ --with control_modo_sistema; use control_modo_sistema; -- NO SE DEBE USAR NO IMPLEMENTADO CON INTERRUPCIONES
  with control_posicion_altitud; use control_posicion_altitud;
  with control_velocidad_aeronave; use control_velocidad_aeronave;
- with control_visualizacion_aeronave; 
+ with control_visualizacion_aeronave; use control_visualizacion_aeronave;
 
 -- NO ACTIVAR ESTE PAQUETE MIENTRAS NO SE TENGA PROGRAMADA LA INTERRUPCION
 -- Packages needed to generate button interrupts       

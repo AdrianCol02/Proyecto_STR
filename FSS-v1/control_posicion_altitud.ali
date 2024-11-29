@@ -3,7 +3,7 @@ A -g
 P LC TF
 R nnvvrnvvnnnnvvvvvvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U control_posicion_altitud%b  control_posicion_altitud.adb  2DF161DE PK IL
+U control_posicion_altitud%b  control_posicion_altitud.adb  5AD145BC PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -38,8 +38,8 @@ D a-retide.ads		20000718095948 7F3C479C
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
 D a-textio.ads		20000718095948 2D24B708
-D control_posicion_altitud.ads  20241129093419 63EF2DF5
-D control_posicion_altitud.adb  20241129094733 387A1121
+D control_posicion_altitud.ads  20241129130813 63EF2DF5
+D control_posicion_altitud.adb  20241129122756 4F5A3543
 D datos_aeronave.ads	20241129093319 2281839C
 D datos_posalt_vel.ads	20241129093022 4168C533
 D devicesfss_v1.ads	20241108091459 65131FAE
@@ -77,18 +77,18 @@ D s-tarest.ads		20000718095949 1D177686
 D s-unstyp.ads		20000718095949 78AFB91D
 D unchconv.ads		20000718095949 72DC4539
 X 1 ada.ads
-18U9*Ada 11|3r6 3r25 12|3r6 3r25 4r6 4r23 81r10 84r22
+18U9*Ada 11|3r6 3r25 12|3r6 3r25 4r6 4r23 82r10 85r22
 X 6 a-reatim.ads
-43U13*Real_Time 11|3r10 3r29 12|3r10 3r29 84r26
+43U13*Real_Time 11|3r10 3r29 12|3r10 3r29 85r26
 45O9*Time 12|17r30
-57U13*Clock 12|21r24 77r22 84r36
-59U13*"+" 12|84r42
+57U13*Clock 12|21r24 77r22 85r36
+59U13*"+" 12|85r42
 62U13*"-" 12|78r58
 84U13*To_Duration 12|78r37
-89U13*Milliseconds 12|84r44
+89U13*Milliseconds 12|85r44
 X 10 a-textio.ads
-51U13*Text_IO 12|4r10 4r27 81r14
-260U14*Put_Line 12|37r16 42r16 81r22
+51U13*Text_IO 12|4r10 4r27 82r14
+260U14*Put_Line 12|37r16 42r16 81r10 82r22
 X 11 control_posicion_altitud.ads
 7U9*control_posicion_altitud 12|9b14
 10i4*Max_Pitch_Angle 12|32r31
@@ -109,7 +109,7 @@ X 12 control_posicion_altitud.adb
 16i7 Current_Speed 29m10
 17O7 Start_Time 21m10 78r60
 17O19 End_Time 77m10 78r49
-18o7 WCET 78m10 78r31 81r57
+18o7 WCET 78m10 78r31 82r64
 X 13 datos_aeronave.ads
 5U9*datos_aeronave 11|5r6 12|7r6 7r26 35r16 40r16 46r16 50r16 55r10 67r13
 7w14*aeronave 12|35r31 40r31 46r31 50r31 55r25 67r28

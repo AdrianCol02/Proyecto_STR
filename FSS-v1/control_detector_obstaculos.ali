@@ -3,7 +3,7 @@ A -g
 P LC TF
 R nnvvrnvvnnnnvvvvvvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U control_detector_obstaculos%b  control_detector_obstaculos.adb  348864BB PK IL
+U control_detector_obstaculos%b  control_detector_obstaculos.adb  3281D913 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -41,8 +41,8 @@ D a-retide.ads		20000718095948 7F3C479C
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
 D a-textio.ads		20000718095948 2D24B708
-D control_detector_obstaculos.ads  20241129093418 5B3F5735
-D control_detector_obstaculos.adb  20241129095420 19D36E84
+D control_detector_obstaculos.ads  20241129130818 5B3F5735
+D control_detector_obstaculos.adb  20241129124244 1FDAD32C
 D datos_aeronave.ads	20241129093319 2281839C
 D datos_posalt_vel.ads	20241129093022 4168C533
 D devicesfss_v1.ads	20241108091459 65131FAE
@@ -80,18 +80,18 @@ D s-tarest.ads		20000718095949 1D177686
 D s-unstyp.ads		20000718095949 78AFB91D
 D unchconv.ads		20000718095949 72DC4539
 X 1 ada.ads
-18U9*Ada 11|3r6 4r6 12|3r6 3r25 4r6 4r23 40r25 40r47 104r26 127r10 130r22
+18U9*Ada 11|3r6 4r6 12|3r6 3r25 4r6 4r23 40r25 40r47 104r26 128r10 131r22
 X 6 a-reatim.ads
-43U13*Real_Time 11|3r10 12|3r10 3r29 40r29 40r51 104r30 130r26
+43U13*Real_Time 11|3r10 12|3r10 3r29 40r29 40r51 104r30 131r26
 45O9*Time 12|40r39 41r30
-57U13*Clock 12|40r61 45r24 104r40 123r22 130r36
-59U13*"+" 12|104r46 130r42
+57U13*Clock 12|40r61 45r24 104r40 123r22 131r36
+59U13*"+" 12|104r46 131r42
 62U13*"-" 12|124r58
 84U13*To_Duration 12|124r37
-89U13*Milliseconds 12|104r48 130r44
+89U13*Milliseconds 12|104r48 131r44
 X 10 a-textio.ads
-51U13*Text_IO 11|4r10 12|4r10 4r27 127r14
-260U14*Put_Line 12|127r22
+51U13*Text_IO 11|4r10 12|4r10 4r27 128r14
+260U14*Put_Line 12|127r10 128r22
 X 11 control_detector_obstaculos.ads
 9U9*control_detector_obstaculos 12|9b14
 12o4*Tiempo_Alarma 12|70r32 82r34
@@ -117,7 +117,7 @@ X 12 control_detector_obstaculos.adb
 40O7 Next_Time 104m13 105r25
 41O7 Start_Time 45m10 124r60
 41O19 End_Time 123m10 124r49
-42o7 WCET 124m10 124r31 127r57
+42o7 WCET 124m10 124r31 128r66
 X 13 datos_aeronave.ads
 5U9*datos_aeronave 11|6r6 12|6r6 51r10 52r10 55r10 56r10 57r10 61r10 62r10
 . 89r13 90r13 91r13 96r16 100r16 110r16 114r16

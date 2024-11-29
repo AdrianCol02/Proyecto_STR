@@ -51,7 +51,8 @@ package body control_velocidad_aeronave is
             WCET := Duration'Max(WCET, To_Duration(End_Time - Start_Time));
 
             -- Mostrar el WCET
-            Ada.Text_IO.Put_Line("WCET: " & Duration'Image(WCET));
+            Put_Line(" ");
+            Ada.Text_IO.Put_Line("WCET velocidad: " & Duration'Image(WCET));
             delay until Clock + Intervalo_Control;
         end loop;
     end control_velocidad;

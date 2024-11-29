@@ -3,7 +3,7 @@ A -g
 P LC TF
 R nnvvrnvvnnnnvvvvvvvvnnnnvnnnnnvnnnnnnnnnnnn
 
-U control_velocidad_aeronave%b  control_velocidad_aeronave.adb  1B180045 PK IL
+U control_velocidad_aeronave%b  control_velocidad_aeronave.adb  64C595A8 PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -38,8 +38,8 @@ D a-retide.ads		20000718095948 7F3C479C
 D a-stream.ads		20000718095948 5F7C277B
 D a-tags.ads		20000718095948 45EF7E4E
 D a-textio.ads		20000718095948 2D24B708
-D control_velocidad_aeronave.ads  20241129093350 275D08CD
-D control_velocidad_aeronave.adb  20241129094733 4A215582
+D control_velocidad_aeronave.ads  20241129130808 275D08CD
+D control_velocidad_aeronave.adb  20241129122804 35FCC06F
 D datos_aeronave.ads	20241129093319 2281839C
 D datos_posalt_vel.ads	20241129093022 4168C533
 D devicesfss_v1.ads	20241108091459 65131FAE
@@ -77,19 +77,19 @@ D s-tarest.ads		20000718095949 1D177686
 D s-unstyp.ads		20000718095949 78AFB91D
 D unchconv.ads		20000718095949 72DC4539
 X 1 ada.ads
-18U9*Ada 11|3r6 3r25 12|3r6 3r25 4r6 4r23 54r13
+18U9*Ada 11|3r6 3r25 12|3r6 3r25 4r6 4r23 55r13
 X 6 a-reatim.ads
 43U13*Real_Time 11|3r10 3r29 12|3r10 3r29
 45O9*Time 12|18r32
 50O9*Time_Span 11|17r40
-57U13*Clock 12|22r27 50r25 55r25
-59U13*"+" 12|55r31
+57U13*Clock 12|22r27 50r25 56r25
+59U13*"+" 12|56r31
 62U13*"-" 12|51r61
 84U13*To_Duration 12|51r40
 89U13*Milliseconds 11|17r53
 X 10 a-textio.ads
-51U13*Text_IO 12|4r10 4r27 54r17
-260U14*Put_Line 12|54r25
+51U13*Text_IO 12|4r10 4r27 55r17
+260U14*Put_Line 12|54r13 55r25
 X 11 control_velocidad_aeronave.ads
 7U9*control_velocidad_aeronave 12|9b14
 10i4*Max_Velocidad 12|31r43 32r36
@@ -99,7 +99,7 @@ X 11 control_velocidad_aeronave.ads
 14i4*Incremento_Cabeceo
 15i4*Incremento_Alabeo
 16i4*Incremento_CabeceoAlabeo
-17O4*Intervalo_Control 12|55r33
+17O4*Intervalo_Control 12|56r33
 20t9*control_velocidad
 X 12 control_velocidad_aeronave.adb
 12i9 Potenciometro 26m24 27r57 28r41
@@ -110,7 +110,7 @@ X 12 control_velocidad_aeronave.adb
 17i9 Roll_Actual 48m52
 18O9 Start_Time 22m13 51r63
 18O21 End_Time 50m13 51r52
-19o9 WCET 51m13 51r34 54r60
+19o9 WCET 51m13 51r34 55r70
 X 13 datos_aeronave.ads
 5U9*datos_aeronave 12|7r6 27r13 43r13
 7w14*aeronave 12|27r28 43r28
