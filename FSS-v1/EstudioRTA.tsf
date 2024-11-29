@@ -1,0 +1,15 @@
+-- Sample task set
+task set Sample with 4 tasks and 2 locks is
+-- locks
+   lock datos_aeronave;
+   lock datos_posalt_vel;
+-- tasks
+   task tvelocidad is periodic  (18,  300, 0, 0,  14, 0, 0, 300, 0)
+        uses datos_aeronave(5), datos_posalt_vel(7);
+   task tposicion is periodic  (20, 200, 0, 0, 8, 0, 0, 200, 0)
+        uses datos_aeronave(9), datos_posalt_vel(9);
+   task tcolisiones is periodic  (19,   250, 0, 0,  17,  0, 0,  250, 0)
+        uses datos_aeronave(9), datos_posalt_vel(5);
+   task tdisplay is periodic  (17,  5000, 0, 0,  32, 0, 0,  5000, 0)
+        uses datos_aeronave(2);   
+end Sample;
