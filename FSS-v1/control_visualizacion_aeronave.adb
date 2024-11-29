@@ -3,8 +3,7 @@
 with Ada.Real_Time; use Ada.Real_Time;
 with Ada.Text_IO; use Ada.Text_IO;
 with devicesFSS_V1; use devicesFSS_V1;
-with datos_aeronave; -- Incluir el objeto protegido
-with Ada.Execution_Time; use Ada.Execution_Time;
+with datos_aeronave;
 
 package body control_visualizacion_aeronave is
     task body visualizar_datos is

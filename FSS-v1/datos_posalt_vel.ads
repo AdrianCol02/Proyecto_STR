@@ -2,7 +2,6 @@
 
 with devicesFSS_V1; use devicesFSS_V1;
 with Ada.Real_Time; use Ada.Real_Time;
-with Ada.Execution_Time; use Ada.Execution_Time;
 
 package datos_posalt_vel is
     protected Datos_Vuelo is

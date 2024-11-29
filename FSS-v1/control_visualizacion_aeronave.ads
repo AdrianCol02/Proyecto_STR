@@ -2,6 +2,7 @@
 
 with Ada.Real_Time; use Ada.Real_Time;
 
+
 package control_visualizacion_aeronave is
 
     -- Intervalo de visualización: 5 segundos (5000 ms)

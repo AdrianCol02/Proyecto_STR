@@ -5,7 +5,6 @@ with Ada.Text_IO; use Ada.Text_IO;
 with devicesFSS_V1; use devicesFSS_V1;
 with datos_aeronave;
 with datos_posalt_vel;
-with Ada.Execution_Time; use Ada.Execution_Time;
 
 package body control_detector_obstaculos is
 

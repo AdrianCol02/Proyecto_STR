@@ -5,7 +5,6 @@ with Ada.Text_IO; use Ada.Text_IO;
 with devicesFSS_V1; use devicesFSS_V1;
 with datos_posalt_vel; use datos_posalt_vel;
 with datos_aeronave; use datos_aeronave;
-with Ada.Execution_Time; use Ada.Execution_Time;
 
 package body control_posicion_altitud is
    
