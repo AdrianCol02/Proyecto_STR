@@ -19,12 +19,11 @@ package body control_visualizacion_aeronave is
             Start_Time := Clock;
 
             -- Put_Line("Visualización de datos de la aeronave activada");
-            Read_Joystick(Joystick);
             datos_aeronave.aeronave.Leer_Altitud(Altitud);
             datos_aeronave.aeronave.Leer_Velocidad(Velocidad);
             datos_aeronave.aeronave.Leer_Potencia(Potencia_Motores);
-            Pitch := Pitch_Samples_Type(Joystick(x));
-            Roll := Roll_Samples_Type(Joystick(y));
+            datos_aeronave.aeronave.Leer_Pitch(Pitch);
+            datos_aeronave.aeronave.Leer_Roll(Roll);
 
 
             -- Mostrar los datos en el monitor

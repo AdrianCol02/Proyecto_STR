@@ -12,28 +12,32 @@ package body datos_posalt_vel is
         begin
             -- Asignar el valor actual de la velocidad al parámetro `out`
             Execution_Time(Milliseconds(2));
-            Velocidad := Velocidad_Actual;
+            Velocidad := devicesFSS_V1.Read_Speed;
+            Datos_Vuelo.Velocidad_Actual := Velocidad;
         end Leer_Velocidad;
 
         procedure Leer_Altitud(Altitud : out Altitude_Samples_Type) is
         begin
             -- Asignar el valor actual de la altitud al parámetro `out`
             Execution_Time(Milliseconds(2));
-            Altitud := Altitud_Actual;
+            Altitud := devicesFSS_V1.Read_Altitude;
+            Datos_Vuelo.Altitud_Actual := Altitud;
         end Leer_Altitud;
 
         procedure Leer_Pitch(Pitch : out Pitch_Samples_Type) is
         begin
             -- Asignar el valor actual del pitch al parámetro `out`
             Execution_Time(Milliseconds(2));
-            Pitch := Pitch_Actual;
+            Pitch := devicesFSS_V1.Read_Pitch;
+            Datos_Vuelo.Pitch_Actual := Pitch;
         end Leer_Pitch;
 
         procedure Leer_Roll(Roll : out Roll_Samples_Type) is
         begin
             -- Asignar el valor actual del roll al parámetro `out`
             Execution_Time(Milliseconds(2));
-            Roll := Roll_Actual;
+            Roll := devicesFSS_V1.Read_Roll;
+            Datos_Vuelo.Roll_Actual := Roll;
         end Leer_Roll;
 
         -- Procedimientos de actualización datos
@@ -41,6 +45,7 @@ package body datos_posalt_vel is
         begin
             -- Asignar el valor de la nueva altitud a la variable privada
             Execution_Time(Milliseconds(5));
+            devicesFSS_V1.Write_Altitude(Nueva_Altitud);
             Altitud_Actual := Nueva_Altitud;
         end Actualizar_Altitud;
 
@@ -48,6 +53,7 @@ package body datos_posalt_vel is
         begin
             -- Asignar el valor de la nueva velocidad a la variable privada
             Execution_Time(Milliseconds(5));
+            devicesFSS_V1.Write_Speed(Nueva_Velocidad);
             Velocidad_Actual := Nueva_Velocidad;
         end Actualizar_Velocidad;
 
@@ -55,6 +61,7 @@ package body datos_posalt_vel is
         begin
             -- Asignar el valor del nuevo pitch a la variable privada
             Execution_Time(Milliseconds(5));
+            devicesFSS_V1.Write_Pitch(Nuevo_Pitch);
             Pitch_Actual := Nuevo_Pitch;
         end Actualizar_Pitch;
 
@@ -62,6 +69,7 @@ package body datos_posalt_vel is
         begin
             -- Asignar el valor del nuevo roll a la variable privada
             Execution_Time(Milliseconds(5));
+            devicesFSS_V1.Write_Roll(Nuevo_Roll);
             Roll_Actual := Nuevo_Roll;
         end Actualizar_Roll;
 
