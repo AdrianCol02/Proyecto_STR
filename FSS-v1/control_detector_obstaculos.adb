@@ -90,19 +90,20 @@ package body control_detector_obstaculos is
             datos_aeronave.aeronave.Leer_Pitch(Pitch);      
             datos_aeronave.aeronave.Leer_Roll(Roll);        
 
-            -- Realizar maniobra basada en la altitud
-            if Altitud <= 8500 then
-               devicesFSS_V1.Set_Aircraft_Pitch(20);
-               datos_aeronave.aeronave.Actualizar_Pitch(20);
-               datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(20);
-            else
-               devicesFSS_V1.Set_Aircraft_Roll(45); 
-               datos_aeronave.aeronave.Actualizar_Roll(45); 
-               datos_posalt_vel.Datos_Vuelo.Actualizar_Roll(45);
-            end if;
+            for I in 1 .. 12 loop-- Realizar maniobra basada en la altitud
+               if Altitud <= 8500 then
+                  devicesFSS_V1.Set_Aircraft_Pitch(20);
+                  datos_aeronave.aeronave.Actualizar_Pitch(20);
+                  datos_posalt_vel.Datos_Vuelo.Actualizar_Pitch(20);
+               else
+                  devicesFSS_V1.Set_Aircraft_Roll(45); 
+                  datos_aeronave.aeronave.Actualizar_Roll(45); 
+                  datos_posalt_vel.Datos_Vuelo.Actualizar_Roll(45);
+               end if;
 
-            Next_Time := Ada.Real_Time.Clock + Milliseconds(3000);
-            delay until Next_Time; 
+               Next_Time := Ada.Real_Time.Clock + Milliseconds(250);
+               delay until Next_Time; 
+            end loop;
 
             -- Estabilizar la nave después de la maniobra
             if Altitud > 8500 then
