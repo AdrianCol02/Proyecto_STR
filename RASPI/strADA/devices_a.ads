@@ -28,14 +28,14 @@ Package devices_a is
  pragma Import (C, read_infrared_A, "read_infrared");
  
 
- function set_led_1_A (Led_1: in integer) return integer;
+ procedure set_led_1_A (Led_1: in integer);
  pragma Import (C, set_led_1_A,"set_led_1");
 
- function set_led_2_A (Led_2: in integer) return integer;
+ procedure set_led_2_A (Led_2: in integer);
  pragma Import (C, set_led_2_A,"set_led_2");
 
  
- function moveServo_A (angle: in integer) return integer;
+ procedure moveServo_A (angle: in integer);
  pragma Import (C, moveServo_A,"moveServo");
  
 
